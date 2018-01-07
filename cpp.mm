@@ -9400,7 +9400,8 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="polymorphism" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1473647588" CREATED="1515336243452" MODIFIED="1515336787103">
+<node TEXT="polymorphism" STYLE_REF="Beschreibung" ID="ID_1473647588" CREATED="1515336243452" MODIFIED="1515349450962">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1579724163" CREATED="1515335035178" MODIFIED="1515336252203"><richcontent TYPE="DETAILS">
 
 <html>
@@ -9416,7 +9417,7 @@
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 </node>
-<node TEXT="use of the virtual keyword" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1782755397" CREATED="1515335528995" MODIFIED="1515335537716"><richcontent TYPE="DETAILS">
+<node TEXT="use of the virtual keyword" STYLE_REF="Beschreibung" ID="ID_1782755397" CREATED="1515335528995" MODIFIED="1515349454278"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -9429,6 +9430,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_490436767" CREATED="1515335620719" MODIFIED="1515335625627"><richcontent TYPE="DETAILS">
 
 <html>
@@ -9457,7 +9459,8 @@
 </node>
 </node>
 </node>
-<node TEXT="usage" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_345041904" CREATED="1515336277854" MODIFIED="1515336787714">
+<node TEXT="usage" STYLE_REF="Beschreibung" ID="ID_345041904" CREATED="1515336277854" MODIFIED="1515349457249">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="downside" STYLE_REF="Beschreibung" ID="ID_1266030490" CREATED="1515335731348" MODIFIED="1515335736691"><richcontent TYPE="DETAILS">
 
 <html>
@@ -9517,7 +9520,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="return types" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1357555080" CREATED="1515335592712" MODIFIED="1515335597242"><richcontent TYPE="DETAILS">
+<node TEXT="return types" STYLE_REF="Beschreibung" ID="ID_1357555080" CREATED="1515335592712" MODIFIED="1515349473823"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -9530,6 +9533,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="covariant return types" STYLE_REF="Beschreibung" ID="ID_1929341881" CREATED="1515336733797" MODIFIED="1515336743938"><richcontent TYPE="DETAILS">
 
 <html>
@@ -9546,7 +9550,7 @@
 </node>
 </node>
 </node>
-<node TEXT="override specifier" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_623498285" CREATED="1515336003415" MODIFIED="1515336209058"><richcontent TYPE="DETAILS">
+<node TEXT="override specifier" STYLE_REF="Beschreibung" ID="ID_623498285" CREATED="1515336003415" MODIFIED="1515349466356"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -9559,6 +9563,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="Apply to every intended override function" STYLE_REF="Beschreibung" ID="ID_1764011226" CREATED="1515336355780" MODIFIED="1515336380996"><richcontent TYPE="DETAILS">
 
 <html>
@@ -9600,7 +9605,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="final specifier" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1309635847" CREATED="1515336458845" MODIFIED="1515336464820"><richcontent TYPE="DETAILS">
+<node TEXT="final specifier" STYLE_REF="Beschreibung" ID="ID_1309635847" CREATED="1515336458845" MODIFIED="1515349469012"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -9613,6 +9618,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1752489068" CREATED="1515336570057" MODIFIED="1515336574881"><richcontent TYPE="DETAILS">
 
 <html>
@@ -9644,7 +9650,7 @@
 </node>
 </node>
 </node>
-<node TEXT="misc" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1135090154" CREATED="1515337546848" MODIFIED="1515337549112">
+<node TEXT="misc" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1135090154" CREATED="1515337546848" MODIFIED="1515342898357">
 <node TEXT="virtual destructor" STYLE_REF="Beschreibung" ID="ID_888534936" CREATED="1515337046127" MODIFIED="1515337250520"><richcontent TYPE="DETAILS">
 
 <html>
@@ -9685,6 +9691,688 @@
     </p>
   </body>
 </html>
+</richcontent>
+</node>
+</node>
+<node TEXT="pure virtual functions" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_245531524" CREATED="1515342743380" MODIFIED="1515342898767">
+<node TEXT="basic" STYLE_REF="Beschreibung" ID="ID_1788425760" CREATED="1515343176606" MODIFIED="1515349487725">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_851169033" CREATED="1515342749686" MODIFIED="1515342939612"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;C++ allows you to create a special kind of virtual function called a pure virtual function (or abstract function) that has no body at all! A pure virtual function simply acts as a placeholder that is meant to be redefined by derived classes. When we add a pure virtual function to our class, we are effectively saying, &#8220;it is up to the derived classes to implement this function&#8221;.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="To create a pure virtual function, rather than define a body for the function, we simply assign the function the value 0." STYLE_REF="Beschreibung" ID="ID_1797636819" CREATED="1515342778772" MODIFIED="1515342789586"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;virtual int getValue() = 0; // a pure virtual function</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="abstract base class" STYLE_REF="Beschreibung" ID="ID_1357962469" CREATED="1515342977425" MODIFIED="1515349490610"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;any class with one or more pure virtual functions becomes an abstract base class, which means that it can not be instantiated!</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="derived class" STYLE_REF="Beschreibung" ID="ID_622034170" CREATED="1515342997553" MODIFIED="1515343003616"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;any derived class must define a body for this function, or that derived class will be considered an abstract base class as well.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="useful for" STYLE_REF="Beschreibung" ID="ID_1632401158" CREATED="1515343068302" MODIFIED="1515343077185"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;A pure virtual function is useful when we have a function that we want to put in the base class, but only the derived classes know what it should return. A pure virtual function makes it so the base class can not be instantiated, and the derived classes are forced to define these function before they can be instantiated. This helps ensure the derived classes do not forget to redefine functions that the base class was expecting them to.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="pure virtual functions with bodies" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1070105365" CREATED="1515343313828" MODIFIED="1515343341224">
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_120269185" CREATED="1515343196142" MODIFIED="1515343327255"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;When providing a body for a pure virtual function, the body must be provided separately (not inline).</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="useful for" STYLE_REF="Beschreibung" ID="ID_228851018" CREATED="1515343272961" MODIFIED="1515343293568"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;This paradigm can be useful when you want your base class to provide a default implementation for a function, but still force any derived classes to provide their own implementation. However, if the derived class is happy with the default implementation provided by the base class, it can simply call the base class implementation directly.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="interface classes" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1435671553" CREATED="1515343390158" MODIFIED="1515343401242">
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_201944197" CREATED="1515343395425" MODIFIED="1515343399996"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;An interface class is a class that has no member variables, and where all of the functions are pure virtual! In other words, the class is purely a definition, and has no actual implementation.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="useful for" STYLE_REF="Beschreibung" ID="ID_1451397567" CREATED="1515343407483" MODIFIED="1515343428711"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Interfaces are useful when you want to define the functionality that derived classes must implement, but leave the details of how the derived class implements that functionality entirely up to the derived class.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="naming" STYLE_REF="Beschreibung" ID="ID_1586829988" CREATED="1515343429552" MODIFIED="1515343445862"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Interface classes are often named beginning with an I.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="destructor" STYLE_REF="Beschreibung" ID="ID_1700663338" CREATED="1515343505672" MODIFIED="1515343514383"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Don&#8217;t forget to include a virtual destructor for your interface classes, so that the proper derived destructor will be called if a pointer to the interface is deleted.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="virtual base class" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_546719968" CREATED="1515343949265" MODIFIED="1515343964943">
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1731261008" CREATED="1515343965897" MODIFIED="1515349500918"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;To share a base class, simply insert the &#8220;virtual&#8221; keyword in the inheritance list of the derived class. This creates what is called a virtual base class, which means there is only one base object that is shared.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_778592332" CREATED="1515343993728" MODIFIED="1515344006062"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;class PoweredDevice </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>class Scanner: virtual public PoweredDevice </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>class Printer: virtual public PoweredDevice </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>class Copier: public Scanner, public Printer </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>};</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="virtual before non-virtual" STYLE_REF="Beschreibung" ID="ID_1497317054" CREATED="1515344071704" MODIFIED="1515344079041"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;virtual base classes are always created before non-virtual base classes, which ensures all bases get created before their derived classes.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="most derived class responsible" STYLE_REF="Beschreibung" ID="ID_1890734420" CREATED="1515344363208" MODIFIED="1515344457641"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;if a class inherits one or more classes that have virtual parents, the most derived class is responsible for constructing the virtual base class. Note that this is true even in a single inheritance case.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="virtual table" STYLE_REF="Beschreibung" ID="ID_1748031679" CREATED="1515344508221" MODIFIED="1515344513019"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;a virtual base class is always considered a direct base of its most derived class (which is why the most derived class is responsible for its construction). But classes inheriting the virtual base still need access to it. So in order to facilitate this, the compiler creates a virtual table for each class directly inheriting the virtual class (Printer and Scanner). These virtual tables point to the functions in the most derived class. Because the derived classes have a virtual table, that also means they are now larger by a pointer (to the virtual table).</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="object slicing" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_398257127" CREATED="1515344758287" MODIFIED="1515344764193">
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_292677361" CREATED="1515344764620" MODIFIED="1515344792377"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Remember that derived has a Base part and a Derived part. When we assign a Derived object to a Base object, only the Base portion of the Derived object is copied. The Derived portion is not. Consequently, the assigning of a Derived class object to a Base class object is called object slicing (or slicing for short).</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="slicing and functions" STYLE_REF="Beschreibung" ID="ID_1878424429" CREATED="1515346105974" MODIFIED="1515346152428"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;slicing is much more likely to occur accidentally with functions when an object is passed by value rather than passed by reference.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="avoid slicing" STYLE_REF="Beschreibung" ID="ID_1591569586" CREATED="1515346989042" MODIFIED="1515346997809"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Although C++ supports assigning derived objects to base objects via object slicing, in general, this is likely to cause nothing but headaches, and you should generally try to avoid slicing. Make sure your function parameters are references (or pointers) and try to avoid any kind of pass-by-value when it comes to derived classes.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="examples" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1697905799" CREATED="1515346974543" MODIFIED="1515346977843">
+<node TEXT="std::vector example" STYLE_REF="Beschreibung" ID="ID_1935226766" CREATED="1515346366796" MODIFIED="1515349511147"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;std::vector&lt;Base&gt; v; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;v.push_back(Base(5)); // add a Base object to our vector </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;v.push_back(Derived(6)); // add a Derived object to our vector</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="sliced" STYLE_REF="Beschreibung" ID="ID_361749991" CREATED="1515346388949" MODIFIED="1515346400993"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Similar to the previous examples, because the std::vector was declared to be a vector of type Base, when Derived(6) was added to the vector, it was sliced.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="std::reference_wrapper" STYLE_REF="Beschreibung" ID="ID_713757021" CREATED="1515346464147" MODIFIED="1515349517180"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;There&#8217;s one other way to resolve this. The standard library provides a useful workaround: the std::reference_wrapper class. Essentially, std::reference_wrapper is a class that acts like a reference, but also allows assignment and copying, so it&#8217;s compatible with std::vector.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="&lt;functional&gt; header" STYLE_REF="Beschreibung" ID="ID_1210197706" CREATED="1515346486185" MODIFIED="1515346499477"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;std::reference_wrapper lives in the &lt;functional&gt; header</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="can&apos;t be anonymous" STYLE_REF="Beschreibung" ID="ID_1358986924" CREATED="1515346510017" MODIFIED="1515346516941"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;When you create your std::reference_wrapper wrapped object, the object can&#8217;t be an anonymous object (since anonymous objects have expression scope would leave the reference dangling)</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="get()" STYLE_REF="Beschreibung" ID="ID_1887487360" CREATED="1515346527482" MODIFIED="1515346531656"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;When you want to get your object back out of std::reference_wrapper, you use the get() member function.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1921284171" CREATED="1515346545086" MODIFIED="1515346549409"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;std::vector&lt;std::reference_wrapper&lt;Base&gt; &gt; v; // our vector is a vector of std::reference_wrapper wrapped Base (not Base&amp;) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;Base b(5); // b and d can't be anonymous objects </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;Derived d(6); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;v.push_back(b); // add a Base object to our vector </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;v.push_back(d); // add a Derived object to our vector</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="frankenobject example" STYLE_REF="Beschreibung" ID="ID_576943941" CREATED="1515346866663" MODIFIED="1515349513713"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;Derived d1(5); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;Derived d2(6); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;Base &amp;b = d2; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;b = d1; // this line is problematic</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="only base portion gets copied" STYLE_REF="Beschreibung" ID="ID_685535763" CREATED="1515346875601" MODIFIED="1515346883590"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The fourth line is where things go astray. Since b points at d2, and we&#8217;re assigning d1 to b, you might think that the result would be that d1 would get copied into d2 -- and it would, if b were a Derived. But b is a Base, and the operator= that C++ provides for classes isn&#8217;t virtual by default. Consequently, only the Base portion of d1 is copied into d2.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="downcasting" STYLE_REF="Beschreibung" ID="ID_1666766896" CREATED="1515348066641" MODIFIED="1515349535529">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="upcasting" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1704533381" CREATED="1515348861795" MODIFIED="1515348864868">
+<node TEXT="upcasting" STYLE_REF="Beschreibung" ID="ID_1630192005" CREATED="1515348072130" MODIFIED="1515348078048"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;We know that C++ will implicitly let you convert a Derived pointer into a Base pointer (in fact, getObject() does just that). This process is sometimes called upcasting.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="dynamic_cast" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_309300180" CREATED="1515348832430" MODIFIED="1515348835616">
+<node TEXT="downcasting with dynamic_cast" STYLE_REF="Beschreibung" ID="ID_698145297" CREATED="1515348085969" MODIFIED="1515348505690"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;C++ provides a casting operator named dynamic_cast that can be used for just this purpose. Although dynamic casts have a few different capabilities, by far the most common use for dynamic casting is for converting base-class pointers into derived-class pointers. This process is called downcasting.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_84430658" CREATED="1515348091206" MODIFIED="1515349542326"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>Base *b = getObject(true); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>Derived *d = dynamic_cast&lt;Derived*&gt;(b); // use dynamic cast to convert Base pointer into Derived pointer </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>if (d) // make sure d is non-null</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="references" STYLE_REF="Beschreibung" ID="ID_1320810644" CREATED="1515348594247" MODIFIED="1515348600028"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Although all of the above examples show dynamic casting of pointers (which is more common), dynamic_cast can also be used with references. This works analogously to how dynamic_cast works with pointers.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="dynamic cast failure" STYLE_REF="Beschreibung" ID="ID_560196838" CREATED="1515348177437" MODIFIED="1515348239563"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;If a dynamic_cast fails, the result of the conversion will be a null pointer. Rule: Always ensure your dynamic casts actually succeeded by checking for a null pointer result.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="will not work" STYLE_REF="Beschreibung" ID="ID_1377988363" CREATED="1515348273030" MODIFIED="1515349545972">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="With protected or private inheritance." STYLE_REF="Beschreibung" ID="ID_1271447539" CREATED="1515348284129" MODIFIED="1515348285133"/>
+<node TEXT="For classes that do not declare or inherit any virtual functions (and thus don&#x2019;t have a virtual table)." STYLE_REF="Beschreibung" ID="ID_825843514" CREATED="1515348291419" MODIFIED="1515348292310"/>
+<node TEXT="In certain cases involving virtual base classes (see this page for an example of some of these cases, and how to resolve them)." STYLE_REF="Beschreibung" ID="ID_1410467968" CREATED="1515348299515" MODIFIED="1515348300522"/>
+</node>
+<node TEXT="performance penality" STYLE_REF="Beschreibung" ID="ID_513312954" CREATED="1515348349413" MODIFIED="1515348357070"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Note that Because dynamic_cast does some consistency checking at runtime (to ensure the conversion can be made), use of dynamic_cast does incur a performance penalty.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="static_cast" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_875164267" CREATED="1515348821048" MODIFIED="1515348827545">
+<node TEXT="downcasting with static_cast" STYLE_REF="Beschreibung" ID="ID_844965153" CREATED="1515348506553" MODIFIED="1515348542434"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;It turns out that downcasting can also be done with static_cast. The main difference is that static_cast does no runtime type checking to ensure that what you&#8217;re doing makes sense. This makes using static_cast faster, but more dangerous. If you cast a Base* to a Derived*, it will &#8220;succeed&#8221; even if the Base pointer isn&#8217;t pointing to a Derived object. This will result in undefined behavior when you try to access the resulting Derived pointer (that is actually pointing to a Base object).</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="usage" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1928279468" CREATED="1515348812676" MODIFIED="1515348819528">
+<node TEXT="dynamic_cast vs. static_cast" STYLE_REF="Beschreibung" ID="ID_1682189783" CREATED="1515348640380" MODIFIED="1515348658687"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;New programmers are sometimes confused about when to use static_cast vs dynamic_cast. The answer is quite simple: use static_cast unless you&#8217;re downcasting, in which case dynamic_cast is usually a better choice. However, you should also consider avoiding casting altogether and just using virtual functions.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT=" However, there are times when downcasting is the better choice:" STYLE_REF="Beschreibung" ID="ID_952694251" CREATED="1515348725959" MODIFIED="1515348746526"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>- When you can not modify the base class to add a virtual function (e.g. because the base class is part of the standard library) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>- When you need access to something that is derived-class specific (e.g. an access function that only exists in the derived class) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>- When adding a virtual function to your base class doesn&#8217;t make sense (e.g. there is no appropriate value for the base class to return). Using a pure virtual function may be an option here if you don&#8217;t need to instantiate the base class.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="operator overloading" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1160996377" CREATED="1515349301568" MODIFIED="1515349312826">
+<node TEXT="Can we make Operator &lt;&lt; virtual?" STYLE_REF="Beschreibung" ID="ID_1900725242" CREATED="1515349320024" MODIFIED="1515349352086"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The short answer is no. But, we set up operator&lt;&lt; as a friend in our base class as usual. But instead of having operator&lt;&lt; do the printing itself, we delegate that responsibility to a normal member function that can be virtualized!</i></font>
+    </p>
+  </body>
+</html>
+
 </richcontent>
 </node>
 </node>
