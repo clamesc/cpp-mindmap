@@ -86,7 +86,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<node TEXT="basic" STYLE_REF="Beschreibung" POSITION="right" ID="ID_1479062675" CREATED="1514743378702" MODIFIED="1514743381983">
+<node TEXT="basic" STYLE_REF="Beschreibung" FOLDED="true" POSITION="right" ID="ID_1479062675" CREATED="1514743378702" MODIFIED="1514743381983">
 <node TEXT="memory" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1671435209" CREATED="1514743388641" MODIFIED="1514743391665">
 <node TEXT="The code segment (also called a text segment)," STYLE_REF="Beschreibung" ID="ID_1546558380" CREATED="1514743394822" MODIFIED="1514743435900"><richcontent TYPE="DETAILS">
 
@@ -277,7 +277,7 @@
 
 </richcontent>
 </node>
-<node TEXT="late binding" STYLE_REF="Beschreibung" ID="ID_1712646886" CREATED="1515338474687" MODIFIED="1515338482307"><richcontent TYPE="DETAILS">
+<node TEXT="late binding" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1712646886" CREATED="1515338474687" MODIFIED="1515338482307"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -291,7 +291,7 @@
 </html>
 
 </richcontent>
-<node TEXT="slightly less efficient" STYLE_REF="Beschreibung" ID="ID_307938318" CREATED="1515338613167" MODIFIED="1515338622851"><richcontent TYPE="DETAILS">
+<node TEXT="slightly less efficient" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_307938318" CREATED="1515338613167" MODIFIED="1515338622851"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -321,7 +321,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="virtual table" STYLE_REF="Beschreibung" ID="ID_450445542" CREATED="1515338796701" MODIFIED="1515338804353"><richcontent TYPE="DETAILS">
+<node TEXT="virtual table" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_450445542" CREATED="1515338796701" MODIFIED="1515338804353"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -9400,7 +9400,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="polymorphism" STYLE_REF="Beschreibung" ID="ID_1473647588" CREATED="1515336243452" MODIFIED="1515336787103">
+<node TEXT="polymorphism" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1473647588" CREATED="1515336243452" MODIFIED="1515336787103">
 <node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1579724163" CREATED="1515335035178" MODIFIED="1515336252203"><richcontent TYPE="DETAILS">
 
 <html>
@@ -9416,7 +9416,7 @@
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 </node>
-<node TEXT="use of the virtual keyword" STYLE_REF="Beschreibung" ID="ID_1782755397" CREATED="1515335528995" MODIFIED="1515335537716"><richcontent TYPE="DETAILS">
+<node TEXT="use of the virtual keyword" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1782755397" CREATED="1515335528995" MODIFIED="1515335537716"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -9457,7 +9457,7 @@
 </node>
 </node>
 </node>
-<node TEXT="usage" STYLE_REF="Beschreibung" ID="ID_345041904" CREATED="1515336277854" MODIFIED="1515336787714">
+<node TEXT="usage" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_345041904" CREATED="1515336277854" MODIFIED="1515336787714">
 <node TEXT="downside" STYLE_REF="Beschreibung" ID="ID_1266030490" CREATED="1515335731348" MODIFIED="1515335736691"><richcontent TYPE="DETAILS">
 
 <html>
@@ -9517,7 +9517,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="return types" STYLE_REF="Beschreibung" ID="ID_1357555080" CREATED="1515335592712" MODIFIED="1515335597242"><richcontent TYPE="DETAILS">
+<node TEXT="return types" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1357555080" CREATED="1515335592712" MODIFIED="1515335597242"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -9546,7 +9546,7 @@
 </node>
 </node>
 </node>
-<node TEXT="override specifier" STYLE_REF="Beschreibung" ID="ID_623498285" CREATED="1515336003415" MODIFIED="1515336209058"><richcontent TYPE="DETAILS">
+<node TEXT="override specifier" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_623498285" CREATED="1515336003415" MODIFIED="1515336209058"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -9600,7 +9600,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="final specifier" STYLE_REF="Beschreibung" ID="ID_1309635847" CREATED="1515336458845" MODIFIED="1515336464820"><richcontent TYPE="DETAILS">
+<node TEXT="final specifier" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1309635847" CREATED="1515336458845" MODIFIED="1515336464820"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -9644,7 +9644,7 @@
 </node>
 </node>
 </node>
-<node TEXT="misc" STYLE_REF="Beschreibung" ID="ID_1135090154" CREATED="1515337546848" MODIFIED="1515337549112">
+<node TEXT="misc" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1135090154" CREATED="1515337546848" MODIFIED="1515337549112">
 <node TEXT="virtual destructor" STYLE_REF="Beschreibung" ID="ID_888534936" CREATED="1515337046127" MODIFIED="1515337250520"><richcontent TYPE="DETAILS">
 
 <html>
