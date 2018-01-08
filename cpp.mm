@@ -12559,7 +12559,6 @@
 </node>
 </node>
 </node>
-<node TEXT="exceptions" STYLE_REF="Stichpunkt" ID="ID_504430578" CREATED="1514569065778" MODIFIED="1515406270194"/>
 </node>
 <node TEXT="pseudo-random number generator (PRNG)" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_493262570" CREATED="1514579845746" MODIFIED="1515406411891">
 <node TEXT="what is is?" STYLE_REF="Beschreibung" ID="ID_789350963" CREATED="1514579896576" MODIFIED="1514579903404"><richcontent TYPE="DETAILS">
@@ -13034,6 +13033,697 @@
 <node TEXT="put test into automated function" STYLE_REF="Beschreibung" ID="ID_1676506919" CREATED="1514585774673" MODIFIED="1514585783401"/>
 </node>
 <node TEXT="error handling" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_929687182" CREATED="1514827575967" MODIFIED="1515406661629">
+<node TEXT="exceptions" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_504430578" CREATED="1514569065778" MODIFIED="1515406270194">
+<node TEXT="" ID="ID_683755885" CREATED="1515425527784" MODIFIED="1515445922751">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="throw" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1551509116" CREATED="1515424256808" MODIFIED="1515445925465">
+<node TEXT="throwing exceptions" STYLE_REF="Beschreibung" ID="ID_1234874387" CREATED="1515423515510" MODIFIED="1515423522665"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;In C++, a throw statement is used to signal that an exception or error case has occurred (think of throwing a penalty flag). Signaling that an exception has occurred is also commonly called raising an exception.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="To use a throw statement, simply use the throw keyword, followed by a value of any data type you wish to use to signal that an error has occurred. Typically, this value will be an error code, a description of the problem, or a custom exception class." STYLE_REF="Beschreibung" ID="ID_792241834" CREATED="1515423560162" MODIFIED="1515423593335"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;throw -1; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>throw ENUM_INVALID_INDEX; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>throw &quot;Can not take square root of negative number&quot;; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>throw dX; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>throw MyException(&quot;Fatal Error&quot;); </i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="rethrow exceptions" STYLE_REF="Beschreibung" ID="ID_306497971" CREATED="1515444744687" MODIFIED="1515445937210"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;C++ provides a way to rethrow the exact same exception as the one that was just caught. To do so, simply use the throw keyword from within the catch block (with no associated variable).</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_412526994" CREATED="1515444819999" MODIFIED="1515444855207"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>catch (Base&amp; b) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;std::cout &lt;&lt; &quot;Caught Base b, which is actually a &quot;; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;b.print(); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;std::cout &lt;&lt; &quot;\n&quot;; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;throw; // note: We're now rethrowing the object here </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="try" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_390987317" CREATED="1515424230701" MODIFIED="1515445926497">
+<node TEXT="looking for exceptions" STYLE_REF="Beschreibung" ID="ID_537645699" CREATED="1515423651372" MODIFIED="1515423659258"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;In C++, we use the try keyword to define a block of statements (called a try block). The try block acts as an observer, looking for any exceptions that are thrown by any of the statements within the try block.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_182576739" CREATED="1515423666996" MODIFIED="1515423691868"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;try </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;throw -1; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="at least one catch block" STYLE_REF="Beschreibung" ID="ID_1205519826" CREATED="1515424115427" MODIFIED="1515424124511"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;A try block must have at least one catch block immediately following it, but may have multiple catch blocks listed in sequence.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="function try blocks" STYLE_REF="Beschreibung" ID="ID_211942277" CREATED="1515445154408" MODIFIED="1515445942795"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Function try blocks are designed to allow you to establish an exception handler around the body of an entire function, rather than around a block of code. </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>unlike normal catch blocks, which allow you to either resolve an exception, throw a new exception, or rethrow an existing exception, with function-level try blocks, you must throw or rethrow an exception. If you do not explicitly throw a new exception, or rethrow the current exception (using the throw keyword by itself), the exception will be implicitly rethrown up the stack.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_567590093" CREATED="1515445164172" MODIFIED="1515445319109"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;class B : public A </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>public: </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;B(int x) try : A(x) // note addition of try keyword here </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;} </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;catch (...) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// Exceptions from member initializer list or constructor </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// body are caught here </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;std::cerr &lt;&lt; &quot;Construction of A failed\n&quot;; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// If an exception isn't explicitly thrown here, the current </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// exception will be implicitly rethrown </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;}</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="catch" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1361979484" CREATED="1515424246680" MODIFIED="1515445926915">
+<node TEXT="handling exceptions" STYLE_REF="Beschreibung" ID="ID_1634927803" CREATED="1515423731715" MODIFIED="1515445950252"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Actually handling exceptions is the job of the catch block(s). The catch keyword is used to define a block of code (called a catch block) that handles exceptions for a single data type.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_731298099" CREATED="1515423747253" MODIFIED="1515423764965"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;catch (int x) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ &#160; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;std::cerr &lt;&lt; &quot;We caught an int exception with value&quot; &lt;&lt; x &lt;&lt; std::endl; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="catch parameters" STYLE_REF="Beschreibung" ID="ID_1745524248" CREATED="1515424201230" MODIFIED="1515424208985"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Catch parameters work just like function parameters, with the parameter being available within the subsequent catch block. Exceptions of fundamental types can be caught by value, but exceptions of non-fundamental types should be caught by const reference to avoid making an unnecessary copy.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="There are three common things that catch blocks do when they catch an exception:" STYLE_REF="Beschreibung" ID="ID_1601421201" CREATED="1515424592220" MODIFIED="1515445953061">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="First, catch blocks may print an error (either to the console, or a log file)." STYLE_REF="Beschreibung" ID="ID_459452400" CREATED="1515424610953" MODIFIED="1515424611963"/>
+<node TEXT="Second, catch blocks may return a value or error code back to the caller." STYLE_REF="Beschreibung" ID="ID_836199135" CREATED="1515424618186" MODIFIED="1515424619111"/>
+<node TEXT="Third, a catch block may throw another exception. Because the catch block is outside of the try block, the newly thrown exception in this case is not handled by the preceding try block -- it&#x2019;s handled by the next enclosing try block." STYLE_REF="Beschreibung" ID="ID_1823137801" CREATED="1515424626198" MODIFIED="1515424627299"/>
+</node>
+<node TEXT="catch-all handler" STYLE_REF="Beschreibung" ID="ID_562822782" CREATED="1515425854386" MODIFIED="1515445955503"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;A catch-all handler works just like a normal catch block, except that instead of using a specific type to catch, it uses the ellipses operator (&#8230;) as the type to catch.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="placed last" STYLE_REF="Beschreibung" ID="ID_1420260267" CREATED="1515425944341" MODIFIED="1515425949639"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The catch-all handler should be placed last in the catch block chain. This is to ensure that exceptions can be caught by exception handlers tailored to specific data types if those handlers exist.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="left empty" STYLE_REF="Beschreibung" ID="ID_1544512458" CREATED="1515425962300" MODIFIED="1515425986715"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Often, the catch-all handler block is left empty. This will catch any unanticipated exceptions and prevent them from stack unwinding to the top of your program, but does no specific error handling.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1671298044" CREATED="1515425995509" MODIFIED="1515426003918"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>catch(...) {} // ignore any unanticipated exceptions</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="when return codes fail" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1490110116" CREATED="1515424279837" MODIFIED="1515445927239">
+<node TEXT="when return codes fail" STYLE_REF="Beschreibung" ID="ID_1287283361" CREATED="1515423387328" MODIFIED="1515423445552"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>The primary issue with return codes is that the error handling code ends up intricately linked to the normal control flow of the code. This in turns ends up constraining both how the code is laid out, and how errors can be reasonably handled.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="unwinding the stack" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1420031267" CREATED="1515425081874" MODIFIED="1515445927562">
+<node TEXT="what happens when an exception is raised?" STYLE_REF="Beschreibung" ID="ID_865494825" CREATED="1515425097138" MODIFIED="1515425110362"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;First, the program looks to see if the exception can be handled immediately (which means it was thrown inside a try block). If not, the current function is terminated, and the program checks to see if the function&#8217;s caller will handle the exception. If not, it terminates the caller and checks the caller&#8217;s caller. Each function is terminated in sequence until a handler for the exception is found, or until main() is terminated without the exception being handled. This process is called unwinding the stack</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="uncaught exceptions" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1899556161" CREATED="1515425768484" MODIFIED="1515445927901">
+<node TEXT="what happens?" STYLE_REF="Beschreibung" ID="ID_1489593235" CREATED="1515425776459" MODIFIED="1515425799300"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;When main() terminates with an unhandled exception, the operating system will generally notify you that an unhandled exception error has occurred. How it does this depends on the operating system, but possibilities include printing an error message, popping up an error dialog, or simply crashing. Some OSes are less graceful than others. Generally this is something you want to avoid altogether!</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="catch-all handler" STYLE_REF="Beschreibung" ID="ID_1489671829" CREATED="1515425854386" MODIFIED="1515445969016"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;A catch-all handler works just like a normal catch block, except that instead of using a specific type to catch, it uses the ellipses operator (&#8230;) as the type to catch.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="placed last" STYLE_REF="Beschreibung" ID="ID_433946611" CREATED="1515425944341" MODIFIED="1515425949639"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The catch-all handler should be placed last in the catch block chain. This is to ensure that exceptions can be caught by exception handlers tailored to specific data types if those handlers exist.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="left empty" STYLE_REF="Beschreibung" ID="ID_673807651" CREATED="1515425962300" MODIFIED="1515425986715"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Often, the catch-all handler block is left empty. This will catch any unanticipated exceptions and prevent them from stack unwinding to the top of your program, but does no specific error handling.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_466480320" CREATED="1515425995509" MODIFIED="1515426003918"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>catch(...) {} // ignore any unanticipated exceptions</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="exception class" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_784572443" CREATED="1515426953719" MODIFIED="1515445928248">
+<node TEXT="basic" STYLE_REF="Beschreibung" ID="ID_1660213018" CREATED="1515427342686" MODIFIED="1515445976760">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1832353016" CREATED="1515426962189" MODIFIED="1515426967040"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;An exception class is just a normal class that is designed specifically to be thrown as an exception.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="why" STYLE_REF="Beschreibung" ID="ID_866706049" CREATED="1515427000287" MODIFIED="1515427003611"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Using such a class, we can have the exception return a description of the problem that occurred, which provides context for what went wrong. And since ArrayException is its own unique type, we can specifically catch exceptions thrown by the array class and treat them differently from other exceptions if we wish.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="catch by reference" STYLE_REF="Beschreibung" ID="ID_1597695204" CREATED="1515427024099" MODIFIED="1515427031216"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Note that exception handlers should catch class exception objects by reference instead of by value. This prevents the compiler from making a copy of the exception, which can be expensive when the exception is a class object, and prevents object slicing when dealing with derived exception classes (which we&#8217;ll talk about in a moment). Catching exceptions by pointer should generally be avoided unless you have a specific reason to do so.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="inheritance" STYLE_REF="Beschreibung" ID="ID_377425028" CREATED="1515427147574" MODIFIED="1515445983009"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;As it turns out, exception handlers will not only match classes of a specific type, they&#8217;ll also match classes derived from that specific type as well!</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="derived before base class" STYLE_REF="Beschreibung" ID="ID_986593016" CREATED="1515427168956" MODIFIED="1515427175977"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Handlers for derived exception classes should be listed before those for base classes.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="std::exception" STYLE_REF="Beschreibung" ID="ID_1879792524" CREATED="1515427332358" MODIFIED="1515445980520">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="standard library" STYLE_REF="Beschreibung" ID="ID_1827160642" CREATED="1515427246551" MODIFIED="1515427255525"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The good news is that all of these exception classes are derived from a single class called std::exception. std::exception is a small interface class designed to serve as a base class to any exception thrown by the C++ standard library.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="catch all std::exceptions" STYLE_REF="Beschreibung" ID="ID_1093083602" CREATED="1515427267941" MODIFIED="1515445986275"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;// This handler will catch std::exception and all the derived exceptions too </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;catch (std::exception &amp;exception)</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="what()" STYLE_REF="Beschreibung" ID="ID_1610255830" CREATED="1515427324713" MODIFIED="1515427329601"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The one thing worth noting is that std::exception has a virtual member function named what() that returns a C-style string description of the exception. Most derived classes override the what() function to change the message. Note that this string is meant to be used for descriptive text only -- do not use it for comparisons, as it is not guaranteed to be the same across compilers.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="using standard exceptions directly" STYLE_REF="Beschreibung" ID="ID_279954270" CREATED="1515427436621" MODIFIED="1515427446205"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Nothing throws a std::exception directly, and neither should you. However, you should feel free to throw the other standard exception classes in the standard library if they adequately represent your needs.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="deriving your own classes from std::exception" STYLE_REF="Beschreibung" ID="ID_1429506419" CREATED="1515427479593" MODIFIED="1515427492825"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;You can, of course, derive your own classes from std::exception, and override the virtual what() member function.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="problems" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1065735343" CREATED="1515445639117" MODIFIED="1515445928580">
+<node TEXT="cleaning up resources" STYLE_REF="Beschreibung" ID="ID_906647327" CREATED="1515445644799" MODIFIED="1515445658239"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;One of the biggest problems that new programmers run into when using exceptions is the issue of cleaning up resources when an exception occurs.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="exceptions and destructors" STYLE_REF="Beschreibung" ID="ID_1488769299" CREATED="1515445706639" MODIFIED="1515445995169"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The problem occurs when an exception is thrown from a destructor during the stack unwinding process. If that happens, the compiler is put in a situation where it doesn&#8217;t know whether to continue the stack unwinding process or handle the new exception. The end result is that your program will be terminated immediately.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="don&apos;t" STYLE_REF="Beschreibung" ID="ID_1172474796" CREATED="1515445731908" MODIFIED="1515445736690"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Consequently, the best course of action is just to abstain from using exceptions in destructors altogether. Write a message to a log file instead.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="performance concers" STYLE_REF="Beschreibung" ID="ID_1604249908" CREATED="1515445763026" MODIFIED="1515445769651"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Exceptions do come with a small performance price to pay. They increase the size of your executable, and they may also cause it to run slower due to the additional checking that has to be performed. However, the main performance penalty for exceptions happens when an exception is actually thrown. In this case, the stack must be unwound and an appropriate exception handler found, which is a relatively expensive operation.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="when should I use exceptions?" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_116849218" CREATED="1515445822694" MODIFIED="1515445928943">
+<node TEXT="The error being handled is likely to occur only infrequently." STYLE_REF="Beschreibung" ID="ID_1152397945" CREATED="1515445831446" MODIFIED="1515445838021"/>
+<node TEXT="The error is serious and execution could not continue otherwise." STYLE_REF="Beschreibung" ID="ID_1640522633" CREATED="1515445843490" MODIFIED="1515445844602"/>
+<node TEXT="The error cannot be handled at the place where it occurs." STYLE_REF="Beschreibung" ID="ID_1083918787" CREATED="1515445852107" MODIFIED="1515445853248"/>
+<node TEXT="There isn&#x2019;t a good alternative way to return an error code back to the caller." STYLE_REF="Beschreibung" ID="ID_590568891" CREATED="1515445859462" MODIFIED="1515445860651"/>
+</node>
+</node>
 <node TEXT="defensive programming" STYLE_REF="Beschreibung" ID="ID_813511610" CREATED="1514827501967" MODIFIED="1514834905504"><richcontent TYPE="DETAILS">
 
 <html>
