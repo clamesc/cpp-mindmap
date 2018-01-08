@@ -86,8 +86,9 @@
 </stylenode>
 </map_styles>
 </hook>
-<node TEXT="basic" STYLE_REF="Beschreibung" FOLDED="true" POSITION="right" ID="ID_1479062675" CREATED="1514743378702" MODIFIED="1514743381983">
-<node TEXT="memory" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1671435209" CREATED="1514743388641" MODIFIED="1514743391665">
+<node TEXT="basic" STYLE_REF="Beschreibung" POSITION="right" ID="ID_1479062675" CREATED="1514743378702" MODIFIED="1515405885544">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="memory" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1671435209" CREATED="1514743388641" MODIFIED="1515405886321">
 <node TEXT="The code segment (also called a text segment)," STYLE_REF="Beschreibung" ID="ID_1546558380" CREATED="1514743394822" MODIFIED="1514743435900"><richcontent TYPE="DETAILS">
 
 <html>
@@ -130,7 +131,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="The heap," STYLE_REF="Beschreibung" FOLDED="true" ID="ID_201521797" CREATED="1514743503302" MODIFIED="1514743514553"><richcontent TYPE="DETAILS">
+<node TEXT="The heap," STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_201521797" CREATED="1514743503302" MODIFIED="1515405894580"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -171,14 +172,15 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="pros/cons" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_750800936" CREATED="1514743924240" MODIFIED="1514743966204">
+<node TEXT="pros/cons" STYLE_REF="Beschreibung" ID="ID_750800936" CREATED="1514743924240" MODIFIED="1515405905222">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="Allocating memory on the heap is comparatively slow." STYLE_REF="Beschreibung" ID="ID_1073727629" CREATED="1514743930993" MODIFIED="1514743932380"/>
 <node TEXT="Allocated memory stays allocated until it is specifically deallocated (beware memory leaks) or the application ends (at which point the OS should clean it up)." STYLE_REF="Beschreibung" ID="ID_1481372915" CREATED="1514743971632" MODIFIED="1514743972751"/>
 <node TEXT="Dynamically allocated memory must be accessed through a pointer. Dereferencing a pointer is slower than accessing a variable directly." STYLE_REF="Beschreibung" ID="ID_1811286857" CREATED="1514743981567" MODIFIED="1514744075268"/>
 <node TEXT="Because the heap is a big pool of memory, large arrays, structures, or classes can be allocated here." STYLE_REF="Beschreibung" ID="ID_251331637" CREATED="1514743992235" MODIFIED="1514744092069"/>
 </node>
 </node>
-<node TEXT="The call stack," STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1243832337" CREATED="1514743522033" MODIFIED="1514743530922"><richcontent TYPE="DETAILS">
+<node TEXT="The call stack," STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1243832337" CREATED="1514743522033" MODIFIED="1515405894932"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -219,10 +221,13 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="in action" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1501609422" CREATED="1514744371251" MODIFIED="1514744373392">
-<node TEXT="function call" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1485217947" CREATED="1514744375991" MODIFIED="1514744378583">
+<node TEXT="in action" STYLE_REF="Beschreibung" ID="ID_1501609422" CREATED="1514744371251" MODIFIED="1515405916179">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="function call" STYLE_REF="Beschreibung" ID="ID_1485217947" CREATED="1514744375991" MODIFIED="1515405919680">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="The program encounters a function call." STYLE_REF="Beschreibung" ID="ID_425428816" CREATED="1514744419428" MODIFIED="1514744420465"/>
-<node TEXT="A stack frame is constructed and pushed on the stack." STYLE_REF="Beschreibung" FOLDED="true" ID="ID_320648547" CREATED="1514744430681" MODIFIED="1514744431849">
+<node TEXT="A stack frame is constructed and pushed on the stack." STYLE_REF="Beschreibung" ID="ID_320648547" CREATED="1514744430681" MODIFIED="1515405925513">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="return address" STYLE_REF="Beschreibung" ID="ID_615792148" CREATED="1514744435283" MODIFIED="1514744438872"/>
 <node TEXT="function arguments" STYLE_REF="Beschreibung" ID="ID_504837294" CREATED="1514744439373" MODIFIED="1514744447824"/>
 <node TEXT="memory for any local variables" STYLE_REF="Beschreibung" ID="ID_1956938881" CREATED="1514744454091" MODIFIED="1514744459874"/>
@@ -231,14 +236,15 @@
 <node TEXT="The CPU jumps to the function&#x2019;s start point." STYLE_REF="Beschreibung" ID="ID_704977421" CREATED="1514744486857" MODIFIED="1514744487936"/>
 <node TEXT="The instructions inside of the function begin executing." STYLE_REF="Beschreibung" ID="ID_25780619" CREATED="1514744493607" MODIFIED="1514744494624"/>
 </node>
-<node TEXT="function terminates" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_334887727" CREATED="1514744503724" MODIFIED="1514744507740">
+<node TEXT="function terminates" STYLE_REF="Beschreibung" ID="ID_334887727" CREATED="1514744503724" MODIFIED="1515405922284">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="Registers are restored from the call stack" STYLE_REF="Beschreibung" ID="ID_1862693909" CREATED="1514744514352" MODIFIED="1514744515404"/>
 <node TEXT="The stack frame is popped off the stack. This frees the memory for all local variables and arguments." STYLE_REF="Beschreibung" ID="ID_925431166" CREATED="1514744525926" MODIFIED="1514744526896"/>
 <node TEXT="The return value is handled." STYLE_REF="Beschreibung" ID="ID_848752504" CREATED="1514744532168" MODIFIED="1514744533030"/>
 <node TEXT="The CPU resumes execution at the return address." STYLE_REF="Beschreibung" ID="ID_795314744" CREATED="1514744538912" MODIFIED="1514744539703"/>
 </node>
 </node>
-<node TEXT="stack overflow" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_459526545" CREATED="1514744592105" MODIFIED="1514744601842"><richcontent TYPE="DETAILS">
+<node TEXT="stack overflow" STYLE_REF="Beschreibung" ID="ID_459526545" CREATED="1514744592105" MODIFIED="1515405929966"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -251,9 +257,11 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="Stack overflow is generally the result of allocating too many variables on the stack, and/or making too many nested function calls (where function A calls function B calls function C calls function D etc&#x2026;) Overflowing the stack will generally cause a program to crash." STYLE_REF="Beschreibung" ID="ID_1084883438" CREATED="1514744631306" MODIFIED="1514744632360"/>
 </node>
-<node TEXT="pros/cons" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1011186247" CREATED="1514744645926" MODIFIED="1514744650211">
+<node TEXT="pros/cons" STYLE_REF="Beschreibung" ID="ID_1011186247" CREATED="1514744645926" MODIFIED="1515405932992">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="Allocating memory on the stack is comparatively fast." STYLE_REF="Beschreibung" ID="ID_1678313748" CREATED="1514744651594" MODIFIED="1514744652902"/>
 <node TEXT="Memory allocated on the stack stays in scope as long as it is on the stack. It is destroyed when it is popped off the stack." STYLE_REF="Beschreibung" ID="ID_1075014286" CREATED="1514744660246" MODIFIED="1514744661085"/>
 <node TEXT="All memory allocated on the stack is known at compile time. Consequently, this memory can be accessed directly through a variable." STYLE_REF="Beschreibung" ID="ID_1436239426" CREATED="1514744677604" MODIFIED="1514744678682"/>
@@ -261,7 +269,7 @@
 </node>
 </node>
 </node>
-<node TEXT="binding" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1894797471" CREATED="1515338414625" MODIFIED="1515338417457">
+<node TEXT="binding" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1894797471" CREATED="1515338414625" MODIFIED="1515405887794">
 <node TEXT="early binding" STYLE_REF="Beschreibung" ID="ID_1219798587" CREATED="1515338418374" MODIFIED="1515338428527"><richcontent TYPE="DETAILS">
 
 <html>
@@ -277,7 +285,7 @@
 
 </richcontent>
 </node>
-<node TEXT="late binding" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1712646886" CREATED="1515338474687" MODIFIED="1515338482307"><richcontent TYPE="DETAILS">
+<node TEXT="late binding" STYLE_REF="Beschreibung" ID="ID_1712646886" CREATED="1515338474687" MODIFIED="1515405951164"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -291,7 +299,8 @@
 </html>
 
 </richcontent>
-<node TEXT="slightly less efficient" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_307938318" CREATED="1515338613167" MODIFIED="1515338622851"><richcontent TYPE="DETAILS">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="slightly less efficient" STYLE_REF="Beschreibung" ID="ID_307938318" CREATED="1515338613167" MODIFIED="1515405953640"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -305,6 +314,7 @@
 </html>
 
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="reason" STYLE_REF="Beschreibung" ID="ID_637100764" CREATED="1515339066018" MODIFIED="1515339074536"><richcontent TYPE="DETAILS">
 
 <html>
@@ -321,7 +331,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="virtual table" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_450445542" CREATED="1515338796701" MODIFIED="1515338804353"><richcontent TYPE="DETAILS">
+<node TEXT="virtual table" STYLE_REF="Beschreibung" ID="ID_450445542" CREATED="1515338796701" MODIFIED="1515405956673"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -335,6 +345,7 @@
 </html>
 
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="each class has its own virtual table" STYLE_REF="Beschreibung" ID="ID_556878778" CREATED="1515338851679" MODIFIED="1515338879197"><richcontent TYPE="DETAILS">
 
 <html>
@@ -371,7 +382,7 @@
 </node>
 <node TEXT="elements" STYLE_REF="Beschreibung" POSITION="right" ID="ID_738190097" CREATED="1514396863423" MODIFIED="1515256303528">
 <hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="literals" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_825551665" CREATED="1514396384202" MODIFIED="1515253768854">
+<node TEXT="literals" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_825551665" CREATED="1514396384202" MODIFIED="1515405887104">
 <node TEXT="unsigned int" STYLE_REF="Beschreibung" ID="ID_1571964803" CREATED="1514408053706" MODIFIED="1514408061918"><richcontent TYPE="DETAILS">
 
 <html>
@@ -10394,7 +10405,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="class assignment" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1365178435" CREATED="1515161840282" MODIFIED="1515161868667"><richcontent TYPE="DETAILS">
+<node TEXT="class assignment" STYLE_REF="Beschreibung" ID="ID_1365178435" CREATED="1515161840282" MODIFIED="1515350107364"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -10407,6 +10418,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="when" STYLE_REF="Beschreibung" ID="ID_1061967492" CREATED="1515161883955" MODIFIED="1515161889248"><richcontent TYPE="DETAILS">
 
 <html>
@@ -10441,7 +10453,7 @@
 </node>
 <node TEXT="techniques" STYLE_REF="Beschreibung" POSITION="right" ID="ID_1418801475" CREATED="1514396903564" MODIFIED="1514410342983">
 <hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="basic structure" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1755167711" CREATED="1514394404962" MODIFIED="1514397117597">
+<node TEXT="basic structure" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1755167711" CREATED="1514394404962" MODIFIED="1515406000454">
 <node TEXT="Statements" STYLE_REF="Beschreibung" ID="ID_215610335" CREATED="1514394414189" MODIFIED="1514394436132"><richcontent TYPE="DETAILS">
 
 <html>
@@ -10484,7 +10496,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="Comments" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1229121772" CREATED="1514394624115" MODIFIED="1514394642762"><richcontent TYPE="DETAILS">
+<node TEXT="Comments" STYLE_REF="Beschreibung" ID="ID_1229121772" CREATED="1514394624115" MODIFIED="1515405970325"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -10497,6 +10509,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="comments inside comments" STYLE_REF="Beschreibung" ID="ID_808228466" CREATED="1514395087939" MODIFIED="1514395123143"><richcontent TYPE="DETAILS">
 
 <html>
@@ -10512,7 +10525,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="Identifier naming rules" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_240236728" CREATED="1514396074080" MODIFIED="1514396124322"><richcontent TYPE="DETAILS">
+<node TEXT="Identifier naming rules" STYLE_REF="Beschreibung" ID="ID_240236728" CREATED="1514396074080" MODIFIED="1515405972985"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -10525,8 +10538,10 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="no keyword" STYLE_REF="Beschreibung" ID="ID_1533668612" CREATED="1514396091574" MODIFIED="1514396096246"/>
-<node TEXT="" FOLDED="true" ID="ID_529537098" CREATED="1514396144330" MODIFIED="1514396144330">
+<node TEXT="" ID="ID_529537098" CREATED="1514396144330" MODIFIED="1515405975961">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="letters" STYLE_REF="Beschreibung" ID="ID_1457074135" CREATED="1514396146086" MODIFIED="1514396172112"><richcontent TYPE="DETAILS">
 
 <html>
@@ -10587,8 +10602,8 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="scope" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1468399822" CREATED="1514396230735" MODIFIED="1514660349240">
-<node TEXT="forward declaration" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_168072463" CREATED="1514396703525" MODIFIED="1514396740567"><richcontent TYPE="DETAILS">
+<node TEXT="scope" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1468399822" CREATED="1514396230735" MODIFIED="1515406001238">
+<node TEXT="forward declaration" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_168072463" CREATED="1514396703525" MODIFIED="1515406039940"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -10642,8 +10657,9 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="namespaces" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1169345708" CREATED="1514465852473" MODIFIED="1514465857508">
-<node TEXT="global namespace" STYLE_REF="Beschreibung" ID="ID_1311868401" CREATED="1514465858415" MODIFIED="1514465865400"><richcontent TYPE="DETAILS">
+<node TEXT="namespaces" STYLE_REF="Beschreibung" ID="ID_1169345708" CREATED="1514465852473" MODIFIED="1515406036279">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="global namespace" STYLE_REF="Stichpunkt" ID="ID_1311868401" CREATED="1514465858415" MODIFIED="1515406041303"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -10657,7 +10673,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="std namespace" STYLE_REF="Beschreibung" ID="ID_133947561" CREATED="1514397503033" MODIFIED="1514397528442"><richcontent TYPE="DETAILS">
+<node TEXT="std namespace" STYLE_REF="Stichpunkt" ID="ID_133947561" CREATED="1514397503033" MODIFIED="1515406041754"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -10674,7 +10690,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="using directive / declaration" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_742538724" CREATED="1514468641363" MODIFIED="1514468847018"><richcontent TYPE="DETAILS">
+<node TEXT="using directive / declaration" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_742538724" CREATED="1514468641363" MODIFIED="1515406042188"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -10687,8 +10703,9 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="" FOLDED="true" ID="ID_575482455" CREATED="1514468884914" MODIFIED="1514468884914">
-<node TEXT="using declaration" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1296652908" CREATED="1514468211430" MODIFIED="1514468271504"><richcontent TYPE="DETAILS">
+<node TEXT="" ID="ID_575482455" CREATED="1514468884914" MODIFIED="1515406063026">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="using declaration" STYLE_REF="Beschreibung" ID="ID_1296652908" CREATED="1514468211430" MODIFIED="1515406070370"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -10701,6 +10718,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1977871031" CREATED="1514468306765" MODIFIED="1514468328057"><richcontent TYPE="DETAILS">
 
 <html>
@@ -10733,7 +10751,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="using directive" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1119976706" CREATED="1514468479788" MODIFIED="1514468565749"><richcontent TYPE="DETAILS">
+<node TEXT="using directive" STYLE_REF="Beschreibung" ID="ID_1119976706" CREATED="1514468479788" MODIFIED="1515406067539"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -10746,6 +10764,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1732411992" CREATED="1514468489198" MODIFIED="1514468520911"><richcontent TYPE="DETAILS">
 
 <html>
@@ -10794,7 +10813,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="own namespace" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_836163622" CREATED="1514466017557" MODIFIED="1514466023557">
+<node TEXT="own namespace" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_836163622" CREATED="1514466017557" MODIFIED="1515406042622">
 <node TEXT="goo.h" STYLE_REF="Beschreibung" ID="ID_427443711" CREATED="1514466024705" MODIFIED="1514466046755"><richcontent TYPE="DETAILS">
 
 <html>
@@ -10870,7 +10889,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="nested namespaces" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1306349195" CREATED="1514466217695" MODIFIED="1514466238979"><richcontent TYPE="DETAILS">
+<node TEXT="nested namespaces" STYLE_REF="Beschreibung" ID="ID_1306349195" CREATED="1514466217695" MODIFIED="1515406080312"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -10883,6 +10902,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1402440210" CREATED="1514466324454" MODIFIED="1514466330009"><richcontent TYPE="DETAILS">
 
 <html>
@@ -10932,7 +10952,7 @@
 </node>
 </node>
 </node>
-<node TEXT="blocks / local variables" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1116200116" CREATED="1514458853828" MODIFIED="1514459606523"><richcontent TYPE="DETAILS">
+<node TEXT="blocks / local variables" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1116200116" CREATED="1514458853828" MODIFIED="1515406043137"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -10945,8 +10965,9 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="duration" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_86758251" CREATED="1514461902095" MODIFIED="1514461904695">
-<node TEXT="automatic (default)" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_852729388" CREATED="1514459051624" MODIFIED="1514461916392"><richcontent TYPE="DETAILS">
+<node TEXT="duration" STYLE_REF="Beschreibung" ID="ID_86758251" CREATED="1514461902095" MODIFIED="1515406125671">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="automatic (default)" STYLE_REF="Beschreibung" ID="ID_852729388" CREATED="1514459051624" MODIFIED="1515406130162"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -10959,6 +10980,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="default" STYLE_REF="Beschreibung" ID="ID_1796585476" CREATED="1514461884770" MODIFIED="1514461895080"><richcontent TYPE="DETAILS">
 
 <html>
@@ -10974,7 +10996,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="static" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_948168642" CREATED="1514461850949" MODIFIED="1514461918699"><richcontent TYPE="DETAILS">
+<node TEXT="static" STYLE_REF="Beschreibung" ID="ID_948168642" CREATED="1514461850949" MODIFIED="1515406132198"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -10987,6 +11009,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="keyword" STYLE_REF="Beschreibung" ID="ID_1030986086" CREATED="1514461874617" MODIFIED="1514461880624"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11031,7 +11054,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="nested blocks" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_638653700" CREATED="1514459141759" MODIFIED="1514459174197"><richcontent TYPE="DETAILS">
+<node TEXT="nested blocks" STYLE_REF="Beschreibung" ID="ID_638653700" CREATED="1514459141759" MODIFIED="1515406134615"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11044,6 +11067,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="shadowing" STYLE_REF="Beschreibung" ID="ID_376200812" CREATED="1514459247188" MODIFIED="1514459253049"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11089,7 +11113,7 @@
 </node>
 <node TEXT="function parameters have block scope" STYLE_REF="Beschreibung" ID="ID_301467521" CREATED="1514459362072" MODIFIED="1514459373606"/>
 </node>
-<node TEXT="global variables" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1321206039" CREATED="1514459459653" MODIFIED="1514459468227"><richcontent TYPE="DETAILS">
+<node TEXT="global variables" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1321206039" CREATED="1514459459653" MODIFIED="1515406043603"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11130,7 +11154,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="Defining global variables" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1193569260" CREATED="1514460009366" MODIFIED="1514460020217"><richcontent TYPE="DETAILS">
+<node TEXT="Defining global variables" STYLE_REF="Beschreibung" ID="ID_1193569260" CREATED="1514460009366" MODIFIED="1515406148534"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11143,6 +11167,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="global scope operator" STYLE_REF="Beschreibung" ID="ID_1929312282" CREATED="1514460042551" MODIFIED="1514460060846"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11158,8 +11183,9 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="linkage" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_476303718" CREATED="1514460103212" MODIFIED="1514460107141">
-<node TEXT="internal" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1537539141" CREATED="1514460127062" MODIFIED="1514460134029"><richcontent TYPE="DETAILS">
+<node TEXT="linkage" STYLE_REF="Beschreibung" ID="ID_476303718" CREATED="1514460103212" MODIFIED="1515406151363">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="internal" STYLE_REF="Beschreibung" ID="ID_1537539141" CREATED="1514460127062" MODIFIED="1515406154331"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11172,6 +11198,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="keyword: static" STYLE_REF="Beschreibung" ID="ID_1059117875" CREATED="1514460136383" MODIFIED="1514460152316"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11187,7 +11214,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="external" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1471604799" CREATED="1514460154083" MODIFIED="1514460170997"><richcontent TYPE="DETAILS">
+<node TEXT="external" STYLE_REF="Beschreibung" ID="ID_1471604799" CREATED="1514460154083" MODIFIED="1515406156140"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11200,6 +11227,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="keyword: extern" STYLE_REF="Beschreibung" ID="ID_64182483" CREATED="1514460173381" MODIFIED="1514460199170"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11214,7 +11242,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="forward declaration" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_440489432" CREATED="1514460323645" MODIFIED="1514460449702"><richcontent TYPE="DETAILS">
+<node TEXT="forward declaration" STYLE_REF="Beschreibung" ID="ID_440489432" CREATED="1514460323645" MODIFIED="1515406158807"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11227,6 +11255,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="Variable forward declarations via the extern keyword" STYLE_REF="Beschreibung" ID="ID_403704456" CREATED="1514460267885" MODIFIED="1514460318489"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11258,7 +11287,8 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="why global constants are evil" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_606618231" CREATED="1514461136056" MODIFIED="1514461147124">
+<node TEXT="why global constants are evil" STYLE_REF="Beschreibung" ID="ID_606618231" CREATED="1514461136056" MODIFIED="1515406161773">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="non-const variables" STYLE_REF="Beschreibung" ID="ID_453895696" CREATED="1514461148161" MODIFIED="1514461157619"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11304,7 +11334,7 @@
 </node>
 </node>
 </node>
-<node TEXT="preprocessing" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_963312100" CREATED="1514398696992" MODIFIED="1514398703394">
+<node TEXT="preprocessing" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_963312100" CREATED="1514398696992" MODIFIED="1515406171791">
 <node TEXT="preprocessor" STYLE_REF="Beschreibung" ID="ID_1780248964" CREATED="1514398748752" MODIFIED="1514398762478"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11367,7 +11397,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="header files" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1249461338" CREATED="1514397612550" MODIFIED="1514397895490"><richcontent TYPE="DETAILS">
+<node TEXT="header files" STYLE_REF="Beschreibung" ID="ID_1249461338" CREATED="1514397612550" MODIFIED="1515406232343"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11380,6 +11410,8 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1434448311" CREATED="1515406212553" MODIFIED="1515406227375">
 <node TEXT="standard library" STYLE_REF="Beschreibung" ID="ID_1068147737" CREATED="1514397619124" MODIFIED="1514410769743"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11512,7 +11544,8 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="best practices" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1459768007" CREATED="1514398158160" MODIFIED="1514398162591">
+</node>
+<node TEXT="best practices" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1459768007" CREATED="1514398158160" MODIFIED="1515406227882">
 <node TEXT="" ID="ID_44304426" CREATED="1514398534684" MODIFIED="1514410783975">
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="including header files from other directories" STYLE_REF="Beschreibung" ID="ID_1637751391" CREATED="1514398140252" MODIFIED="1514398150953"><richcontent TYPE="DETAILS">
@@ -11554,8 +11587,8 @@
 </node>
 </node>
 </node>
-<node TEXT="control flow" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1934348000" CREATED="1514567822027" MODIFIED="1514567826858">
-<node TEXT="halt" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1340927932" CREATED="1514568795479" MODIFIED="1514999366175">
+<node TEXT="control flow" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1934348000" CREATED="1514567822027" MODIFIED="1515406261277">
+<node TEXT="halt" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1340927932" CREATED="1514568795479" MODIFIED="1515406268631">
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_258030588" CREATED="1514568806975" MODIFIED="1514568835429"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11598,9 +11631,10 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="jump" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_467112431" CREATED="1514568859353" MODIFIED="1514568861399">
-<node TEXT="goto" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1178638880" CREATED="1514568863962" MODIFIED="1514568865321">
-<node TEXT="goto statement" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_45203489" CREATED="1514573314418" MODIFIED="1514573326072"><richcontent TYPE="DETAILS">
+<node TEXT="jump" STYLE_REF="Beschreibung" ID="ID_467112431" CREATED="1514568859353" MODIFIED="1515406285866">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="goto" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1178638880" CREATED="1514568863962" MODIFIED="1515406287604">
+<node TEXT="goto statement" STYLE_REF="Beschreibung" ID="ID_45203489" CREATED="1514573314418" MODIFIED="1515406294058"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11613,6 +11647,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_48421424" CREATED="1514573337117" MODIFIED="1514573341261"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11688,7 +11723,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="break" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1836758778" CREATED="1514568865654" MODIFIED="1514568867563">
+<node TEXT="break" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1836758778" CREATED="1514568865654" MODIFIED="1515406287961">
 <node TEXT="break statement" STYLE_REF="Beschreibung" ID="ID_342433245" CREATED="1514572892565" MODIFIED="1514576821507"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11718,7 +11753,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="continue" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_135244251" CREATED="1514568868277" MODIFIED="1514568872318">
+<node TEXT="continue" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_135244251" CREATED="1514568868277" MODIFIED="1515406288250">
 <node TEXT="use" STYLE_REF="Beschreibung" ID="ID_1682282039" CREATED="1514576996998" MODIFIED="1514577002508"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11776,9 +11811,10 @@
 </node>
 </node>
 </node>
-<node TEXT="conditional branches" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1841852103" CREATED="1514568937421" MODIFIED="1514568941346">
-<node TEXT="if statements" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_892654988" CREATED="1514568942180" MODIFIED="1514568945225">
-<node TEXT="form" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_911598322" CREATED="1514569206510" MODIFIED="1514569211471"><richcontent TYPE="DETAILS">
+<node TEXT="conditional branches" STYLE_REF="Beschreibung" ID="ID_1841852103" CREATED="1514568937421" MODIFIED="1515406313274">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="if statements" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_892654988" CREATED="1514568942180" MODIFIED="1515406316140">
+<node TEXT="form" STYLE_REF="Beschreibung" ID="ID_911598322" CREATED="1514569206510" MODIFIED="1515406324656"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11800,6 +11836,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="Using if with multiple statements" STYLE_REF="Beschreibung" ID="ID_1397108511" CREATED="1514569236409" MODIFIED="1514569249984"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11845,7 +11882,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="nesting" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1152749027" CREATED="1514569499374" MODIFIED="1514569503321"><richcontent TYPE="DETAILS">
+<node TEXT="nesting" STYLE_REF="Beschreibung" ID="ID_1152749027" CREATED="1514569499374" MODIFIED="1515406327925"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11858,6 +11895,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="dangling else problem" STYLE_REF="Beschreibung" ID="ID_1552988634" CREATED="1514569550499" MODIFIED="1514569570433"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11901,7 +11939,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="null statement" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1277648347" CREATED="1514569784554" MODIFIED="1514569792799"><richcontent TYPE="DETAILS">
+<node TEXT="null statement" STYLE_REF="Beschreibung" ID="ID_1277648347" CREATED="1514569784554" MODIFIED="1515406330442"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11917,6 +11955,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="warning" STYLE_REF="Beschreibung" ID="ID_225633309" CREATED="1514569799032" MODIFIED="1514569802954"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11933,8 +11972,8 @@
 </node>
 </node>
 </node>
-<node TEXT="switch statements" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_480797033" CREATED="1514568945769" MODIFIED="1514568950193">
-<node TEXT="starting switch" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1485118889" CREATED="1514572405291" MODIFIED="1514572432157"><richcontent TYPE="DETAILS">
+<node TEXT="switch statements" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_480797033" CREATED="1514568945769" MODIFIED="1515406316900">
+<node TEXT="starting switch" STYLE_REF="Beschreibung" ID="ID_1485118889" CREATED="1514572405291" MODIFIED="1515406340647"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11947,6 +11986,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="integral type expression" STYLE_REF="Beschreibung" ID="ID_1470396443" CREATED="1514572615225" MODIFIED="1514572624057"><richcontent TYPE="DETAILS">
 
 <html>
@@ -11962,7 +12002,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="case form" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1956742262" CREATED="1514572469950" MODIFIED="1514572690721"><richcontent TYPE="DETAILS">
+<node TEXT="case form" STYLE_REF="Beschreibung" ID="ID_1956742262" CREATED="1514572469950" MODIFIED="1515406342859"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11996,6 +12036,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="It is possible to have multiple case labels refer to the same statements" STYLE_REF="Beschreibung" ID="ID_1957094800" CREATED="1514572571338" MODIFIED="1514572591795"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12037,7 +12078,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="fall-through" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_890780198" CREATED="1514572789356" MODIFIED="1514572795585"><richcontent TYPE="DETAILS">
+<node TEXT="fall-through" STYLE_REF="Beschreibung" ID="ID_890780198" CREATED="1514572789356" MODIFIED="1515406345279"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -12050,10 +12091,11 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="The end of the switch block is reached" STYLE_REF="Beschreibung" ID="ID_1886679260" CREATED="1514572798980" MODIFIED="1514572806384"/>
 <node TEXT="A return/goto/break statement occurs" STYLE_REF="Beschreibung" ID="ID_1097209354" CREATED="1514572812228" MODIFIED="1514572821646"/>
 </node>
-<node TEXT="multiple statements inside a switch block" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_659151203" CREATED="1514572949496" MODIFIED="1514572958697"><richcontent TYPE="DETAILS">
+<node TEXT="multiple statements inside a switch block" STYLE_REF="Beschreibung" ID="ID_659151203" CREATED="1514572949496" MODIFIED="1515406347865"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -12066,6 +12108,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1445965436" CREATED="1514572965146" MODIFIED="1514572970332"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12127,8 +12170,9 @@
 </node>
 </node>
 </node>
-<node TEXT="loops" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_816188002" CREATED="1514568986644" MODIFIED="1514568988588">
-<node TEXT="while" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1012656363" CREATED="1514568989978" MODIFIED="1514568991870">
+<node TEXT="loops" STYLE_REF="Beschreibung" ID="ID_816188002" CREATED="1514568986644" MODIFIED="1515406365129">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="while" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1012656363" CREATED="1514568989978" MODIFIED="1515406366261">
 <node TEXT="form" STYLE_REF="Beschreibung" ID="ID_1703728589" CREATED="1514573438502" MODIFIED="1514573442118"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12146,7 +12190,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="loop variables" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_677447441" CREATED="1514573624284" MODIFIED="1514573629629"><richcontent TYPE="DETAILS">
+<node TEXT="loop variables" STYLE_REF="Beschreibung" ID="ID_677447441" CREATED="1514573624284" MODIFIED="1515406374501"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -12159,6 +12203,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1579125237" CREATED="1514573651876" MODIFIED="1514573692196"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12189,7 +12234,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="variables" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1482425663" CREATED="1514573777252" MODIFIED="1514573783073"><richcontent TYPE="DETAILS">
+<node TEXT="variables" STYLE_REF="Beschreibung" ID="ID_1482425663" CREATED="1514573777252" MODIFIED="1515406376539"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -12202,6 +12247,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="may cause performance issues" STYLE_REF="Beschreibung" ID="ID_1079181571" CREATED="1514573826423" MODIFIED="1514573833464"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12246,7 +12292,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="do while" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_375374957" CREATED="1514568992219" MODIFIED="1514568996432">
+<node TEXT="do while" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_375374957" CREATED="1514568992219" MODIFIED="1515406366569">
 <node TEXT="The statement in a do-while loop always executes at least once. After the statement has been executed, the do-while loop checks the condition. If the condition is true, the pathof execution jumps back to the top of the do-while loop and executes it again." STYLE_REF="Beschreibung" ID="ID_388341591" CREATED="1514574380131" MODIFIED="1514574389495"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12268,8 +12314,8 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="for" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1681715031" CREATED="1514568999112" MODIFIED="1514569000392">
-<node TEXT="ideal when we know exactly how many times we need to iterate, because it lets us easily define, initialize, and change the value of loop variables after each iteration." STYLE_REF="Beschreibung" FOLDED="true" ID="ID_658587349" CREATED="1514576005141" MODIFIED="1514576015270"><richcontent TYPE="DETAILS">
+<node TEXT="for" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1681715031" CREATED="1514568999112" MODIFIED="1515406366923">
+<node TEXT="ideal when we know exactly how many times we need to iterate, because it lets us easily define, initialize, and change the value of loop variables after each iteration." STYLE_REF="Beschreibung" ID="ID_658587349" CREATED="1514576005141" MODIFIED="1515406388830"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -12285,6 +12331,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="init statement" STYLE_REF="Beschreibung" ID="ID_1825745226" CREATED="1514576055065" MODIFIED="1514576063725"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12391,7 +12438,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="for each" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_801610912" CREATED="1514569025581" MODIFIED="1514569027735">
+<node TEXT="for each" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_801610912" CREATED="1514569025581" MODIFIED="1515406367244">
 <node TEXT="iterate through every element in an array" STYLE_REF="Beschreibung" ID="ID_392048893" CREATED="1514670431381" MODIFIED="1514670452047"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12409,7 +12456,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="element type" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_952788077" CREATED="1514670483319" MODIFIED="1514670491768"><richcontent TYPE="DETAILS">
+<node TEXT="element type" STYLE_REF="Beschreibung" ID="ID_952788077" CREATED="1514670483319" MODIFIED="1515406395951"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -12422,6 +12469,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="auto keyword" STYLE_REF="Beschreibung" ID="ID_91748744" CREATED="1514670550846" MODIFIED="1514670567041"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12437,7 +12485,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="references" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1374341768" CREATED="1514670629446" MODIFIED="1514670647629"><richcontent TYPE="DETAILS">
+<node TEXT="references" STYLE_REF="Beschreibung" ID="ID_1374341768" CREATED="1514670629446" MODIFIED="1515406397763"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -12450,6 +12498,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_895046655" CREATED="1514670666376" MODIFIED="1514670670808"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12495,9 +12544,9 @@
 </node>
 </node>
 </node>
-<node TEXT="exceptions" STYLE_REF="Beschreibung" ID="ID_504430578" CREATED="1514569065778" MODIFIED="1514569075186"/>
+<node TEXT="exceptions" STYLE_REF="Stichpunkt" ID="ID_504430578" CREATED="1514569065778" MODIFIED="1515406270194"/>
 </node>
-<node TEXT="pseudo-random number generator (PRNG)" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_493262570" CREATED="1514579845746" MODIFIED="1514579849277">
+<node TEXT="pseudo-random number generator (PRNG)" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_493262570" CREATED="1514579845746" MODIFIED="1515406411891">
 <node TEXT="what is is?" STYLE_REF="Beschreibung" ID="ID_789350963" CREATED="1514579896576" MODIFIED="1514579903404"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12512,8 +12561,9 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="C (and by extension C++) comes with a built-in pseudo-random number generator. It is implemented as two separate functions that live in the cstdlib header:" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_866427934" CREATED="1514580041726" MODIFIED="1514580131035">
-<node TEXT="srand()" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_445272994" CREATED="1514580135460" MODIFIED="1514580151704"><richcontent TYPE="DETAILS">
+<node TEXT="C (and by extension C++) comes with a built-in pseudo-random number generator. It is implemented as two separate functions that live in the cstdlib header:" STYLE_REF="Beschreibung" ID="ID_866427934" CREATED="1514580041726" MODIFIED="1515406417001">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="srand()" STYLE_REF="Beschreibung" ID="ID_445272994" CREATED="1514580135460" MODIFIED="1515406421926"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -12526,6 +12576,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="set initial seed value to system clock" STYLE_REF="Beschreibung" ID="ID_1573337701" CREATED="1514580276934" MODIFIED="1514580297827"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12571,8 +12622,8 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="Input/Output" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_211015142" CREATED="1514396503763" MODIFIED="1514582079337">
-<node TEXT="output operator" STYLE_REF="Beschreibung" ID="ID_547661978" CREATED="1514394588123" MODIFIED="1514410419308"><richcontent TYPE="DETAILS">
+<node TEXT="Input/Output" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_211015142" CREATED="1514396503763" MODIFIED="1515406432670">
+<node TEXT="output operator" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_547661978" CREATED="1514394588123" MODIFIED="1515406585987"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -12585,7 +12636,6 @@
   </body>
 </html>
 </richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="&lt;&lt;" STYLE_REF="Beschreibung" ID="ID_315612794" CREATED="1514395386698" MODIFIED="1514395436316"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12618,7 +12668,8 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="end line" STYLE_REF="Beschreibung" ID="ID_601497683" CREATED="1514395265343" MODIFIED="1514395309165"><richcontent TYPE="DETAILS">
+<node TEXT="input" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1753511776" CREATED="1514481081601" MODIFIED="1515406609144">
+<node TEXT="std::getline()" STYLE_REF="Beschreibung" ID="ID_516320255" CREATED="1514481091800" MODIFIED="1514481216880"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -12626,16 +12677,19 @@
   </head>
   <body>
     <p>
-      <font color="#666666" size="1"><i>&#160;std::endl</i></font>
+      <font color="#666666" size="1"><i>std::string name; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>std::getline(std::cin, name);</i></font>
     </p>
   </body>
 </html>
 </richcontent>
 </node>
-<node TEXT="input" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1753511776" CREATED="1514481081601" MODIFIED="1514481084152">
-<node TEXT="std::cin" STYLE_REF="Beschreibung" ID="ID_511350796" CREATED="1514395320991" MODIFIED="1514481080423">
+<node TEXT="std::cin" STYLE_REF="Beschreibung" ID="ID_511350796" CREATED="1514395320991" MODIFIED="1515406615538">
 <hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="input validation" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1087530817" CREATED="1514583775958" MODIFIED="1514583779560">
+<node TEXT="input validation" STYLE_REF="Beschreibung" ID="ID_1087530817" CREATED="1514583775958" MODIFIED="1515406618142">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="clear (up to 32767) characters out of the buffer until a &apos;\n&apos; character is removed" STYLE_REF="Beschreibung" ID="ID_1735759060" CREATED="1514583639884" MODIFIED="1514583655000"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12703,7 +12757,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="&gt;&gt; (extraction operator)" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_857100163" CREATED="1514395437279" MODIFIED="1514582103121"><richcontent TYPE="DETAILS">
+<node TEXT="&gt;&gt; (extraction operator)" STYLE_REF="Beschreibung" ID="ID_857100163" CREATED="1514395437279" MODIFIED="1515406621326"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -12716,7 +12770,9 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="" FOLDED="true" ID="ID_689062127" CREATED="1515071972564" MODIFIED="1515071972564">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="" ID="ID_689062127" CREATED="1515071972564" MODIFIED="1515406623724">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="If there is data already in the input buffer, that data is used for extraction." STYLE_REF="Beschreibung" ID="ID_326853966" CREATED="1514582112395" MODIFIED="1514582114524"/>
 <node TEXT="If the input buffer contains no data, the user is asked to input data for extraction (this is the case most of the time). When the user hits enter, a &#x2018;\n&#x2019; character will be placed in the input buffer." STYLE_REF="Beschreibung" ID="ID_934172776" CREATED="1514582122391" MODIFIED="1514582124352"/>
 <node TEXT="operator&gt;&gt; extracts as much data from the input buffer as it can into the variable (ignoring any leading whitespace characters, such as spaces, tabs, or &#x2018;\n&#x2019;)." STYLE_REF="Beschreibung" ID="ID_1571720383" CREATED="1514582130399" MODIFIED="1514582131887"/>
@@ -12737,7 +12793,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="breaks at first white space" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_133343708" CREATED="1514481049766" MODIFIED="1514481324859"><richcontent TYPE="DETAILS">
+<node TEXT="breaks at first white space" STYLE_REF="Beschreibung" ID="ID_133343708" CREATED="1514481049766" MODIFIED="1515406627124"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -12750,6 +12806,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="rule" STYLE_REF="Beschreibung" ID="ID_1340782692" CREATED="1514481326962" MODIFIED="1514481331357"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12766,7 +12823,8 @@
 </node>
 </node>
 </node>
-<node TEXT="std::getline()" STYLE_REF="Beschreibung" ID="ID_516320255" CREATED="1514481091800" MODIFIED="1514481216880"><richcontent TYPE="DETAILS">
+</node>
+<node TEXT="end line" STYLE_REF="Beschreibung" ID="ID_601497683" CREATED="1514395265343" MODIFIED="1514395309165"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -12774,18 +12832,14 @@
   </head>
   <body>
     <p>
-      <font color="#666666" size="1"><i>std::string name; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>std::getline(std::cin, name);</i></font>
+      <font color="#666666" size="1"><i>&#160;std::endl</i></font>
     </p>
   </body>
 </html>
 </richcontent>
 </node>
 </node>
-</node>
-<node TEXT="command line arguments" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1417897380" CREATED="1514836371213" MODIFIED="1514836377885">
+<node TEXT="command line arguments" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1417897380" CREATED="1514836371213" MODIFIED="1515406640569">
 <node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_335272783" CREATED="1514836391661" MODIFIED="1514836396768"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12800,7 +12854,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="main()" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_867360293" CREATED="1514836740126" MODIFIED="1514836809170"><richcontent TYPE="DETAILS">
+<node TEXT="main()" STYLE_REF="Beschreibung" ID="ID_867360293" CREATED="1514836740126" MODIFIED="1515406645113"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -12819,6 +12873,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="argc" STYLE_REF="Beschreibung" ID="ID_1687409178" CREATED="1514836832582" MODIFIED="1514836836999"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12848,7 +12903,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="dealing with numeric arguments" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_620390593" CREATED="1514836977580" MODIFIED="1514837064107"><richcontent TYPE="DETAILS">
+<node TEXT="dealing with numeric arguments" STYLE_REF="Beschreibung" ID="ID_620390593" CREATED="1514836977580" MODIFIED="1515406647464"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -12861,6 +12916,7 @@
   </body>
 </html>
 </richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1477098052" CREATED="1514836984565" MODIFIED="1514837042756"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12886,8 +12942,9 @@
 </node>
 </node>
 </node>
-<node TEXT="testing" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1644707749" CREATED="1514585610588" MODIFIED="1514585614283">
-<node TEXT="" FOLDED="true" ID="ID_731453860" CREATED="1514585762430" MODIFIED="1514585762430">
+<node TEXT="testing" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1644707749" CREATED="1514585610588" MODIFIED="1515406650650">
+<node TEXT="" ID="ID_731453860" CREATED="1514585762430" MODIFIED="1515406656184">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="Testing tip #1: Write your program in small, well defined units (functions), and compile often along the way" STYLE_REF="Beschreibung" ID="ID_1058806518" CREATED="1514585630252" MODIFIED="1514585641285"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12961,7 +13018,7 @@
 </node>
 <node TEXT="put test into automated function" STYLE_REF="Beschreibung" ID="ID_1676506919" CREATED="1514585774673" MODIFIED="1514585783401"/>
 </node>
-<node TEXT="error handling" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_929687182" CREATED="1514827575967" MODIFIED="1514834915372">
+<node TEXT="error handling" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_929687182" CREATED="1514827575967" MODIFIED="1515406661629">
 <node TEXT="defensive programming" STYLE_REF="Beschreibung" ID="ID_813511610" CREATED="1514827501967" MODIFIED="1514834905504"><richcontent TYPE="DETAILS">
 
 <html>
@@ -12976,8 +13033,9 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="" FOLDED="true" ID="ID_840695187" CREATED="1514835695375" MODIFIED="1514835695375">
-<node TEXT="assert" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1978350192" CREATED="1514835286462" MODIFIED="1514835689380"><richcontent TYPE="DETAILS">
+<node TEXT="" ID="ID_840695187" CREATED="1514835695375" MODIFIED="1515406667886">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="assert" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1978350192" CREATED="1514835286462" MODIFIED="1515406694978"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -12990,7 +13048,8 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="example" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_343014229" CREATED="1514835356781" MODIFIED="1514835358759">
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_343014229" CREATED="1514835356781" MODIFIED="1515406674845">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1602528213" CREATED="1514835359574" MODIFIED="1514835365074"><richcontent TYPE="DETAILS">
 
 <html>
@@ -13072,7 +13131,8 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="NDEBUG" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_112018142" CREATED="1514835520284" MODIFIED="1514835524041">
+<node TEXT="NDEBUG" STYLE_REF="Beschreibung" ID="ID_112018142" CREATED="1514835520284" MODIFIED="1515406677444">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="motivation" STYLE_REF="Beschreibung" ID="ID_1862329532" CREATED="1514835524917" MODIFIED="1514835529874"><richcontent TYPE="DETAILS">
 
 <html>
@@ -13106,7 +13166,7 @@
 </node>
 </node>
 </node>
-<node TEXT="static assert" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1447583044" CREATED="1514835690796" MODIFIED="1514835701938"><richcontent TYPE="DETAILS">
+<node TEXT="static assert" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1447583044" CREATED="1514835690796" MODIFIED="1515406694559"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -13135,20 +13195,39 @@
 </node>
 </node>
 </node>
-<node TEXT="" FOLDED="true" ID="ID_1112190127" CREATED="1514835847155" MODIFIED="1514835847155">
-<node TEXT="detecting assumption errors" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1155295508" CREATED="1514827584546" MODIFIED="1514827589630">
-<node TEXT="At the top of each function, check to make sure any parameters have appropriate values." STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1581917598" CREATED="1514827599012" MODIFIED="1514827600088">
+<node TEXT="" ID="ID_1112190127" CREATED="1514835847155" MODIFIED="1515406706132">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="detecting assumption errors" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1155295508" CREATED="1514827584546" MODIFIED="1515406717744">
+<node TEXT="At the top of each function, check to make sure any parameters have appropriate values." STYLE_REF="Beschreibung" ID="ID_1581917598" CREATED="1514827599012" MODIFIED="1515406730260">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="When a function has been called, the caller may have passed the function parameters that are incorrect or semantically meaningless." STYLE_REF="Beschreibung" ID="ID_1728921790" CREATED="1514827626278" MODIFIED="1514827627259"/>
 </node>
-<node TEXT="After a function has returned, check the return value (if any), and any other error reporting mechanisms, to see if an error occurred." STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1746696555" CREATED="1514827606428" MODIFIED="1514827607481">
+<node TEXT="After a function has returned, check the return value (if any), and any other error reporting mechanisms, to see if an error occurred." STYLE_REF="Beschreibung" ID="ID_1746696555" CREATED="1514827606428" MODIFIED="1515406732178">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="When a function returns, the return value may indicate that an error has occurred." STYLE_REF="Beschreibung" ID="ID_744808608" CREATED="1514827634575" MODIFIED="1514827635558"/>
 </node>
-<node TEXT="Validate any user input to make sure it meets the expected formatting or range criteria." STYLE_REF="Beschreibung" FOLDED="true" ID="ID_124685459" CREATED="1514827618545" MODIFIED="1514827619502">
+<node TEXT="Validate any user input to make sure it meets the expected formatting or range criteria." STYLE_REF="Beschreibung" ID="ID_124685459" CREATED="1514827618545" MODIFIED="1515406734351">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="When program receives input (either from the user, or a file), the input may not be in the correct format." STYLE_REF="Beschreibung" ID="ID_975537468" CREATED="1514827641532" MODIFIED="1514827642456"/>
 </node>
 </node>
-<node TEXT="handling assumption errors" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_598778677" CREATED="1514834335309" MODIFIED="1514834343103">
-<node TEXT="1) Quietly skip the code that depends on the assumption being valid:" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1852686266" CREATED="1514834363213" MODIFIED="1514834365220">
+<node TEXT="handling assumption errors" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_598778677" CREATED="1514834335309" MODIFIED="1515406718250">
+<node TEXT="1" OBJECT="java.lang.Long|1" STYLE_REF="Beschreibung" ID="ID_1852686266" CREATED="1514834363213" MODIFIED="1515406776002">
+<hook NAME="AlwaysUnfoldedNode"/>
+<richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>Quietly skip the code that depends on the assumption being valid:</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_471671678" CREATED="1514834545074" MODIFIED="1514834604234"><richcontent TYPE="DETAILS">
 
 <html>
@@ -13167,7 +13246,22 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="2) If we are in a function, return an error code back to the caller and let the caller deal with the problem." STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1276955504" CREATED="1514834509390" MODIFIED="1514834510575">
+<node TEXT="2" OBJECT="java.lang.Long|2" STYLE_REF="Beschreibung" ID="ID_1276955504" CREATED="1514834509390" MODIFIED="1515406790164">
+<hook NAME="AlwaysUnfoldedNode"/>
+<richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>If we are in a function, return an error code back to the caller and let the caller deal with the problem.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_653932227" CREATED="1514834559931" MODIFIED="1514834617968"><richcontent TYPE="DETAILS">
 
 <html>
@@ -13186,7 +13280,22 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="3) If we want to terminate the program immediately, the exit function that lives in &lt;cstdlib&gt; can be used to return an error code to the operating system:" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_787934093" CREATED="1514834527719" MODIFIED="1514834528902">
+<node TEXT="3" OBJECT="java.lang.Long|3" STYLE_REF="Beschreibung" ID="ID_787934093" CREATED="1514834527719" MODIFIED="1515406803188">
+<hook NAME="AlwaysUnfoldedNode"/>
+<richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>If we want to terminate the program immediately, the exit function that lives in &lt;cstdlib&gt; can be used to return an error code to the operating system:</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1815169179" CREATED="1514834583859" MODIFIED="1514834630226"><richcontent TYPE="DETAILS">
 
 <html>
@@ -13205,8 +13314,37 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="4) If the user has entered invalid input, ask the user to enter the input again." STYLE_REF="Beschreibung" ID="ID_309378418" CREATED="1514834696748" MODIFIED="1514834697909"/>
-<node TEXT="5) cerr is another mechanism that is meant specifically for printing error messages. cerr is an output stream (just like cout) that is defined in &lt;iostream&gt;. Typically, cerr writes the error messages on the screen (just like cout), but it can also be individually redirected to a file." STYLE_REF="Beschreibung" FOLDED="true" ID="ID_754830737" CREATED="1514834712231" MODIFIED="1514834714859">
+<node TEXT="4" OBJECT="java.lang.Long|4" STYLE_REF="Beschreibung" ID="ID_309378418" CREATED="1514834696748" MODIFIED="1515406816866"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>If the user has entered invalid input, ask the user to enter the input again.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="5" OBJECT="java.lang.Long|5" STYLE_REF="Beschreibung" ID="ID_754830737" CREATED="1514834712231" MODIFIED="1515406847193">
+<hook NAME="AlwaysUnfoldedNode"/>
+<richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>cerr is another mechanism that is meant specifically for printing error messages. cerr is an output stream (just like cout) that is defined in &lt;iostream&gt;. Typically, cerr writes the error messages on the screen (just like cout), but it can also be individually redirected to a file.&#160;</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_340145486" CREATED="1514834726566" MODIFIED="1514834751549"><richcontent TYPE="DETAILS">
 
 <html>
@@ -13231,13 +13369,29 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="6) If working in some kind of graphical environment (eg. MFC, SDL, QT, etc&#x2026;), it is common to pop up a message box with an error code and then terminate the program." STYLE_REF="Beschreibung" ID="ID_262288795" CREATED="1514834773475" MODIFIED="1514834775883"/>
+<node TEXT="6" OBJECT="java.lang.Long|6" STYLE_REF="Beschreibung" ID="ID_262288795" CREATED="1514834773475" MODIFIED="1515406864026"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>If working in some kind of graphical environment (eg. MFC, SDL, QT, etc&#8230;), it is common to pop up a message box with an error code and then terminate the program.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
 </node>
 </node>
 </node>
 </node>
-<node TEXT="Examples" STYLE_REF="Beschreibung" FOLDED="true" POSITION="right" ID="ID_1525910066" CREATED="1514462171717" MODIFIED="1514462175078">
-<node TEXT="unique identifier generators" STYLE_REF="Beschreibung" FOLDED="true" ID="ID_1861031089" CREATED="1514462176339" MODIFIED="1514462181316">
+<node TEXT="templates" STYLE_REF="Stichpunkt" ID="ID_1520449085" CREATED="1515405857318" MODIFIED="1515406888124"/>
+</node>
+<node TEXT="Examples" STYLE_REF="Beschreibung" POSITION="right" ID="ID_1525910066" CREATED="1514462171717" MODIFIED="1515406905553">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="unique identifier generators" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1861031089" CREATED="1514462176339" MODIFIED="1515406880369">
 <node TEXT="" STYLE_REF="Beschreibung" ID="ID_743446371" CREATED="1514462191016" MODIFIED="1514462198353"><richcontent TYPE="DETAILS">
 
 <html>
