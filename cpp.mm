@@ -8975,6 +8975,21 @@
 </richcontent>
 </node>
 </node>
+<node TEXT="templates classes" STYLE_REF="Beschreibung" ID="ID_605807043" CREATED="1515409594764" MODIFIED="1515409600321"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Template classes are ideal for implementing container classes, because it is highly desirable to have containers work across a wide variety of data types, and templates allow you to do so without duplicating code.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
 </node>
 <node TEXT="inheritance" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1616481682" CREATED="1515163226916" MODIFIED="1515255510460"><richcontent TYPE="DETAILS">
 
@@ -13387,7 +13402,683 @@
 </node>
 </node>
 </node>
-<node TEXT="templates" STYLE_REF="Stichpunkt" ID="ID_1520449085" CREATED="1515405857318" MODIFIED="1515406888124"/>
+<node TEXT="templates" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1520449085" CREATED="1515405857318" MODIFIED="1515406888124">
+<node TEXT="function templates" STYLE_REF="Beschreibung" ID="ID_538145178" CREATED="1515407426917" MODIFIED="1515414830118">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1634509495" CREATED="1515407965051" MODIFIED="1515414836206">
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_131443761" CREATED="1515407431786" MODIFIED="1515409442081"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;In C++, function templates are functions that serve as a pattern for creating other similar functions. The basic idea behind function templates is to create a function without having to specify the exact type(s) of some or all of the variables.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="template type parameters" STYLE_REF="Beschreibung" ID="ID_1888401978" CREATED="1515407457450" MODIFIED="1515409398017"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Instead, we define the function using placeholder types, called template type parameters.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+</node>
+<node TEXT="naming" STYLE_REF="Beschreibung" ID="ID_964777558" CREATED="1515407696969" MODIFIED="1515407703548"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;You can name your placeholder types almost anything you want, so long as it&#8217;s not a reserved word. However, in C++, it&#8217;s customary to name your template types the letter T (short for &#8220;Type&#8221;).</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="template parameter declaration" STYLE_REF="Beschreibung" ID="ID_1076727214" CREATED="1515407726301" MODIFIED="1515407743995"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;In order to make this work, we need to tell the compiler two things: First, that this is a template definition, and second, that T is a placeholder type. We can do both of those things in one line, using what is called a template parameter declaration.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="function template instance" STYLE_REF="Beschreibung" ID="ID_1721956534" CREATED="1515408410570" MODIFIED="1515409402896"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;at compile time, when the compiler encounters a call to a template function, it replicates the template function and replaces the template type parameters with actual types. The function with actual types is called a function template instance. The compiler is smart enough to know it only needs to create one template instance per set of unique type parameters (per file). It&#8217;s also worth noting that if you create a template function but do not call it, no template instances will be created.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="undefined operators or function calls" STYLE_REF="Beschreibung" ID="ID_998236252" CREATED="1515408870055" MODIFIED="1515408897870"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Template functions will work with both built-in types (e.g. char, int, double, etc&#8230;) and classes, with one caveat. When the compiler compiles the template instance, it compiles it just like a normal function. In a normal function, any operators or function calls that you use with your types must be defined, or you will get a compiler error. Similarly, any operators or function calls in your template function must be defined for any types the function template is instantiated for.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="downsides" STYLE_REF="Beschreibung" ID="ID_1885018168" CREATED="1515408262128" MODIFIED="1515409400576">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="error messages" STYLE_REF="Beschreibung" ID="ID_924825735" CREATED="1515408271455" MODIFIED="1515408277419"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;template functions often produce crazy-looking error messages that are much harder to decipher than those of regular functions</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="increasing compile time and code size" STYLE_REF="Beschreibung" ID="ID_1864033106" CREATED="1515408292083" MODIFIED="1515408307230"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;template functions can increase your compile time and code size, as a single template might be &#8220;realized&#8221; and recompiled in many files (there are ways to work around this one).</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="example" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1261151945" CREATED="1515407950774" MODIFIED="1515414836818">
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_308489696" CREATED="1515407747503" MODIFIED="1515409453161"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>template &lt;typename T&gt; // this is the template parameter declaration </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>T max(T x, T y) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;return (x &gt; y) ? x : y; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="multiple template type parameters" STYLE_REF="Beschreibung" ID="ID_1907140656" CREATED="1515407819764" MODIFIED="1515407828369"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;template &lt;typename T1, typename T2&gt;</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="const references" STYLE_REF="Beschreibung" ID="ID_1592701323" CREATED="1515407885293" MODIFIED="1515409454946"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Because the function argument passed in for type T could be a class type, and it&#8217;s generally not a good idea to pass classes by value, it would be better to make the parameters and return types of our templated function const references:</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_266594118" CREATED="1515407898476" MODIFIED="1515407902594"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;template &lt;typename T&gt; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>const T&amp; max(const T&amp; x, const T&amp; y) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;return (x &gt; y) ? x : y; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="specialization" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_881078702" CREATED="1515413390143" MODIFIED="1515414837108">
+<node TEXT="function template specialization (sometimes called a full or explicit function template specialization)" STYLE_REF="Beschreibung" ID="ID_173589337" CREATED="1515413399454" MODIFIED="1515413438238"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;simply define the specialized function (if the function is a member function, do so outside of the class definition), replacing the template type with the specific type you wish to redefine the function for.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1906258019" CREATED="1515413449061" MODIFIED="1515414854094"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;template &lt;&gt; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>void Storage&lt;double&gt;::print() </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;std::cout &lt;&lt; std::scientific &lt;&lt; m_value &lt;&lt; '\n'; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="compiler" STYLE_REF="Beschreibung" ID="ID_1693668500" CREATED="1515413482505" MODIFIED="1515413488317"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;When the compiler goes to instantiate Storage&lt;double&gt;::print(), it will see we&#8217;ve already explicitly defined that function, and it will use the one we&#8217;ve defined instead of stenciling out a version from the generic templated class.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="template &lt;&gt;" STYLE_REF="Beschreibung" ID="ID_1886583965" CREATED="1515413498465" MODIFIED="1515413506543"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The template &lt;&gt; tells the compiler that this is a template function, but that there are no template parameters (since in this case, we&#8217;re explicitly specifying all of the types). Some compilers may allow you to omit this, but it&#8217;s proper to include it.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="template classes" STYLE_REF="Beschreibung" ID="ID_1048013278" CREATED="1515409955621" MODIFIED="1515414832479">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1045746361" CREATED="1515411056422" MODIFIED="1515414837447">
+<node TEXT="what is it?" STYLE_REF="Beschreibung" ID="ID_1946615710" CREATED="1515410394200" MODIFIED="1515410444834"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;classes using template types</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="name" STYLE_REF="Beschreibung" ID="ID_33481566" CREATED="1515409968156" MODIFIED="1515409976205"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;note that the name of the templated array class is Array&lt;T&gt;, not Array -- Array would refer to a non-templated version of a class named Array.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="example use" STYLE_REF="Beschreibung" ID="ID_1637133113" CREATED="1515409994177" MODIFIED="1515410008160"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>Array&lt;int&gt; intArray(12); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>Array&lt;double&gt; doubleArray(12);</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="code files" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_336663352" CREATED="1515410196527" MODIFIED="1515414837795">
+<node TEXT="all in header file" STYLE_REF="Beschreibung" ID="ID_1000133446" CREATED="1515410201142" MODIFIED="1515414862677"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The easiest way is to simply put all of your template class code in the header file (in this case, put the contents of Array.cpp into Array.h, below the class). In this way, when you #include the header, all of the template code will be in one place. This is our preferred solution unless the compile or link times start to become a problem.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="simple" STYLE_REF="Beschreibung" ID="ID_1874825574" CREATED="1515410226259" MODIFIED="1515410235713"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The upside of this solution is that it is simple.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="many local copies" STYLE_REF="Beschreibung" ID="ID_1789951129" CREATED="1515410257064" MODIFIED="1515410283231"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;The downside here is that if the template class is used in many places, you will end up with many local copies of the template class, which can increase your compile and link times (your linker should remove the duplicate definitions, so it shouldn&#8217;t bloat your executable).</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="inline" STYLE_REF="Beschreibung" ID="ID_131462465" CREATED="1515410328477" MODIFIED="1515410332730"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;an alternative is to rename Array.cpp to Array.inl (.inl stands for inline), and then include Array.inl from the bottom of the Array.h header. That yields the same result as putting all the code in the header, but helps keep things a little cleaner.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="three file approach" STYLE_REF="Beschreibung" ID="ID_1060212189" CREATED="1515410372413" MODIFIED="1515410377718"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Another alternative is to use a three-file approach. The template class definition goes in the header. The template class member functions goes in the code file. Then you add a third file, which contains all of the instantiated classes you need:</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="expression parameter" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1022149271" CREATED="1515410761923" MODIFIED="1515414838110">
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_774309054" CREATED="1515411179061" MODIFIED="1515414869859"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;A template expression parameter is a special type of parameter that does not substitute for a type, but is instead replaced by a value.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="A value that has an integral type or enumeration" STYLE_REF="Beschreibung" ID="ID_1700250444" CREATED="1515410777177" MODIFIED="1515410778133"/>
+<node TEXT="A pointer or reference to a class object" STYLE_REF="Beschreibung" ID="ID_1433957273" CREATED="1515410787913" MODIFIED="1515410788856"/>
+<node TEXT="A pointer or reference to a function" STYLE_REF="Beschreibung" ID="ID_183996353" CREATED="1515410794897" MODIFIED="1515410795848"/>
+<node TEXT="A pointer or reference to a class member function" STYLE_REF="Beschreibung" ID="ID_1434259732" CREATED="1515410802974" MODIFIED="1515410803902"/>
+</node>
+<node TEXT="static allocation" STYLE_REF="Beschreibung" ID="ID_1537440403" CREATED="1515411159266" MODIFIED="1515411166654"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;One noteworthy thing about the above example is that we do not have to dynamically allocate the m_array member variable! This is because for any given instance of the StaticArray class, size is actually constant. For example, if you instantiate a StaticArray&lt;int, 12&gt;, the compiler replaces size with 12. Thus m_array is of type int[12], which can be allocated statically.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1279914358" CREATED="1515410931142" MODIFIED="1515411116410"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>template &lt;class T, int size&gt;</i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>class StaticArray </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>public: </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;T m_array[size]; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>StaticArray&lt;int, 12&gt; intArray;</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="specialization" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_593084283" CREATED="1515413562830" MODIFIED="1515414838425">
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_465992328" CREATED="1515413674894" MODIFIED="1515413679895"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Class template specialization allows us to specialize a template class for a particular data type (or data types, if there are multiple template parameters).</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="completely independent class" STYLE_REF="Beschreibung" ID="ID_1940766121" CREATED="1515413753964" MODIFIED="1515413764915"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Class template specializations are treated as completely independent classes, even though they are allocated in the same way as the templated class. This means that we can change anything and everything about our specialization class, including the way it&#8217;s implemented and even the functions it makes public, just as if it were an independent class.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_854527114" CREATED="1515413860528" MODIFIED="1515413864556"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Now, when we declare a class of type Storage8&lt;T&gt;, where T is not a bool, we&#8217;ll get a version stenciled from the generic templated Storage8&lt;T&gt; class. When we declare a class of type Storage8&lt;bool&gt;, we&#8217;ll get the specialized version we just created. Note that we have kept the publicly exposed interface of both classes the same -- while C++ gives us free reign to add, remove, or change functions of Storage8&lt;bool&gt; as we see fit, keeping a consistent interface means the programmer can use either class in exactly the same manner.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="partial specialization" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1287026702" CREATED="1515414226183" MODIFIED="1515414838747">
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_908278226" CREATED="1515414232357" MODIFIED="1515414236867"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Partial template specialization allows us to specialize classes (but not individual functions!) where some, but not all, of the template parameters have been explicitly defined.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_201975246" CREATED="1515414320451" MODIFIED="1515414879186"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;// overload of print() function for partially specialized StaticArray&lt;char, size&gt; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>template &lt;int size&gt; // size is still a templated expression parameter </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>void print(StaticArray&lt;char, size&gt; &amp;array) // we're explicitly defining type char here </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;for (int count = 0; count &lt; size; ++count) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;std::cout &lt;&lt; array[count]; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="things to do" STYLE_REF="Beschreibung" ID="ID_768623908" CREATED="1515414335992" MODIFIED="1515414346694"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;As you can see here, we&#8217;ve explicitly declared that this function will only work for StaticArray of type char, but size is still a templated expression parameter, so it will work for char arrays of any size. That&#8217;s all there is to it!</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="C++14" STYLE_REF="Beschreibung" ID="ID_499542708" CREATED="1515414473517" MODIFIED="1515414484718"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Note that as of C++14, partial template specialization can only be used with classes, not template functions (functions must be fully specialized). Our void print(StaticArray&lt;char, size&gt; &amp;array) example works because the print function is not partially specialized (it&#8217;s just an overloaded function using a class parameter that&#8217;s partially specialized).</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="pointer types" STYLE_REF="Beschreibung" ID="ID_1159133023" CREATED="1515414651734" MODIFIED="1515414882358">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="problem" STYLE_REF="Beschreibung" ID="ID_1904950835" CREATED="1515414656020" MODIFIED="1515414885455"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Fortunately, partial template specialization offers us a convenient solution. In this case, we&#8217;ll use class partial template specialization to define a special version of the Storage class that works for pointer values. This class is considered partially specialized because we&#8217;re telling the compiler that it&#8217;s only for use with pointer types, even though we haven&#8217;t specified the underlying type exactly.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="extremely useful" STYLE_REF="Beschreibung" ID="ID_303906405" CREATED="1515414810216" MODIFIED="1515414818185"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Using partial template class specialization to create separate pointer and non-pointer implementations of a class is extremely useful when you want a class to handle both differently, but in a way that&#8217;s completely transparent to the end-user.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_647091625" CREATED="1515414695636" MODIFIED="1515414699815"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;template &lt;typename T&gt; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>class Storage&lt;T*&gt; // this is a partial-specialization of Storage that works with pointer types</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+</node>
 </node>
 <node TEXT="Examples" STYLE_REF="Beschreibung" POSITION="right" ID="ID_1525910066" CREATED="1514462171717" MODIFIED="1515406905553">
 <hook NAME="AlwaysUnfoldedNode"/>
