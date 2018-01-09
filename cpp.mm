@@ -1,7 +1,7 @@
 <map version="freeplane 1.6.0">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
 <node TEXT="C++" STYLE_REF="Beschreibung" FOLDED="false" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1514394356050"><hook NAME="MapStyle" background="#fcfce9" zoom="1.5">
-    <properties fit_to_viewport="false;" show_icon_for_attributes="true"/>
+    <properties show_icon_for_attributes="true" fit_to_viewport="false;"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
@@ -282,7 +282,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="late binding" STYLE_REF="Beschreibung" ID="ID_1712646886" CREATED="1515338474687" MODIFIED="1515405951164"><richcontent TYPE="DETAILS">
@@ -297,7 +296,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="slightly less efficient" STYLE_REF="Beschreibung" ID="ID_307938318" CREATED="1515338613167" MODIFIED="1515405953640"><richcontent TYPE="DETAILS">
@@ -312,7 +310,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="reason" STYLE_REF="Beschreibung" ID="ID_637100764" CREATED="1515339066018" MODIFIED="1515339074536"><richcontent TYPE="DETAILS">
@@ -327,7 +324,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -343,7 +339,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="each class has its own virtual table" STYLE_REF="Beschreibung" ID="ID_556878778" CREATED="1515338851679" MODIFIED="1515338879197"><richcontent TYPE="DETAILS">
@@ -358,7 +353,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="hidden pointer to the base class" STYLE_REF="Beschreibung" ID="ID_1269764330" CREATED="1515338949541" MODIFIED="1515338956717"><richcontent TYPE="DETAILS">
@@ -373,7 +367,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -2460,7 +2453,10 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="pointers" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_835018892" CREATED="1514652007482" MODIFIED="1515254014708">
+</node>
+<node TEXT="pointers and references" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_680457097" CREATED="1515510524710" MODIFIED="1515510539138">
+<node TEXT="pointers" STYLE_REF="Beschreibung" ID="ID_835018892" CREATED="1514652007482" MODIFIED="1515510571565">
+<hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="definition" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1189109054" CREATED="1514671782702" MODIFIED="1515254130733">
 <node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1145585301" CREATED="1514652169057" MODIFIED="1514652174377"><richcontent TYPE="DETAILS">
 
@@ -2963,8 +2959,24 @@
 </node>
 </node>
 </node>
+<node TEXT="smart pointer" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_532867714" CREATED="1515503508693" MODIFIED="1515503514534">
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_345737252" CREATED="1515503514932" MODIFIED="1515503523067"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;A Smart pointer is a composition class that is designed to manage dynamically allocated memory and ensure that memory gets deleted when the smart pointer object goes out of scope. (Relatedly, built-in pointers are sometimes called &#8220;dumb pointers&#8221; because they can&#8217;t clean up after themselves).</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
 </node>
-<node TEXT="references vs. pointers" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1539147601" CREATED="1514663192598" MODIFIED="1515254014998"><richcontent TYPE="DETAILS">
+<node TEXT="std::unique_ptr" STYLE_REF="Beschreibung" ID="ID_884257671" CREATED="1515510950970" MODIFIED="1515512775788">
+<hook NAME="AlwaysUnfoldedNode"/>
+<richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -2972,12 +2984,14 @@
   </head>
   <body>
     <p>
-      <font color="#666666" size="1"><i>&#160;a reference acts like a pointer that is implicitly dereferenced when accessed (references are usually implemented internally by the compiler using pointers).</i></font>
+      <font color="#666666" size="1"><i>&#160;&#160;std::unique_ptr is the C++11 replacement for std::auto_ptr. It should be used to manage any dynamically allocated object that is not shared by multiple objects. That is, std::unique_ptr should completely own the object it manages, not share that ownership with other classes.</i></font>
     </p>
   </body>
 </html>
+
 </richcontent>
-<node TEXT="prefer references" STYLE_REF="Beschreibung" ID="ID_181741417" CREATED="1514663257430" MODIFIED="1514663298623"><richcontent TYPE="DETAILS">
+<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_498037099" CREATED="1515512105551" MODIFIED="1515512652965">
+<node TEXT="copy disabled" STYLE_REF="Beschreibung" ID="ID_802248715" CREATED="1515511148857" MODIFIED="1515511156059"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -2985,11 +2999,417 @@
   </head>
   <body>
     <p>
-      <font color="#666666" size="1"><i>&#160;Because references must be initialized to valid objects (cannot be null) and can not be changed once set, references are generally much safer to use than pointers (since there&#8217;s no risk of dereferencing a null pointer). However, they are also a bit more limited in functionality accordingly. If a given task can be solved with either a reference or a pointer, the reference should generally be preferred. Pointers should only be used in situations where references are not sufficient (such as dynamically allocating memory).</i></font>
+      <font color="#666666" size="1"><i>&#160;Because std::unique_ptr is designed with move semantics in mind, copy initialization and copy assignment are disabled. If you want to transfer the contents managed by std::unique_ptr, you must use move semantics.</i></font>
     </p>
   </body>
 </html>
+
 </richcontent>
+</node>
+<node TEXT="accessing the managed object" STYLE_REF="Beschreibung" ID="ID_1748200333" CREATED="1515511756021" MODIFIED="1515511764547"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;std::unique_ptr has an overloaded operator* and operator-&gt; that can be used to return the resource being managed. Operator* returns a reference to the managed resource, and operator-&gt; returns a pointer.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="std::make_unique()" STYLE_REF="Beschreibung" ID="ID_1581003680" CREATED="1515511975766" MODIFIED="1515512661290"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;C++14 comes with an additional function named std::make_unique(). This templated function constructs an object of the template type and initializes it with the arguments passed into the function.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="use it" STYLE_REF="Beschreibung" ID="ID_1035359190" CREATED="1515512001524" MODIFIED="1515512005837"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Use of std::make_unique() is optional, but is recommended over creating std::unique_ptr yourself. This is because code using std::make_unique is simpler, and it also requires less typing (when used with automatic type deduction). Furthermore it resolves an exception safety issue that can result from C++ leaving the order of evaluation for function arguments unspecified.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="usage" STYLE_REF="Beschreibung" ID="ID_1823094265" CREATED="1515512114676" MODIFIED="1515512673906">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="arrays" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_95158500" CREATED="1515512491475" MODIFIED="1515512676347">
+<node TEXT="std::unique_ptr and arrays" STYLE_REF="Beschreibung" ID="ID_721793436" CREATED="1515511888634" MODIFIED="1515511899226"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Favor std:array, std::vector, or std::string over a smart pointer managing a fixed array, dynamic array, or C-style string</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="functions" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1525064602" CREATED="1515512178147" MODIFIED="1515512676932">
+<node TEXT="returning std::unique_ptr from a function" STYLE_REF="Beschreibung" ID="ID_1909755504" CREATED="1515512038352" MODIFIED="1515512061941"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;std::unique_ptr can be safely returned from a function by value. In general, you should not return std::unique_ptr by pointer (ever) or reference (unless you have a specific compelling reason to).</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="Passing std::unique_ptr to a function" STYLE_REF="Beschreibung" ID="ID_842508443" CREATED="1515512175612" MODIFIED="1515512686661">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="take ownership of contents" STYLE_REF="Beschreibung" ID="ID_641325506" CREATED="1515512233566" MODIFIED="1515512241033"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;If you want the function to take ownership of the contents of the pointer, pass the std::unique_ptr by value. Note that because copy semantics have been disabled, you&#8217;ll need to use std::move to actually pass the variable in.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="don&apos;t take ownership" STYLE_REF="Beschreibung" ID="ID_1437708410" CREATED="1515512269675" MODIFIED="1515512689574">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="by reference" STYLE_REF="Beschreibung" ID="ID_770451766" CREATED="1515512275516" MODIFIED="1515512281514"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Although you can pass a std::unique_ptr by reference (which will allow the function to use the object without assuming ownership), you should only do so when the caller might alter or change the object being managed.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="pass resource itself" STYLE_REF="Beschreibung" ID="ID_43757432" CREATED="1515512338800" MODIFIED="1515512348725"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Instead, it&#8217;s better to just pass the resource itself (by pointer or reference, depending on whether null is a valid argument). This allows the function to remain agnostic of how the caller is managing its resources. To get a raw resource pointer from a std::unique_ptr, you can use the get() member function:</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="classes" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1722468233" CREATED="1515512483199" MODIFIED="1515512677279">
+<node TEXT="std::unique_ptr and classes" STYLE_REF="Beschreibung" ID="ID_798571836" CREATED="1515512433982" MODIFIED="1515512444170"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;You can, of course, use std::unique_ptr as a composition member of your class. This way, you don&#8217;t have to worry about ensuring your class destructor deletes the dynamic memory, as the std::unique_ptr will be automatically destroyed when the class object is destroyed. However, do note that if your class object is dynamically allocated, the object itself is at risk for not being properly deallocated, in which case even a smart pointer won&#8217;t help.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="what not to do" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_414894173" CREATED="1515512544202" MODIFIED="1515512677658">
+<node TEXT="same resource" STYLE_REF="Beschreibung" ID="ID_321218407" CREATED="1515512547911" MODIFIED="1515512700707"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;First, don&#8217;t let multiple classes manage the same resource.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1323700453" CREATED="1515512593711" MODIFIED="1515512597577"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Resource *res = new Resource; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>std::unique_ptr&lt;Resource&gt; res1(res); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>std::unique_ptr&lt;Resource&gt; res2(res);</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="manually delete resource" STYLE_REF="Beschreibung" ID="ID_1208025368" CREATED="1515512580047" MODIFIED="1515512704139"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Second, don&#8217;t manually delete the resource out from underneath the std::unique_ptr.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_514691509" CREATED="1515512604455" MODIFIED="1515512610188"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Resource *res = new Resource; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>std::unique_ptr&lt;Resource&gt; res1(res); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>delete res;</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="std::shared_ptr" STYLE_REF="Beschreibung" ID="ID_939091375" CREATED="1515512837830" MODIFIED="1515513535796"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Unlike std::unique_ptr, which is designed to singly own and manage a resource, std::shared_ptr is meant to solve the case where you need multiple smart pointers co-owning a resource. This means that it is fine to have multiple std::shared_ptr pointing to the same resource. Internally, std::shared_ptr keeps track of how many std::shared_ptr are sharing the resource. As long as at least one std::shared_ptr is pointing to the resource, the resource will not be deallocated, even if individual std::shared_ptr are destroyed. As soon as the last std::shared_ptr managing the resource goes out of scope (or is reassigned to point at something else), the resource will be deallocated.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1802185359" CREATED="1515513182972" MODIFIED="1515513538504">
+<node TEXT="std::make_shared()" STYLE_REF="Beschreibung" ID="ID_1557687752" CREATED="1515513186161" MODIFIED="1515513542927"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Much like std::make_unique() can be used to create a std::unique_ptr in C++14, std::make_shared() can (and should) be used to make a std::shared_ptr. std::make_shared() is available in C++11.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="simpler, safer, more performant" STYLE_REF="Beschreibung" ID="ID_845848129" CREATED="1515513258980" MODIFIED="1515513277619"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The reasons for using std::make_shared() are the same as std::make_unique() -- std::make_shared() is simpler and safer (there&#8217;s no way to directly create two std::shared_ptr pointing to the same resource using this method). However, std::make_shared() is also more performant than not using it. The reasons for this lie in the way that std::shared_ptr keeps track of how many pointers are pointing at a given resource.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="more than one pointing to same resource" STYLE_REF="Beschreibung" ID="ID_1349896581" CREATED="1515513128619" MODIFIED="1515513545434"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Always make a copy of an existing std::shared_ptr if you need more than one std::shared_ptr pointing to the same resource.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="why" STYLE_REF="Beschreibung" ID="ID_881483697" CREATED="1515513366949" MODIFIED="1515513371756"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;However, when a std::shared_ptr is cloned using copy assignment, the data in the control block can be appropriately updated to indicate that there are now additional std::shared_ptr co-managing the resource.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="shared pointers can be created from unique pointers" STYLE_REF="Beschreibung" ID="ID_1990798585" CREATED="1515513424170" MODIFIED="1515513443307"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;A std::unique_ptr can be converted into a std::shared_ptr via a special std::shared_ptr constructor that accepts a std::unique_ptr r-value. The contents of the std::unique_ptr will be moved to the std::shared_ptr. However, std::shared_ptr can not be safely converted to a std::unique_ptr. This means that if you&#8217;re creating a function that is going to return a smart pointer, you&#8217;re better off returning a std::unique_ptr and assigning it to a std::shared_ptr if and when that&#8217;s appropriate.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="downsides" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1607043680" CREATED="1515513712872" MODIFIED="1515513718804">
+<node TEXT="perils of shared pointers" STYLE_REF="Beschreibung" ID="ID_359571160" CREATED="1515513499211" MODIFIED="1515513512499"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;std::shared_ptr has some of the same challenges as std::unique_ptr -- if the std::shared_ptr is not properly disposed of (either because it was dynamically allocated and never deleted, or it was part of an object that was dynamically allocated and never deleted) then the resource it is managing won&#8217;t be deallocated either. With std::unique_ptr, you only have to worry about one smart pointer being properly disposed of. With std::shared_ptr, you have to worry about them all. If any of the std::shared_ptr managing a resource are not properly destroyed, the resource will not be deallocated properly.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="circular references" STYLE_REF="Beschreibung" ID="ID_1548046878" CREATED="1515513725990" MODIFIED="1515513732570"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The practical effect having shared pointers form a cycle is that each object ends up keeping the next object alive -- with the last object keeping the first object alive. Thus, no objects in the series can be deallocated because they all think some other object still needs it!</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="std::weak_ptr" STYLE_REF="Beschreibung" ID="ID_906030801" CREATED="1515513817392" MODIFIED="1515514003054"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;A std::weak_ptr is an observer -- it can observe and access the same object as a std::shared_ptr (or other std::weak_ptrs) but it is not considered an owner. Remember, when a std::shared pointer goes out of scope, it only considers whether other std:shared_ptr are co-owning the object. std::weak_ptr does not count!</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1879668779" CREATED="1515513973504" MODIFIED="1515513977400">
+<node TEXT="using std::weak_ptr" STYLE_REF="Beschreibung" ID="ID_181022261" CREATED="1515513883575" MODIFIED="1515513893380"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The downside of std::weak_ptr is that std::weak_ptr are not directly usable (they have no operator-&gt;). To use a std::weak_ptr, you must first convert it into a std::shared_ptr. Then you can use the std::shared_ptr. To convert a std::weak_ptr into a std::shared_ptr, you can use the lock() member function.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="shared vs. weak" STYLE_REF="Beschreibung" ID="ID_1547831884" CREATED="1515513954435" MODIFIED="1515513962400"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;std::shared_ptr can be used when you need multiple smart pointers that can co-own a resource. The resource will be deallocated when the last std::shared_ptr goes out of scope. std::weak_ptr can be used when you want a smart pointer that can see and use a shared resource, but does not participate in the ownership of that resource.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
 </node>
 </node>
 <node TEXT="references" STYLE_REF="Beschreibung" ID="ID_254146950" CREATED="1514662431080" MODIFIED="1515254293033">
@@ -3192,6 +3612,166 @@
 </richcontent>
 </node>
 </node>
+</node>
+<node TEXT="r-value" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1550824777" CREATED="1515507272962" MODIFIED="1515507773051"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;C++11</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1605115704" CREATED="1515507279029" MODIFIED="1515509099227"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;An r-value reference is a reference that is designed to be initialized with an r-value (only). While an l-value reference is created using a single ampersand, an r-value reference is created using a double ampersand</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example 1" STYLE_REF="Beschreibung" ID="ID_734264516" CREATED="1515507294130" MODIFIED="1515507621410"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int x = 5; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>int &amp;lref = x; // l-value reference initialized with l-value x </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>int &amp;&amp;rref = 5; // r-value reference initialized with r-value 5</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="example 2" STYLE_REF="Beschreibung" ID="ID_1753393392" CREATED="1515507621911" MODIFIED="1515507634030"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>Fraction &amp;&amp;rref = Fraction(3, 5); // r-value reference to temporary Fraction </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>std::cout &lt;&lt; rref &lt;&lt; '\n';</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="r-value references as function parameters" STYLE_REF="Beschreibung" ID="ID_920681781" CREATED="1515507818253" MODIFIED="1515509102758"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;R-value references are more often used as function parameters. This is most useful for function overloads when you want to have different behavior for l-value and r-value arguments.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1205021187" CREATED="1515507835529" MODIFIED="1515507858415"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int x = 5; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>fun(x); // l-value argument calls l-value version of function </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>fun(5); // r-value argument calls r-value version of function</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="useful properties" STYLE_REF="Beschreibung" ID="ID_1721118234" CREATED="1515507352324" MODIFIED="1515509106368">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="1" OBJECT="java.lang.Long|1" STYLE_REF="Beschreibung" ID="ID_809933305" CREATED="1515507371267" MODIFIED="1515507374841"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;First, r-value references extend the lifespan of the object they are initialized with to the lifespan of the r-value reference. l-value references to const objects can do this too, but it&#8217;s far more useful for r-value references since r-values have expression scope otherwise.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="2" OBJECT="java.lang.Long|2" STYLE_REF="Beschreibung" ID="ID_387514640" CREATED="1515507377022" MODIFIED="1515507386754"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Second, non-const r-value references allow you to modify the r-value!</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="references vs. pointers" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1539147601" CREATED="1514663192598" MODIFIED="1515254014998"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;a reference acts like a pointer that is implicitly dereferenced when accessed (references are usually implemented internally by the compiler using pointers).</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="prefer references" STYLE_REF="Beschreibung" ID="ID_181741417" CREATED="1514663257430" MODIFIED="1514663298623"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Because references must be initialized to valid objects (cannot be null) and can not be changed once set, references are generally much safer to use than pointers (since there&#8217;s no risk of dereferencing a null pointer). However, they are also a bit more limited in functionality accordingly. If a given task can be solved with either a reference or a pointer, the reference should generally be preferred. Pointers should only be used in situations where references are not sufficient (such as dynamically allocating memory).</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
 </node>
 </node>
 </node>
@@ -8987,7 +9567,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -9735,7 +10314,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="To create a pure virtual function, rather than define a body for the function, we simply assign the function the value 0." STYLE_REF="Beschreibung" ID="ID_1797636819" CREATED="1515342778772" MODIFIED="1515342789586"><richcontent TYPE="DETAILS">
@@ -9750,7 +10328,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="abstract base class" STYLE_REF="Beschreibung" ID="ID_1357962469" CREATED="1515342977425" MODIFIED="1515349490610"><richcontent TYPE="DETAILS">
@@ -9765,7 +10342,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="derived class" STYLE_REF="Beschreibung" ID="ID_622034170" CREATED="1515342997553" MODIFIED="1515343003616"><richcontent TYPE="DETAILS">
@@ -9780,7 +10356,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -9797,7 +10372,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -9814,7 +10388,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="useful for" STYLE_REF="Beschreibung" ID="ID_228851018" CREATED="1515343272961" MODIFIED="1515343293568"><richcontent TYPE="DETAILS">
@@ -9829,7 +10402,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -9846,7 +10418,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="useful for" STYLE_REF="Beschreibung" ID="ID_1451397567" CREATED="1515343407483" MODIFIED="1515343428711"><richcontent TYPE="DETAILS">
@@ -9861,7 +10432,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="naming" STYLE_REF="Beschreibung" ID="ID_1586829988" CREATED="1515343429552" MODIFIED="1515343445862"><richcontent TYPE="DETAILS">
@@ -9876,7 +10446,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="destructor" STYLE_REF="Beschreibung" ID="ID_1700663338" CREATED="1515343505672" MODIFIED="1515343514383"><richcontent TYPE="DETAILS">
@@ -9891,7 +10460,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -9908,7 +10476,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_778592332" CREATED="1515343993728" MODIFIED="1515344006062"><richcontent TYPE="DETAILS">
@@ -9956,7 +10523,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -9972,7 +10538,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="most derived class responsible" STYLE_REF="Beschreibung" ID="ID_1890734420" CREATED="1515344363208" MODIFIED="1515344457641"><richcontent TYPE="DETAILS">
@@ -9987,7 +10552,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="virtual table" STYLE_REF="Beschreibung" ID="ID_1748031679" CREATED="1515344508221" MODIFIED="1515344513019"><richcontent TYPE="DETAILS">
@@ -10002,7 +10566,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -10019,7 +10582,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="slicing and functions" STYLE_REF="Beschreibung" ID="ID_1878424429" CREATED="1515346105974" MODIFIED="1515346152428"><richcontent TYPE="DETAILS">
@@ -10034,7 +10596,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="avoid slicing" STYLE_REF="Beschreibung" ID="ID_1591569586" CREATED="1515346989042" MODIFIED="1515346997809"><richcontent TYPE="DETAILS">
@@ -10049,7 +10610,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="examples" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1697905799" CREATED="1515346974543" MODIFIED="1515346977843">
@@ -10071,7 +10631,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="sliced" STYLE_REF="Beschreibung" ID="ID_361749991" CREATED="1515346388949" MODIFIED="1515346400993"><richcontent TYPE="DETAILS">
@@ -10086,7 +10645,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="std::reference_wrapper" STYLE_REF="Beschreibung" ID="ID_713757021" CREATED="1515346464147" MODIFIED="1515349517180"><richcontent TYPE="DETAILS">
@@ -10101,7 +10659,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="&lt;functional&gt; header" STYLE_REF="Beschreibung" ID="ID_1210197706" CREATED="1515346486185" MODIFIED="1515346499477"><richcontent TYPE="DETAILS">
@@ -10116,7 +10673,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="can&apos;t be anonymous" STYLE_REF="Beschreibung" ID="ID_1358986924" CREATED="1515346510017" MODIFIED="1515346516941"><richcontent TYPE="DETAILS">
@@ -10131,7 +10687,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="get()" STYLE_REF="Beschreibung" ID="ID_1887487360" CREATED="1515346527482" MODIFIED="1515346531656"><richcontent TYPE="DETAILS">
@@ -10146,7 +10701,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1921284171" CREATED="1515346545086" MODIFIED="1515346549409"><richcontent TYPE="DETAILS">
@@ -10173,7 +10727,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -10199,7 +10752,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="only base portion gets copied" STYLE_REF="Beschreibung" ID="ID_685535763" CREATED="1515346875601" MODIFIED="1515346883590"><richcontent TYPE="DETAILS">
@@ -10214,7 +10766,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -10235,7 +10786,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -10252,7 +10802,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_84430658" CREATED="1515348091206" MODIFIED="1515349542326"><richcontent TYPE="DETAILS">
@@ -10273,7 +10822,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="references" STYLE_REF="Beschreibung" ID="ID_1320810644" CREATED="1515348594247" MODIFIED="1515348600028"><richcontent TYPE="DETAILS">
@@ -10288,7 +10836,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -10304,7 +10851,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="will not work" STYLE_REF="Beschreibung" ID="ID_1377988363" CREATED="1515348273030" MODIFIED="1515349545972">
@@ -10325,7 +10871,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -10342,7 +10887,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -10359,7 +10903,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT=" However, there are times when downcasting is the better choice:" STYLE_REF="Beschreibung" ID="ID_952694251" CREATED="1515348725959" MODIFIED="1515348746526"><richcontent TYPE="DETAILS">
@@ -10380,7 +10923,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -10398,7 +10940,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -13049,7 +13590,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="To use a throw statement, simply use the throw keyword, followed by a value of any data type you wish to use to signal that an error has occurred. Typically, this value will be an error code, a description of the problem, or a custom exception class." STYLE_REF="Beschreibung" ID="ID_792241834" CREATED="1515423560162" MODIFIED="1515423593335"><richcontent TYPE="DETAILS">
@@ -13076,7 +13616,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="rethrow exceptions" STYLE_REF="Beschreibung" ID="ID_306497971" CREATED="1515444744687" MODIFIED="1515445937210"><richcontent TYPE="DETAILS">
@@ -13091,7 +13630,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_412526994" CREATED="1515444819999" MODIFIED="1515444855207"><richcontent TYPE="DETAILS">
@@ -13124,7 +13662,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -13142,7 +13679,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_182576739" CREATED="1515423666996" MODIFIED="1515423691868"><richcontent TYPE="DETAILS">
@@ -13166,7 +13702,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="at least one catch block" STYLE_REF="Beschreibung" ID="ID_1205519826" CREATED="1515424115427" MODIFIED="1515424124511"><richcontent TYPE="DETAILS">
@@ -13181,7 +13716,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="function try blocks" STYLE_REF="Beschreibung" ID="ID_211942277" CREATED="1515445154408" MODIFIED="1515445942795"><richcontent TYPE="DETAILS">
@@ -13199,7 +13733,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_567590093" CREATED="1515445164172" MODIFIED="1515445319109"><richcontent TYPE="DETAILS">
@@ -13253,7 +13786,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -13271,7 +13803,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_731298099" CREATED="1515423747253" MODIFIED="1515423764965"><richcontent TYPE="DETAILS">
@@ -13295,7 +13826,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -13311,7 +13841,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="There are three common things that catch blocks do when they catch an exception:" STYLE_REF="Beschreibung" ID="ID_1601421201" CREATED="1515424592220" MODIFIED="1515445953061">
@@ -13392,7 +13921,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -13409,7 +13937,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -13426,7 +13953,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="catch-all handler" STYLE_REF="Beschreibung" ID="ID_1489671829" CREATED="1515425854386" MODIFIED="1515445969016"><richcontent TYPE="DETAILS">
@@ -13441,7 +13967,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="placed last" STYLE_REF="Beschreibung" ID="ID_433946611" CREATED="1515425944341" MODIFIED="1515425949639"><richcontent TYPE="DETAILS">
@@ -13456,7 +13981,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="left empty" STYLE_REF="Beschreibung" ID="ID_673807651" CREATED="1515425962300" MODIFIED="1515425986715"><richcontent TYPE="DETAILS">
@@ -13471,7 +13995,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_466480320" CREATED="1515425995509" MODIFIED="1515426003918"><richcontent TYPE="DETAILS">
@@ -13486,7 +14009,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -13506,7 +14028,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="why" STYLE_REF="Beschreibung" ID="ID_866706049" CREATED="1515427000287" MODIFIED="1515427003611"><richcontent TYPE="DETAILS">
@@ -13521,7 +14042,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="catch by reference" STYLE_REF="Beschreibung" ID="ID_1597695204" CREATED="1515427024099" MODIFIED="1515427031216"><richcontent TYPE="DETAILS">
@@ -13536,7 +14056,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="inheritance" STYLE_REF="Beschreibung" ID="ID_377425028" CREATED="1515427147574" MODIFIED="1515445983009"><richcontent TYPE="DETAILS">
@@ -13551,7 +14070,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="derived before base class" STYLE_REF="Beschreibung" ID="ID_986593016" CREATED="1515427168956" MODIFIED="1515427175977"><richcontent TYPE="DETAILS">
@@ -13566,7 +14084,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -13585,7 +14102,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="catch all std::exceptions" STYLE_REF="Beschreibung" ID="ID_1093083602" CREATED="1515427267941" MODIFIED="1515445986275"><richcontent TYPE="DETAILS">
@@ -13603,7 +14119,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="what()" STYLE_REF="Beschreibung" ID="ID_1610255830" CREATED="1515427324713" MODIFIED="1515427329601"><richcontent TYPE="DETAILS">
@@ -13618,7 +14133,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -13634,7 +14148,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="deriving your own classes from std::exception" STYLE_REF="Beschreibung" ID="ID_1429506419" CREATED="1515427479593" MODIFIED="1515427492825"><richcontent TYPE="DETAILS">
@@ -13649,7 +14162,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -13667,7 +14179,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="exceptions and destructors" STYLE_REF="Beschreibung" ID="ID_1488769299" CREATED="1515445706639" MODIFIED="1515445995169"><richcontent TYPE="DETAILS">
@@ -13682,7 +14193,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="don&apos;t" STYLE_REF="Beschreibung" ID="ID_1172474796" CREATED="1515445731908" MODIFIED="1515445736690"><richcontent TYPE="DETAILS">
@@ -13697,7 +14207,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -13713,7 +14222,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -13931,7 +14439,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_471671678" CREATED="1514834545074" MODIFIED="1514834604234"><richcontent TYPE="DETAILS">
 
@@ -13965,7 +14472,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_653932227" CREATED="1514834559931" MODIFIED="1514834617968"><richcontent TYPE="DETAILS">
 
@@ -13999,7 +14505,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1815169179" CREATED="1514834583859" MODIFIED="1514834630226"><richcontent TYPE="DETAILS">
 
@@ -14031,7 +14536,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="5" OBJECT="java.lang.Long|5" STYLE_REF="Beschreibung" ID="ID_754830737" CREATED="1514834712231" MODIFIED="1515406847193">
@@ -14048,7 +14552,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_340145486" CREATED="1514834726566" MODIFIED="1514834751549"><richcontent TYPE="DETAILS">
 
@@ -14086,7 +14589,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -14108,7 +14610,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="template type parameters" STYLE_REF="Beschreibung" ID="ID_1888401978" CREATED="1515407457450" MODIFIED="1515409398017"><richcontent TYPE="DETAILS">
@@ -14123,7 +14624,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 </node>
@@ -14139,7 +14639,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="template parameter declaration" STYLE_REF="Beschreibung" ID="ID_1076727214" CREATED="1515407726301" MODIFIED="1515407743995"><richcontent TYPE="DETAILS">
@@ -14154,7 +14653,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -14170,7 +14668,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="undefined operators or function calls" STYLE_REF="Beschreibung" ID="ID_998236252" CREATED="1515408870055" MODIFIED="1515408897870"><richcontent TYPE="DETAILS">
@@ -14185,7 +14682,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -14203,7 +14699,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="increasing compile time and code size" STYLE_REF="Beschreibung" ID="ID_1864033106" CREATED="1515408292083" MODIFIED="1515408307230"><richcontent TYPE="DETAILS">
@@ -14218,7 +14713,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -14248,7 +14742,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="multiple template type parameters" STYLE_REF="Beschreibung" ID="ID_1907140656" CREATED="1515407819764" MODIFIED="1515407828369"><richcontent TYPE="DETAILS">
@@ -14263,7 +14756,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -14279,7 +14771,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_266594118" CREATED="1515407898476" MODIFIED="1515407902594"><richcontent TYPE="DETAILS">
@@ -14306,7 +14797,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -14324,7 +14814,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1906258019" CREATED="1515413449061" MODIFIED="1515414854094"><richcontent TYPE="DETAILS">
@@ -14351,7 +14840,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="compiler" STYLE_REF="Beschreibung" ID="ID_1693668500" CREATED="1515413482505" MODIFIED="1515413488317"><richcontent TYPE="DETAILS">
@@ -14366,7 +14854,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="template &lt;&gt;" STYLE_REF="Beschreibung" ID="ID_1886583965" CREATED="1515413498465" MODIFIED="1515413506543"><richcontent TYPE="DETAILS">
@@ -14381,7 +14868,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -14402,7 +14888,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="name" STYLE_REF="Beschreibung" ID="ID_33481566" CREATED="1515409968156" MODIFIED="1515409976205"><richcontent TYPE="DETAILS">
@@ -14417,7 +14902,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="example use" STYLE_REF="Beschreibung" ID="ID_1637133113" CREATED="1515409994177" MODIFIED="1515410008160"><richcontent TYPE="DETAILS">
@@ -14435,7 +14919,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -14452,7 +14935,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="simple" STYLE_REF="Beschreibung" ID="ID_1874825574" CREATED="1515410226259" MODIFIED="1515410235713"><richcontent TYPE="DETAILS">
@@ -14467,7 +14949,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="many local copies" STYLE_REF="Beschreibung" ID="ID_1789951129" CREATED="1515410257064" MODIFIED="1515410283231"><richcontent TYPE="DETAILS">
@@ -14482,7 +14963,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="inline" STYLE_REF="Beschreibung" ID="ID_131462465" CREATED="1515410328477" MODIFIED="1515410332730"><richcontent TYPE="DETAILS">
@@ -14497,7 +14977,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -14513,7 +14992,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -14530,7 +15008,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="A value that has an integral type or enumeration" STYLE_REF="Beschreibung" ID="ID_1700250444" CREATED="1515410777177" MODIFIED="1515410778133"/>
@@ -14550,7 +15027,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1279914358" CREATED="1515410931142" MODIFIED="1515411116410"><richcontent TYPE="DETAILS">
@@ -14583,7 +15059,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -14600,7 +15075,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="completely independent class" STYLE_REF="Beschreibung" ID="ID_1940766121" CREATED="1515413753964" MODIFIED="1515413764915"><richcontent TYPE="DETAILS">
@@ -14615,7 +15089,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_854527114" CREATED="1515413860528" MODIFIED="1515413864556"><richcontent TYPE="DETAILS">
@@ -14630,7 +15103,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -14647,7 +15119,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_201975246" CREATED="1515414320451" MODIFIED="1515414879186"><richcontent TYPE="DETAILS">
@@ -14680,7 +15151,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="things to do" STYLE_REF="Beschreibung" ID="ID_768623908" CREATED="1515414335992" MODIFIED="1515414346694"><richcontent TYPE="DETAILS">
@@ -14695,7 +15165,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="C++14" STYLE_REF="Beschreibung" ID="ID_499542708" CREATED="1515414473517" MODIFIED="1515414484718"><richcontent TYPE="DETAILS">
@@ -14710,7 +15179,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -14728,7 +15196,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="extremely useful" STYLE_REF="Beschreibung" ID="ID_303906405" CREATED="1515414810216" MODIFIED="1515414818185"><richcontent TYPE="DETAILS">
@@ -14743,7 +15210,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -14762,9 +15228,274 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="move semantics" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1528075221" CREATED="1515503655560" MODIFIED="1515509964142">
+<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1225382660" CREATED="1515512981417" MODIFIED="1515513032021">
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1808598191" CREATED="1515509199627" MODIFIED="1515509214027"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>Move semantics means the class will transfer ownership of the object rather than making a copy.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="key insight" STYLE_REF="Beschreibung" ID="ID_67050958" CREATED="1515509735056" MODIFIED="1515509739698"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;However, if we construct an object or do an assignment where the argument is an r-value, then we know that r-value is just a temporary object of some kind. Instead of copying it (which can be expensive), we can simply transfer its resources (which is cheap) to the object we&#8217;re constructing or assigning. This is safe to do because the temporary will be destroyed at the end of the expression anyway, so we know it will never be used again!</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="move constructor and move assignment" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_3663740" CREATED="1515512904347" MODIFIED="1515513032362">
+<node TEXT="move constructors and move assignment" STYLE_REF="Beschreibung" ID="ID_283787242" CREATED="1515509217223" MODIFIED="1515513039791"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;C++11 defines two new functions in service of move semantics: a move constructor, and a move assignment operator. Whereas the goal of the copy constructor and copy assignment is to make a copy of one object to another, the goal of the move constructor and move assignment is to move the resources from one object to another. Defining a move constructor and move assignment work analogously to their copy counterparts. However, whereas the copy flavors of these functions take a const l-value reference parameter, the move flavors of these functions use non-const r-value reference parameters.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="when are the move constructor and move assignment called?" STYLE_REF="Beschreibung" ID="ID_527552626" CREATED="1515509644776" MODIFIED="1515509659839"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The move constructor and move assignment are called when those functions have been defined, and the argument for construction or assignment is an r-value. Most typically, this r-value will be a literal or temporary value.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_978067306" CREATED="1515512925683" MODIFIED="1515513043338">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="move constructor" STYLE_REF="Beschreibung" ID="ID_77706801" CREATED="1515509543654" MODIFIED="1515513045713"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;// Move constructor </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// Transfer ownership of a.m_mptr to m_ptr </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;Auto_ptr4(Auto_ptr4&amp;&amp; a) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: m_ptr(a.m_ptr) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;a.m_ptr = nullptr; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="move assignment" STYLE_REF="Beschreibung" ID="ID_945459549" CREATED="1515509457090" MODIFIED="1515509502640"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;// Move assignment </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// Transfer ownership of a.m_ptr to m_ptr </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;Auto_ptr4&amp; operator=(Auto_ptr4&amp;&amp; a) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;// Self-assignment detection </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if (&amp;a == this) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;return *this; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;// Release any resource we're holding </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;delete m_ptr; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;// Transfer ownership of a.m_ptr to m_ptr </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;m_ptr = a.m_ptr; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;a.m_ptr = nullptr; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;return *this; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="std::move" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1727511427" CREATED="1515510151122" MODIFIED="1515510154811">
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1037703340" CREATED="1515510163825" MODIFIED="1515510169557"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;In C++11, std::move is a standard library function that serves a single purpose -- to convert its argument into an r-value. We can pass an l-value to std::move, and it will return an r-value reference. std::move is defined in the utility header.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="swap example" STYLE_REF="Beschreibung" ID="ID_181996088" CREATED="1515510170454" MODIFIED="1515510310367">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="copy" STYLE_REF="Beschreibung" ID="ID_236390860" CREATED="1515510173913" MODIFIED="1515510205349"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;template&lt;class T&gt; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>void swap(T&amp; a, T&amp; b) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;T tmp { a }; // invokes copy constructor </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;a = b; // invokes copy assignment </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;b = tmp; // invokes copy assignment </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="move" STYLE_REF="Beschreibung" ID="ID_1723012973" CREATED="1515510199087" MODIFIED="1515510207954"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;template&lt;class T&gt; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>void swap(T&amp; a, T&amp; b) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;T tmp { std::move(a) }; // invokes move constructor </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;a = std::move(b); // invokes move assignment </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;b = std::move(tmp); // invokes move assignment </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="useful for" STYLE_REF="Beschreibung" ID="ID_1141817760" CREATED="1515510251980" MODIFIED="1515510313817">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="sorting" STYLE_REF="Beschreibung" ID="ID_1889835854" CREATED="1515510256365" MODIFIED="1515510263051"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;std::move can also be useful when sorting an array of elements. Many sorting algorithms (such as selection sort and bubble sort) work by swapping pairs of elements. In previous lessons, we&#8217;ve had to resort to copy-semantics to do the swapping. Now we can use move semantics, which is more efficient.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="move contents from pointer to pointer" STYLE_REF="Beschreibung" ID="ID_896899862" CREATED="1515510287300" MODIFIED="1515510295719"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;It can also be useful if we want to move the contents managed by one smart pointer to another.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
 </node>
 </node>
 </node>
