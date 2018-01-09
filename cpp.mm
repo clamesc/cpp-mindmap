@@ -10106,7 +10106,9 @@
 </node>
 <node TEXT="references" STYLE_REF="Beschreibung" ID="ID_254146950" CREATED="1514662431080" MODIFIED="1515254293033">
 <hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="to non-const values" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1259252640" CREATED="1514662608205" MODIFIED="1515254296936">
+<node TEXT="non-const" STYLE_REF="Beschreibung" ID="ID_1259252640" CREATED="1514662608205" MODIFIED="1515527066038">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="to non-const l-values" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_737215461" CREATED="1515526969299" MODIFIED="1515527039732">
 <node TEXT="declaration" STYLE_REF="Beschreibung" ID="ID_723792415" CREATED="1514662621109" MODIFIED="1514662628370"><richcontent TYPE="DETAILS">
 
 <html>
@@ -10208,104 +10210,7 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="to const values" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1176785562" CREATED="1514668886032" MODIFIED="1515254297570">
-<node TEXT="to non-const l-value" STYLE_REF="Beschreibung" ID="ID_14155422" CREATED="1514668913817" MODIFIED="1515254318783"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>int x = 5; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>const int &amp;ref1 = x; // okay, x is a non-const l-value</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="much like pointer" STYLE_REF="Beschreibung" ID="ID_94960" CREATED="1514669102552" MODIFIED="1514669112917"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Much like a pointer to a const value, a reference to a const value can reference a non-const variable. When accessed through a reference to a const value, the value is considered const even if the original variable is not:</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="to const l-value" STYLE_REF="Beschreibung" ID="ID_139952310" CREATED="1514668939494" MODIFIED="1515254320983"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;const int y = 7; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>const int &amp;ref2 = y; // okay, y is a const l-value</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="constant references as function parameters" STYLE_REF="Beschreibung" ID="ID_1829086168" CREATED="1514669547032" MODIFIED="1515254325578"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;References used as function parameters can also be const. This allows us to access the argument without making a copy of it, while guaranteeing that the function will not change the value being referenced.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="References to const values are particularly useful as function parameters because of their versatility. A const reference parameter allows you to pass in a non-const l-value argument, a const l-value argument, a literal, or the result of an expression:" STYLE_REF="Beschreibung" ID="ID_1507951271" CREATED="1514669699968" MODIFIED="1514669702686"/>
-</node>
-</node>
-<node TEXT="to r-value" STYLE_REF="Beschreibung" ID="ID_1662490789" CREATED="1514668963842" MODIFIED="1515254323594"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;const int &amp;ref3 = 6; // okay, 6 is an r-value</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="References to r-values extend the lifetime of the referenced value" STYLE_REF="Beschreibung" ID="ID_889706749" CREATED="1514669461678" MODIFIED="1514669486328"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;When a reference to a const value is initialized with an r-value, the lifetime of the r-value is extended to match the lifetime of the reference.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="r-value" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1550824777" CREATED="1515507272962" MODIFIED="1515507773051"><richcontent TYPE="DETAILS">
+<node TEXT="to r-values" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1550824777" CREATED="1515507272962" MODIFIED="1515527042805"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -10433,6 +10338,125 @@
     </p>
   </body>
 </html>
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="const" STYLE_REF="Beschreibung" ID="ID_1176785562" CREATED="1514668886032" MODIFIED="1515527006529">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="to non-const l-value" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_14155422" CREATED="1514668913817" MODIFIED="1515527094392">
+<node TEXT="much like pointer" STYLE_REF="Beschreibung" ID="ID_94960" CREATED="1514669102552" MODIFIED="1514669112917"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Much like a pointer to a const value, a reference to a const value can reference a non-const variable. When accessed through a reference to a const value, the value is considered const even if the original variable is not:</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_290560720" CREATED="1515527095540" MODIFIED="1515527102229"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int x = 5; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>const int &amp;ref1 = x; // okay, x is a non-const l-value</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="to const l-value" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_139952310" CREATED="1514668939494" MODIFIED="1515527109642">
+<node TEXT="constant references as function parameters" STYLE_REF="Beschreibung" ID="ID_1829086168" CREATED="1514669547032" MODIFIED="1515254325578"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;References used as function parameters can also be const. This allows us to access the argument without making a copy of it, while guaranteeing that the function will not change the value being referenced.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+</node>
+<node TEXT="versatile" STYLE_REF="Beschreibung" ID="ID_1507951271" CREATED="1514669699968" MODIFIED="1515527175100"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;References to const values are particularly useful as function parameters because of their versatility. A const reference parameter allows you to pass in a non-const l-value argument, a const l-value argument, a literal, or the result of an expression:</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_134100346" CREATED="1515527119749" MODIFIED="1515527131288"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>const int y = 7; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>const int &amp;ref2 = y; // okay, y is a const l-value</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="to r-value" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1662490789" CREATED="1514668963842" MODIFIED="1515527203202">
+<node TEXT="References to r-values extend the lifetime of the referenced value" STYLE_REF="Beschreibung" ID="ID_889706749" CREATED="1514669461678" MODIFIED="1514669486328"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;When a reference to a const value is initialized with an r-value, the lifetime of the r-value is extended to match the lifetime of the reference.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1770462864" CREATED="1515527204757" MODIFIED="1515527211900"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>const int &amp;ref3 = 6; // okay, 6 is an r-value</i></font>
+    </p>
+  </body>
+</html>
+
 </richcontent>
 </node>
 </node>
