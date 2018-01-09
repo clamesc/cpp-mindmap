@@ -88,6 +88,109 @@
 </hook>
 <node TEXT="basic" STYLE_REF="Beschreibung" POSITION="right" ID="ID_1479062675" CREATED="1514743378702" MODIFIED="1515405885544">
 <hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="binding" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1894797471" CREATED="1515338414625" MODIFIED="1515405887794">
+<node TEXT="early binding" STYLE_REF="Beschreibung" ID="ID_1219798587" CREATED="1515338418374" MODIFIED="1515338428527"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Direct function calls can be resolved using a process known as early binding. Early binding (also called static binding) means the compiler (or linker) is able to directly associate the identifier name (such as a function or variable name) with a machine address. Remember that all functions have a unique address. So when the compiler (or linker) encounters a function call, it replaces the function call with a machine language instruction that tells the CPU to jump to the address of the function.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="late binding" STYLE_REF="Beschreibung" ID="ID_1712646886" CREATED="1515338474687" MODIFIED="1515405951164"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Direct function calls can be resolved using a process known as early binding. Early binding (also called static binding) means the compiler (or linker) is able to directly associate the identifier name (such as a function or variable name) with a machine address. Remember that all functions have a unique address. So when the compiler (or linker) encounters a function call, it replaces the function call with a machine language instruction that tells the CPU to jump to the address of the function.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="slightly less efficient" STYLE_REF="Beschreibung" ID="ID_307938318" CREATED="1515338613167" MODIFIED="1515405953640"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Late binding is slightly less efficient since it involves an extra level of indirection. With early binding, the CPU can jump directly to the function&#8217;s address. With late binding, the program has to read the address held in the pointer and then jump to that address. This involves one extra step, making it slightly slower. However, the advantage of late binding is that it is more flexible than early binding, because decisions about what function to call do not need to be made until run time.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="reason" STYLE_REF="Beschreibung" ID="ID_637100764" CREATED="1515339066018" MODIFIED="1515339074536"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Calling a virtual function is slower than calling a non-virtual function for a couple of reasons: First, we have to use the *__vptr to get to the appropriate virtual table. Second, we have to index the virtual table to find the correct function to call. Only then can we call the function. As a result, we have to do 3 operations to find the function to call, as opposed to 2 operations for a normal indirect function call, or one operation for a direct function call. However, with modern computers, this added time is usually fairly insignificant.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="virtual table" STYLE_REF="Beschreibung" ID="ID_450445542" CREATED="1515338796701" MODIFIED="1515405956673"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;To implement virtual functions, C++ uses a special form of late binding known as the virtual table. The virtual table is a lookup table of functions used to resolve function calls in a dynamic/late binding manner. The virtual table sometimes goes by other names, such as &#8220;vtable&#8221;, &#8220;virtual function table&#8221;, &#8220;virtual method table&#8221;, or &#8220;dispatch table&#8221;.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="each class has its own virtual table" STYLE_REF="Beschreibung" ID="ID_556878778" CREATED="1515338851679" MODIFIED="1515338879197"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;First, every class that uses virtual functions (or is derived from a class that uses virtual functions) is given its own virtual table. This table is simply a static array that the compiler sets up at compile time. A virtual table contains one entry for each virtual function that can be called by objects of the class. Each entry in this table is simply a function pointer that points to the most-derived function accessible by that class.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="hidden pointer to the base class" STYLE_REF="Beschreibung" ID="ID_1269764330" CREATED="1515338949541" MODIFIED="1515338956717"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Second, the compiler also adds a hidden pointer to the base class, which we will call *__vptr. *__vptr is set (automatically) when a class instance is created so that it points to the virtual table for that class. Unlike the *this pointer, which is actually a function parameter used by the compiler to resolve self-references, *__vptr is a real pointer. Consequently, it makes each class object allocated bigger by the size of one pointer. It also means that *__vptr is inherited by derived classes, which is important.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+</node>
 <node TEXT="memory" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1671435209" CREATED="1514743388641" MODIFIED="1515405886321">
 <node TEXT="The code segment (also called a text segment)," STYLE_REF="Beschreibung" ID="ID_1546558380" CREATED="1514743394822" MODIFIED="1514743435900"><richcontent TYPE="DETAILS">
 
@@ -269,3512 +372,9 @@
 </node>
 </node>
 </node>
-<node TEXT="binding" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1894797471" CREATED="1515338414625" MODIFIED="1515405887794">
-<node TEXT="early binding" STYLE_REF="Beschreibung" ID="ID_1219798587" CREATED="1515338418374" MODIFIED="1515338428527"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Direct function calls can be resolved using a process known as early binding. Early binding (also called static binding) means the compiler (or linker) is able to directly associate the identifier name (such as a function or variable name) with a machine address. Remember that all functions have a unique address. So when the compiler (or linker) encounters a function call, it replaces the function call with a machine language instruction that tells the CPU to jump to the address of the function.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="late binding" STYLE_REF="Beschreibung" ID="ID_1712646886" CREATED="1515338474687" MODIFIED="1515405951164"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Direct function calls can be resolved using a process known as early binding. Early binding (also called static binding) means the compiler (or linker) is able to directly associate the identifier name (such as a function or variable name) with a machine address. Remember that all functions have a unique address. So when the compiler (or linker) encounters a function call, it replaces the function call with a machine language instruction that tells the CPU to jump to the address of the function.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="slightly less efficient" STYLE_REF="Beschreibung" ID="ID_307938318" CREATED="1515338613167" MODIFIED="1515405953640"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Late binding is slightly less efficient since it involves an extra level of indirection. With early binding, the CPU can jump directly to the function&#8217;s address. With late binding, the program has to read the address held in the pointer and then jump to that address. This involves one extra step, making it slightly slower. However, the advantage of late binding is that it is more flexible than early binding, because decisions about what function to call do not need to be made until run time.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="reason" STYLE_REF="Beschreibung" ID="ID_637100764" CREATED="1515339066018" MODIFIED="1515339074536"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Calling a virtual function is slower than calling a non-virtual function for a couple of reasons: First, we have to use the *__vptr to get to the appropriate virtual table. Second, we have to index the virtual table to find the correct function to call. Only then can we call the function. As a result, we have to do 3 operations to find the function to call, as opposed to 2 operations for a normal indirect function call, or one operation for a direct function call. However, with modern computers, this added time is usually fairly insignificant.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="virtual table" STYLE_REF="Beschreibung" ID="ID_450445542" CREATED="1515338796701" MODIFIED="1515405956673"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;To implement virtual functions, C++ uses a special form of late binding known as the virtual table. The virtual table is a lookup table of functions used to resolve function calls in a dynamic/late binding manner. The virtual table sometimes goes by other names, such as &#8220;vtable&#8221;, &#8220;virtual function table&#8221;, &#8220;virtual method table&#8221;, or &#8220;dispatch table&#8221;.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="each class has its own virtual table" STYLE_REF="Beschreibung" ID="ID_556878778" CREATED="1515338851679" MODIFIED="1515338879197"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;First, every class that uses virtual functions (or is derived from a class that uses virtual functions) is given its own virtual table. This table is simply a static array that the compiler sets up at compile time. A virtual table contains one entry for each virtual function that can be called by objects of the class. Each entry in this table is simply a function pointer that points to the most-derived function accessible by that class.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="hidden pointer to the base class" STYLE_REF="Beschreibung" ID="ID_1269764330" CREATED="1515338949541" MODIFIED="1515338956717"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Second, the compiler also adds a hidden pointer to the base class, which we will call *__vptr. *__vptr is set (automatically) when a class instance is created so that it points to the virtual table for that class. Unlike the *this pointer, which is actually a function parameter used by the compiler to resolve self-references, *__vptr is a real pointer. Consequently, it makes each class object allocated bigger by the size of one pointer. It also means that *__vptr is inherited by derived classes, which is important.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-</node>
 </node>
 <node TEXT="elements" STYLE_REF="Beschreibung" POSITION="right" ID="ID_738190097" CREATED="1514396863423" MODIFIED="1515256303528">
 <hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="literals" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_825551665" CREATED="1514396384202" MODIFIED="1515405887104">
-<node TEXT="unsigned int" STYLE_REF="Beschreibung" ID="ID_1571964803" CREATED="1514408053706" MODIFIED="1514408061918"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;u or U</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="long" STYLE_REF="Beschreibung" ID="ID_759484146" CREATED="1514408064549" MODIFIED="1514408070943"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;l or L</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="unsigned long" STYLE_REF="Beschreibung" ID="ID_1812775330" CREATED="1514408078690" MODIFIED="1514408084595"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;ul, uL, Ul, UL, lu, lU, Lu, or LU</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="long long" STYLE_REF="Beschreibung" ID="ID_499202165" CREATED="1514408089797" MODIFIED="1514408096756"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;ll or LL</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="unsigned long long" STYLE_REF="Beschreibung" ID="ID_217332275" CREATED="1514408108654" MODIFIED="1514408115554"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;ull, uLL, Ull, ULL, llu, llU, LLu, or LLU</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="double" STYLE_REF="Beschreibung" ID="ID_1051958554" CREATED="1514408120414" MODIFIED="1514408126273"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;f or F</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="long double" STYLE_REF="Beschreibung" ID="ID_581805900" CREATED="1514408131627" MODIFIED="1514408137176"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;l or L</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="octal" STYLE_REF="Beschreibung" ID="ID_947194314" CREATED="1514408147041" MODIFIED="1514408234944"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;prefix 0</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="hexadecimal" STYLE_REF="Beschreibung" ID="ID_1229117003" CREATED="1514408243931" MODIFIED="1514408258271"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;prefix 0x</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="binary" STYLE_REF="Beschreibung" ID="ID_900110603" CREATED="1514408266009" MODIFIED="1514408273323"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;prefix 0b</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="operators" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_26142556" CREATED="1514395244370" MODIFIED="1515253769522">
-<node TEXT="" ID="ID_200488901" CREATED="1514396508434" MODIFIED="1514410394765">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="unary" STYLE_REF="Beschreibung" ID="ID_1543891771" CREATED="1514396509808" MODIFIED="1514410415672">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="sizeof()" STYLE_REF="Stichpunkt" ID="ID_342771741" CREATED="1514406291970" MODIFIED="1515253790586"/>
-<node TEXT="arithmetic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_485030467" CREATED="1514409276828" MODIFIED="1515253791381"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;+, -</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="overloading" STYLE_REF="Beschreibung" ID="ID_1240312372" CREATED="1515074876252" MODIFIED="1515253823607">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example 1" STYLE_REF="Beschreibung" ID="ID_1972915117" CREATED="1515074858171" MODIFIED="1515074882300"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Point Point::operator- () const</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="example 2" STYLE_REF="Beschreibung" ID="ID_253742837" CREATED="1515074885817" MODIFIED="1515074890313"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;bool Point::operator! () const</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="increment/decrement" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_510998203" CREATED="1514409416197" MODIFIED="1515253791736"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;++ --</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="prefix" STYLE_REF="Beschreibung" ID="ID_1712741090" CREATED="1514409430273" MODIFIED="1514410479931"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;evaluate after</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="increment" STYLE_REF="Beschreibung" ID="ID_721125791" CREATED="1514409474675" MODIFIED="1514409482255"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;++x</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="decrement" STYLE_REF="Beschreibung" ID="ID_316213926" CREATED="1514409483545" MODIFIED="1514409488849"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;--x</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="overloading example" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1985930498" CREATED="1515074986786" MODIFIED="1515253842598"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Digit&amp; Digit::operator++()</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="return type" STYLE_REF="Beschreibung" ID="ID_365862916" CREATED="1515075032739" MODIFIED="1515075041770"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Note that we return *this. The overloaded increment and decrement operators return the current implicit object so multiple operators can be &#8220;chained&#8221; together. </i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="postfix" STYLE_REF="Beschreibung" ID="ID_1729937590" CREATED="1514409461486" MODIFIED="1514410482504"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;evaluate first</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="increment" STYLE_REF="Beschreibung" ID="ID_1305575231" CREATED="1514409491433" MODIFIED="1514409497974"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;x++</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="decrement" STYLE_REF="Beschreibung" ID="ID_664565754" CREATED="1514409498821" MODIFIED="1514409504810"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;x--</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="overloading" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_722541462" CREATED="1515075083410" MODIFIED="1515253841161">
-<node TEXT="dummy variable" STYLE_REF="Beschreibung" ID="ID_101752837" CREATED="1515075087997" MODIFIED="1515075093007"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;C++ uses a &#8220;dummy variable&#8221; or &#8220;dummy argument&#8221; for the postfix operators. This argument is a fake integer parameter that only serves to distinguish the postfix version of increment/decrement from the prefix version.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_3747584" CREATED="1515075112119" MODIFIED="1515075115653"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Digit Digit::operator++(int)</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="implementation" STYLE_REF="Beschreibung" ID="ID_70373058" CREATED="1515075360068" MODIFIED="1515253850862"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The postfix operators, on the other hand, need to return the state of the object before it is incremented or decremented. The typical way this problem is solved is to use a temporary variable that holds the value of the object before it is incremented or decremented. Then the object itself can be incremented or decremented. And finally, the temporary variable is returned to the caller.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="return type" STYLE_REF="Beschreibung" ID="ID_249598289" CREATED="1515075422769" MODIFIED="1515075427074"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Note that this means the return value of the overloaded operator must be a non-reference, because we can&#8217;t return a reference to a local variable that will be destroyed when the function exits.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="less efficient" STYLE_REF="Beschreibung" ID="ID_1725379435" CREATED="1515075432819" MODIFIED="1515075437894"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Also note that this means the postfix operators are typically less efficient than the prefix operators because of the added overhead of instantiating a temporary variable and returning by value instead of reference.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="side effect" STYLE_REF="Beschreibung" ID="ID_1222321667" CREATED="1514409554757" MODIFIED="1514409560706"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: Don&#8217;t use a variable that has a side effect applied to it more than once in a given statement. If you do, the result may be undefined.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="address-of operator" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1067044209" CREATED="1514652074916" MODIFIED="1515253792083"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&amp;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_958773808" CREATED="1515074071550" MODIFIED="1515074076524"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;std::cout &lt;&lt; &amp;x &lt;&lt; '\n'; // print the memory address of variable x</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="subscript" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1933472310" CREATED="1515089231248" MODIFIED="1515253792462"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;[]</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="overloading" STYLE_REF="Beschreibung" ID="ID_543184128" CREATED="1515089594812" MODIFIED="1515253864978">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="overloading example" STYLE_REF="Beschreibung" ID="ID_1079170514" CREATED="1515089253310" MODIFIED="1515089260825"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int&amp; IntList::operator[] (const int index)</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="constant objects" STYLE_REF="Beschreibung" ID="ID_636920829" CREATED="1515089371953" MODIFIED="1515089383011"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The non-const version will be used with non-const objects, and the const version with const-objects.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="error checking" STYLE_REF="Beschreibung" ID="ID_629878094" CREATED="1515089444575" MODIFIED="1515089477002"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;One other advantage of overloading the subscript operator is that we can make it safer than accessing arrays directly. If we know the size of our array, we can make our overloaded subscript operator check to ensure the index is within bounds</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="pointers to objects and overloaded operator[] don&apos;t mix" STYLE_REF="Beschreibung" ID="ID_217166080" CREATED="1515089563774" MODIFIED="1515089587944"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: Make sure you&#8217;re not trying to call an overloaded operator[] on a pointer to an object.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="parenthesis" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_83153334" CREATED="1515089704880" MODIFIED="1515253792818"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;()</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="overloading" STYLE_REF="Beschreibung" ID="ID_785691882" CREATED="1515092605931" MODIFIED="1515253870689">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example 1" STYLE_REF="Beschreibung" ID="ID_1132675641" CREATED="1515092616867" MODIFIED="1515092621528"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;double&amp; Matrix::operator()(int row, int col)</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="example 2" STYLE_REF="Beschreibung" ID="ID_1536103560" CREATED="1515092622114" MODIFIED="1515092643271"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;const double&amp; Matrix::operator()(int row, int col) const</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="binary" STYLE_REF="Beschreibung" ID="ID_1822106158" CREATED="1514396512100" MODIFIED="1514410428273">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="assignment" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_422303195" CREATED="1515147144236" MODIFIED="1515253793420"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;=</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="overloading" STYLE_REF="Beschreibung" ID="ID_384996394" CREATED="1515147576583" MODIFIED="1515253885121">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="overloading example" STYLE_REF="Beschreibung" ID="ID_910411653" CREATED="1515147153470" MODIFIED="1515147231687"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Fraction&amp; Fraction::operator= (const Fraction &amp;fraction)</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="self-assignment" STYLE_REF="Beschreibung" ID="ID_514244141" CREATED="1515147477367" MODIFIED="1515253888392"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;self-assignment can lead to memory leaks and dangling pointers. By checking if our implicit object is the same as the one being passed in as a parameter, we can have our assignment operator just return immediately without doing any other work.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1292200542" CREATED="1515147518409" MODIFIED="1515147557947"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>// self-assignment guard </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>if (this == &amp;fraction) </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;return *this;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="default assignment operator" STYLE_REF="Beschreibung" ID="ID_789978154" CREATED="1515147617361" MODIFIED="1515147636744"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Unlike other operators, the compiler will provide a default public assignment operator for your class if you do not provide one. This assignment operator does memberwise assignment (which is essentially the same as the memberwise initialization that default copy constructors do).</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="prevent assignments" STYLE_REF="Beschreibung" ID="ID_1361004161" CREATED="1515147647049" MODIFIED="1515147654794"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Just like other constructors and operators, you can prevent assignments from being made by making your assignment operator private or using the delete keyword.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="shallow copies" STYLE_REF="Beschreibung" ID="ID_1523476899" CREATED="1515147949812" MODIFIED="1515253891128"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;when designing classes that handle dynamically allocated memory, memberwise (shallow) copying can get us in a lot of trouble! This is because shallow copies of a pointer just copy the address of the pointer -- it does not allocate any memory or copy the contents being pointed to!</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="deep copies" STYLE_REF="Beschreibung" ID="ID_304270420" CREATED="1515148025843" MODIFIED="1515148030839"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;A deep copy allocates memory for the copy and then copies the actual value, so that the copy lives in distinct memory from the source.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="standard library" STYLE_REF="Beschreibung" ID="ID_1804884126" CREATED="1515148098237" MODIFIED="1515148104527"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Classes in the standard library that deal with dynamic memory, such as std::string and std::vector, handle all of their memory management, and have overloaded copy constructors and assignment operators that do proper deep copying. So instead of doing your own memory management, you can just initialize or assign them like normal fundamental variables! That makes these classes simpler to use, less error-prone, and you don&#8217;t have to spend time writing your own overloaded functions!</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="arithmetic" STYLE_REF="Stichpunkt" ID="ID_333078018" CREATED="1514409296010" MODIFIED="1515253794669"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;+ - * / %</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="arithmetic assignment" STYLE_REF="Stichpunkt" ID="ID_1551142594" CREATED="1514409350977" MODIFIED="1515253796199"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;+= -= *= /= %=</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="comma" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1351514468" CREATED="1514409645010" MODIFIED="1515253796577"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;,</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1603777934" CREATED="1515075491133" MODIFIED="1515075501128"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;Evaluate x then y, returns value of y</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1171256218" CREATED="1515075501786" MODIFIED="1515075508502"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;x, y</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="relational" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1022629920" CREATED="1514409759487" MODIFIED="1515253797411"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&lt; &gt; &lt;= &gt;= == !=</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="Comparison of floating point values" STYLE_REF="Beschreibung" ID="ID_671462765" CREATED="1514409801896" MODIFIED="1514409841700"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Comparison of floating point numbers is a difficult topic, and there&#8217;s no &#8220;one size fits all&#8221; algorithm that works for every case. However, the approximatelyEqualAbsRel() should be good enough to handle most cases you&#8217;ll encounter.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="overloading" STYLE_REF="Beschreibung" ID="ID_1414328431" CREATED="1515074234301" MODIFIED="1515253902169"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Because the comparison operators are all binary operators that do not modify their left operands, we will make our overloaded comparison operators friend functions.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example 1" STYLE_REF="Beschreibung" ID="ID_1629735758" CREATED="1515074917918" MODIFIED="1515074926322"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>bool operator== (const Car &amp;c1, const Car &amp;c2)</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="example 2" STYLE_REF="Beschreibung" ID="ID_1645571396" CREATED="1515074934110" MODIFIED="1515074943812"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;bool operator!= (const Car &amp;c1, const Car &amp;c2)</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="logical" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_230705014" CREATED="1514409896325" MODIFIED="1515253797830"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;NOT AND OR XOR</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="NOT" STYLE_REF="Beschreibung" ID="ID_1199005896" CREATED="1514409903171" MODIFIED="1514409922302"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;!</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="" ID="ID_1120117911" CREATED="1514409981830" MODIFIED="1514409981831">
-<hook NAME="FirstGroupNode"/>
-</node>
-<node TEXT="" ID="ID_40946089" CREATED="1514409964278" MODIFIED="1514409977080">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="AND" STYLE_REF="Beschreibung" ID="ID_484577742" CREATED="1514409905561" MODIFIED="1514409926431"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&amp;&amp;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="OR" STYLE_REF="Beschreibung" ID="ID_1724717770" CREATED="1514409907348" MODIFIED="1514409930791"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;||</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="" ID="ID_1204486761" CREATED="1514409981829" MODIFIED="1514409981830">
-<hook NAME="SummaryNode"/>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="AND has higher precedence" STYLE_REF="Beschreibung" ID="ID_1140321606" CREATED="1514409981831" MODIFIED="1514409993765"/>
-</node>
-<node TEXT="XOR" STYLE_REF="Beschreibung" ID="ID_1656092148" CREATED="1514409909733" MODIFIED="1514409958477"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;!=</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="member selection operator" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_573429508" CREATED="1514670109060" MODIFIED="1515253798186"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;-&gt;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1066141179" CREATED="1514670120321" MODIFIED="1514670124756"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;(*ptr).age&#160;&#160;= 5; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>ptr-&gt;age = 5;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="input / output" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_671334626" CREATED="1515071893463" MODIFIED="1515253798620"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&lt;&lt; &gt;&gt;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="output operator" STYLE_REF="Beschreibung" ID="ID_1832690783" CREATED="1515071585991" MODIFIED="1515253912930"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;std::cout &lt;&lt;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="overloading" STYLE_REF="Beschreibung" ID="ID_755738785" CREATED="1515071642358" MODIFIED="1515071655966"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;// std::ostream is the type for object std::cout </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>friend std::ostream&amp; operator&lt;&lt; (std::ostream &amp;out, const Point &amp;point);</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="input operator" STYLE_REF="Beschreibung" ID="ID_1682908491" CREATED="1515071839768" MODIFIED="1515253915944"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;std::cin &gt;&gt;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="overloading" STYLE_REF="Beschreibung" ID="ID_104963995" CREATED="1515071853950" MODIFIED="1515071859682"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;friend std::istream&amp; operator&gt;&gt; (std::istream &amp;in, Point &amp;point);</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="bitwise" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_221564001" CREATED="1514410090599" MODIFIED="1515253799079">
-<node TEXT="" ID="ID_1586366131" CREATED="1514410199498" MODIFIED="1514410453312">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="left shift" STYLE_REF="Beschreibung" ID="ID_1110754032" CREATED="1514410111429" MODIFIED="1514410117923"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&lt;&lt;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="right shift" STYLE_REF="Beschreibung" ID="ID_781027838" CREATED="1514410118633" MODIFIED="1514410127655"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&gt;&gt;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="NOT" STYLE_REF="Beschreibung" ID="ID_1992926451" CREATED="1514410128780" MODIFIED="1514410136158"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;~</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="AND" STYLE_REF="Beschreibung" ID="ID_1233810840" CREATED="1514410136676" MODIFIED="1514410142959"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&amp;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="OR" STYLE_REF="Beschreibung" ID="ID_87777979" CREATED="1514410143877" MODIFIED="1514410150529"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;|</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="XOR" STYLE_REF="Beschreibung" ID="ID_273505693" CREATED="1514410152362" MODIFIED="1514410159276"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;^</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="bitflags / bitmasks" STYLE_REF="Beschreibung" ID="ID_1860516621" CREATED="1514410206797" MODIFIED="1514410282187"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;use bitwise operations in bytes instead of many booleans to save space</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="ternary" STYLE_REF="Beschreibung" ID="ID_1447099493" CREATED="1514396513928" MODIFIED="1514410432990">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="conditional operator" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_49352233" CREATED="1514409675553" MODIFIED="1515253807054"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;?</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1280558456" CREATED="1515075541000" MODIFIED="1515075546830"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;If c is nonzero (true) then evaluate x, else evaluate y</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_376321054" CREATED="1515075547663" MODIFIED="1515075555715"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;c ? x : y</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="evaluation order" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_812593346" CREATED="1514409179791" MODIFIED="1515253931590">
-<node TEXT="precedence" STYLE_REF="Beschreibung" ID="ID_1463266497" CREATED="1514409127523" MODIFIED="1514409133640"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The order in which operators are evaluated in a compound expression is called operator precedence.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="associativity" STYLE_REF="Beschreibung" ID="ID_394861532" CREATED="1514409170234" MODIFIED="1514409178375"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;If two operators with the same precedence level are adjacent to each other in an expression, the operator associativity rules tell the compiler whether to evaluate the operators from left to right or from right to left.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="overloading" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_274764734" CREATED="1515064695320" MODIFIED="1515253932289">
-<node TEXT="resolving overloaded operators" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1407993862" CREATED="1515064726607" MODIFIED="1515253946628">
-<node TEXT="all operands are fundamental data types" STYLE_REF="Beschreibung" ID="ID_1282854969" CREATED="1515064744037" MODIFIED="1515064754554"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;If all of the operands are fundamental data types, the compiler will call a built-in routine if one exists. If one does not exist, the compiler will produce a compiler error.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="any operands are user types" STYLE_REF="Beschreibung" ID="ID_1804720894" CREATED="1515064764971" MODIFIED="1515064773170"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;If any of the operands are user data types (e.g. one of your classes, or an enum type), the compiler looks to see whether the type has a matching overloaded operator function that it can call. If it can&#8217;t find one, it will try to convert one or more of the user-defined type operands into fundamental data types so it can use a matching built-in operator (via an overloaded typecast, which we&#8217;ll cover later in this chapter). If that fails, then it will produce a compile error.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="what" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1819631547" CREATED="1515064920256" MODIFIED="1515253947310">
-<node TEXT="almost any existing operator can be overloaded, except" STYLE_REF="Beschreibung" ID="ID_1112349776" CREATED="1515064813598" MODIFIED="1515253968950">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="conditional (?:)" STYLE_REF="Beschreibung" ID="ID_1458743612" CREATED="1515064843172" MODIFIED="1515064852646"/>
-<node TEXT="sizeof" STYLE_REF="Beschreibung" ID="ID_1548639871" CREATED="1515064856543" MODIFIED="1515064861357"/>
-<node TEXT="scope (::)" STYLE_REF="Beschreibung" ID="ID_1374786926" CREATED="1515064868757" MODIFIED="1515064869898"/>
-<node TEXT="member selector (.)" STYLE_REF="Beschreibung" ID="ID_1600467100" CREATED="1515064878230" MODIFIED="1515064879396"/>
-<node TEXT="member pointer selector (.*)" STYLE_REF="Beschreibung" ID="ID_1330430546" CREATED="1515064887347" MODIFIED="1515064888290"/>
-</node>
-<node TEXT="you can only overload the operators that exist" STYLE_REF="Beschreibung" ID="ID_1168367280" CREATED="1515064916920" MODIFIED="1515064918062"/>
-<node TEXT="at least one of the operands in an overloaded operator must be a user-defined type." STYLE_REF="Beschreibung" ID="ID_1135217120" CREATED="1515064985742" MODIFIED="1515064986853"/>
-<node TEXT="it is not possible to change the number of operands an operator supports." STYLE_REF="Beschreibung" ID="ID_473823281" CREATED="1515064998918" MODIFIED="1515064999650"/>
-<node TEXT="all operators keep their default precedence and associativity (regardless of what they&#x2019;re used for) and this can not be changed." STYLE_REF="Beschreibung" ID="ID_725808390" CREATED="1515065012394" MODIFIED="1515065013346"/>
-</node>
-<node TEXT="when" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_129497996" CREATED="1515065102694" MODIFIED="1515253947746">
-<node TEXT="as close to original intent as possible" STYLE_REF="Beschreibung" ID="ID_1176395287" CREATED="1515065107041" MODIFIED="1515065122405"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: When overloading operators, it&#8217;s best to keep the function of the operators as close to the original intent of the operators as possible.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="maybe use named function instead" STYLE_REF="Beschreibung" ID="ID_490594197" CREATED="1515065212253" MODIFIED="1515065223495"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: If the meaning of an operator when applied to a custom class is not clear and intuitive, use a named function instead.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="how" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1169131235" CREATED="1515065368619" MODIFIED="1515253948123">
-<node TEXT="using friend functions" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1671504700" CREATED="1515065356660" MODIFIED="1515253987158">
-<node TEXT="class Cents" STYLE_REF="Beschreibung" ID="ID_111863028" CREATED="1515070240549" MODIFIED="1515070268414"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;class Cents </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>{ </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>... </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>public: </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// add Cents + Cents using a friend function </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;friend Cents operator+(const Cents &amp;c1, const Cents &amp;c2); </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>};</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="operator function" STYLE_REF="Beschreibung" ID="ID_1423711275" CREATED="1515070271447" MODIFIED="1515070315651"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;// note: this function is not a member function! </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>Cents operator+(const Cents &amp;c1, const Cents &amp;c2) </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>{ </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;return Cents(c1.m_cents + c2.m_cents); </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>}</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="using normal functions" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_826501415" CREATED="1515070780020" MODIFIED="1515253987794">
-<node TEXT="if you don&#x2019;t need that access, you can write your overloaded operators as normal functions." STYLE_REF="Beschreibung" ID="ID_1328883159" CREATED="1515070784672" MODIFIED="1515070824117"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;// note: this function is not a member function nor a friend function! </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>Cents operator+(const Cents &amp;c1, const Cents &amp;c2) </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>{ </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// use the Cents constructor and operator+(int, int) </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;// we don't need direct access to private members here </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;return Cents(c1.getCents() + c2.getCents()); </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>}</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="prototypes" STYLE_REF="Beschreibung" ID="ID_545958391" CREATED="1515070872841" MODIFIED="1515070877885"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The one difference is that the friend function declaration inside the class serves as a prototype as well. With the normal function version, you&#8217;ll have to provide your own function prototype.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="using member functions" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_540598202" CREATED="1515072653140" MODIFIED="1515253988058">
-<node TEXT="class Cents" STYLE_REF="Beschreibung" ID="ID_424616096" CREATED="1515072745784" MODIFIED="1515072770787"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;class Cents </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>{ </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>... </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>public: </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// Overload Cents + int </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;Cents operator+(int value); </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>};</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="member function" STYLE_REF="Beschreibung" ID="ID_401665586" CREATED="1515072799206" MODIFIED="1515072804986"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;// note: this function is a member function! </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>// the cents parameter in the friend version is now the implicit *this parameter </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>Cents Cents::operator+(int value) </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>{ </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;return Cents(m_cents + value); </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>}</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="usage" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_920988824" CREATED="1515072969154" MODIFIED="1515253948670">
-<node TEXT="overloading operators for operands of different types" STYLE_REF="Beschreibung" ID="ID_1280357547" CREATED="1515070605950" MODIFIED="1515070637003"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Often it is the case that you want your overloaded operators to work with operands that are different types. Consequently, whenever we overload binary operators for operands of different types, we actually need to write two functions -- one for each case.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="overloaded operator calling overloaded operator" STYLE_REF="Beschreibung" ID="ID_1255173092" CREATED="1515070698233" MODIFIED="1515070710123"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;It is often possible to define overloaded operators by calling other overloaded operators -- when possible, do so!</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="which" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_337593686" CREATED="1515072916793" MODIFIED="1515253949001">
-<node TEXT="1" OBJECT="java.lang.Long|1" STYLE_REF="Beschreibung" ID="ID_1095719112" CREATED="1515073174246" MODIFIED="1515073177727"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;If you&#8217;re overloading assignment (=), subscript ([]), function call (()), or member selection (-&gt;), do so as a member function.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="2" OBJECT="java.lang.Long|2" STYLE_REF="Beschreibung" ID="ID_547614132" CREATED="1515073197425" MODIFIED="1515073201145"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;If you&#8217;re overloading a unary operator, do so as a member function.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="3" OBJECT="java.lang.Long|3" STYLE_REF="Beschreibung" ID="ID_1213764670" CREATED="1515073217515" MODIFIED="1515073220549"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;If you&#8217;re overloading a binary operator that modifies its left operand (e.g. operator+=), do so as a member function if you can.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="4" OBJECT="java.lang.Long|4" STYLE_REF="Beschreibung" ID="ID_1854603349" CREATED="1515073230250" MODIFIED="1515073233325"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;If you&#8217;re overloading a binary operator that does not modify its left operand (e.g. operator+), do so as a normal function or friend function.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="variables" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1589531231" CREATED="1514394702029" MODIFIED="1515253769835">
-<node TEXT="normal" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_829924226" CREATED="1514662138223" MODIFIED="1515254013411">
-<node TEXT="" ID="ID_830904743" CREATED="1514662152468" MODIFIED="1515254027893">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="l-value" STYLE_REF="Beschreibung" ID="ID_112515578" CREATED="1514394737287" MODIFIED="1514394769929"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;value that has a persistent address</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="r-value" STYLE_REF="Beschreibung" ID="ID_124345566" CREATED="1514394771019" MODIFIED="1514394794759"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;value that is not associated with a persistent memory address</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="" ID="ID_1040431033" CREATED="1514394873484" MODIFIED="1514394873485">
-<hook NAME="FirstGroupNode"/>
-</node>
-<node TEXT="" ID="ID_1534511155" CREATED="1514394861193" MODIFIED="1514410537278">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_265059873" CREATED="1514394825795" MODIFIED="1514394839512"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int x;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="assignment" STYLE_REF="Beschreibung" ID="ID_514004802" CREATED="1514394841707" MODIFIED="1514394859322"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;x = 5;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="" ID="ID_1662662864" CREATED="1514394873482" MODIFIED="1514394873484">
-<hook NAME="SummaryNode"/>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="initialization" STYLE_REF="Beschreibung" ID="ID_1219793013" CREATED="1514394873487" MODIFIED="1515254031000"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int x = 5;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="uninitialized variables" STYLE_REF="Beschreibung" ID="ID_1691765435" CREATED="1514394921686" MODIFIED="1514394960439"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&quot;make sure all of your variables have known values&quot;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="initialization vs. assignment" STYLE_REF="Beschreibung" ID="ID_116955890" CREATED="1514394984813" MODIFIED="1514395015404"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&quot;When giving variables an initial value, favor initialization over assignment&quot;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="" ID="ID_1617476255" CREATED="1514405708592" MODIFIED="1514410550245">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="copy initialization" STYLE_REF="Beschreibung" ID="ID_243367252" CREATED="1514405713124" MODIFIED="1514405739003"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int x = 5;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="direct initialization" STYLE_REF="Beschreibung" ID="ID_1693247185" CREATED="1514405745292" MODIFIED="1514405758552"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int x(5);</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="uniform initialization" STYLE_REF="Beschreibung" ID="ID_1104541451" CREATED="1514405777102" MODIFIED="1514410553398"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int x{5};</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="rule" STYLE_REF="Beschreibung" ID="ID_757092015" CREATED="1514405835294" MODIFIED="1514405841319"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: If you&#8217;re using a C++11 compatible compiler, favor uniform initialization</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="multiple variables" STYLE_REF="Beschreibung" ID="ID_859188794" CREATED="1514405903638" MODIFIED="1514405913729"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int a = 5, b = 6; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>int c(7), d(8); </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>int e{9}, f{10};</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="where" STYLE_REF="Beschreibung" ID="ID_288222693" CREATED="1514405965185" MODIFIED="1514405971048"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The proper C++ style is to define variables as close to the first use of that variable as you reasonably can</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="auto keyword" STYLE_REF="Beschreibung" ID="ID_1357950884" CREATED="1514486495947" MODIFIED="1515254051517"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;When initializing a variable, the auto keyword can be used in place of the variable type to tell the compiler to infer the variable&#8217;s type from the initializer&#8217;s type. This is called type inference (also sometimes called type deduction).</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_999405168" CREATED="1514486529917" MODIFIED="1514486534478"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;auto d = 5.0; // 5.0 is a double literal, so d will be type double</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="function parameters" STYLE_REF="Beschreibung" ID="ID_168490424" CREATED="1514486567516" MODIFIED="1514486576703"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The auto keyword can&#8217;t be used with function parameters</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="In C++14, the auto keyword was extended to be able to auto-deduce a function&#x2019;s return type" STYLE_REF="Beschreibung" ID="ID_656917206" CREATED="1514486623769" MODIFIED="1514486632869"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;auto add(int x, int y) </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>{ </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;return x + y; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>}</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="constant" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1458368377" CREATED="1514408585224" MODIFIED="1515254014117"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;const double gravity { 9.8 };</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="runtime constants" STYLE_REF="Beschreibung" ID="ID_1603737840" CREATED="1514408694447" MODIFIED="1514408701344"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Runtime constants are those whose initialization values can only be resolved at runtime (when your program is running).</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="compile-time constants" STYLE_REF="Beschreibung" ID="ID_1168023047" CREATED="1514408713432" MODIFIED="1514410543012"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Compile-time constants are those whose initialization values can be resolved at compile-time (when your program is compiling).</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="C++11 introduced new keyword constexpr, which ensures that the constant must be a compile-time constant:" STYLE_REF="Beschreibung" ID="ID_768645495" CREATED="1514408758378" MODIFIED="1514408779483"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;constexpr double gravity (9.8);</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="rule" STYLE_REF="Beschreibung" ID="ID_151316904" CREATED="1514408826759" MODIFIED="1514408831053"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: use const variables to provide a name and context for your magic numbers.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="Using symbolic constants throughout a program" STYLE_REF="Beschreibung" ID="ID_148512389" CREATED="1514408902963" MODIFIED="1514408936583"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;declare constant variables in header file within namespace</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="pointer" STYLE_REF="Beschreibung" ID="ID_718422959" CREATED="1514661578630" MODIFIED="1515254093216">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="pointer to constant value" STYLE_REF="Beschreibung" ID="ID_1654945111" CREATED="1514661389317" MODIFIED="1515254095123"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;A pointer to a constant variable can point to a non-constant variable but not the other way around. Think of it this way: a pointer to a constant variable treats the variable as constant when it is accessed through the pointer, regardless of whether the variable was initially defined as const or not.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_96826063" CREATED="1514661670313" MODIFIED="1514661674761"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int value = 5; // value is not constant </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>const int *ptr = &amp;value; // this is still okay</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="constant pointer" STYLE_REF="Beschreibung" ID="ID_1547008612" CREATED="1514661611992" MODIFIED="1515254097593"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;We can also make a pointer itself constant. A const pointer is a pointer whose value can not be changed after initialization</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1240810340" CREATED="1514661625811" MODIFIED="1514661639825"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int value = 5; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>int *const ptr = &amp;value;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="constant pointer to a constant value" STYLE_REF="Beschreibung" ID="ID_1579897263" CREATED="1514661797873" MODIFIED="1515254101218"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;A const pointer to a const value can not be set to point to another address, nor can the value it is pointing to be changed through the pointer.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1068813881" CREATED="1514661822246" MODIFIED="1514661826864"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int value = 5; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>const int *const ptr = &amp;value;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="dynamic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_730628320" CREATED="1514655712729" MODIFIED="1515254014384"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int *ptr = new int;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="In the above case, we&#x2019;re requesting an integer&#x2019;s worth of memory from the operating system. The new operator returns a pointer containing the address of the memory that has been allocated." STYLE_REF="Beschreibung" ID="ID_659501549" CREATED="1514655732724" MODIFIED="1514655733928"/>
-<node TEXT="initialization" STYLE_REF="Beschreibung" ID="ID_470824029" CREATED="1514655855333" MODIFIED="1514655865135"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>int *ptr1 = new int (5); // use direct initialization </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>int *ptr2 = new int { 6 }; // use uniform initialization</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="delete single variables" STYLE_REF="Beschreibung" ID="ID_1619602884" CREATED="1514655888690" MODIFIED="1514655910455"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;delete ptr; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>ptr = 0;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="operator new can fail" STYLE_REF="Beschreibung" ID="ID_885633782" CREATED="1514656051196" MODIFIED="1515254114085"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int *value = new (std::nothrow) int; // value will be set to a null pointer if the integer allocation fails</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="Consequently, the best practice is to check all memory requests to ensure they actually succeeded before using the allocated memory." STYLE_REF="Beschreibung" ID="ID_1079316604" CREATED="1514656086250" MODIFIED="1514656087490"/>
-</node>
-<node TEXT="memory leaks" STYLE_REF="Beschreibung" ID="ID_1573997630" CREATED="1514656524109" MODIFIED="1514656529716"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Dynamically allocated memory effectively has no scope. That is, it stays allocated until it is explicitly deallocated or until the program ends (and the operating system cleans it up, assuming your operating system does that). However, the pointers used to hold dynamically allocated memory addresses follow the scoping rules of normal variables.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="pointers and references" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_680457097" CREATED="1515510524710" MODIFIED="1515510539138">
-<node TEXT="pointers" STYLE_REF="Beschreibung" ID="ID_835018892" CREATED="1514652007482" MODIFIED="1515510571565">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="definition" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1189109054" CREATED="1514671782702" MODIFIED="1515254130733">
-<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1145585301" CREATED="1514652169057" MODIFIED="1514652174377"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;A pointer is a variable that holds a memory address as its value.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="declaration" STYLE_REF="Beschreibung" ID="ID_409906955" CREATED="1514652208805" MODIFIED="1515254141906"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int *iPtr;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="However, when returning a pointer from a function, it&#x2019;s clearer to put the asterisk next to the return type:" STYLE_REF="Beschreibung" ID="ID_1919826422" CREATED="1514652255741" MODIFIED="1514652273337"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>int* doSomething();</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="type" STYLE_REF="Beschreibung" ID="ID_1113188603" CREATED="1514652423099" MODIFIED="1514652427908"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The type of the pointer has to match the type of the variable being pointed to:</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="get address of a variable" STYLE_REF="Beschreibung" ID="ID_1617674109" CREATED="1514652321634" MODIFIED="1514652336751"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>int value = 5; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>int *ptr = &amp;value;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="usage" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_104351728" CREATED="1514671753009" MODIFIED="1515254129355">
-<node TEXT="dereferencing" STYLE_REF="Beschreibung" ID="ID_73737477" CREATED="1514652734865" MODIFIED="1515254151466"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;std::cout &lt;&lt; *ptr; // dereference ptr (get the value that ptr is pointing to)</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="ptr is the same as &amp;value" STYLE_REF="Beschreibung" ID="ID_424973086" CREATED="1514652823277" MODIFIED="1514652824815"/>
-<node TEXT="*ptr is treated the same as value" STYLE_REF="Beschreibung" ID="ID_1714252064" CREATED="1514652830278" MODIFIED="1514652832207"/>
-</node>
-<node TEXT="arithmetic" STYLE_REF="Beschreibung" ID="ID_1706070977" CREATED="1514654597430" MODIFIED="1515254153896"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;If ptr points to an integer, ptr + 1 is the address of the next integer in memory after ptr. ptr - 1 is the address of the previous integer before ptr.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="scaling" STYLE_REF="Beschreibung" ID="ID_41563821" CREATED="1514654706106" MODIFIED="1514654715970"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Note that ptr + 1 does not return the memory address after ptr, but the memory address of the next object of the type that ptr points to. If ptr points to an integer (assuming 4 bytes), ptr + 3 means 3 integers (12 bytes) after ptr. If ptr points to a char, which is always 1 byte, ptr + 3 means 3 chars (3 bytes) after ptr. </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>When calculating the result of a pointer arithmetic expression, the compiler always multiplies the integer operand by the size of the object being pointed to. This is called scaling.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="warning" STYLE_REF="Beschreibung" ID="ID_561826141" CREATED="1514652900964" MODIFIED="1514652905697"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;When a pointer is dereferenced, the application attempts to go to the memory location that is stored in the pointer and retrieve the contents of memory. For security reasons, modern operating systems sandbox applications to prevent them from improperly interacting with other applications, and to protect the stability of the operating system itself. If an application tries to access a memory location not allocated to it by the operating system, the operating system may shut down the application.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="special" STYLE_REF="Beschreibung" ID="ID_1207863535" CREATED="1514671766044" MODIFIED="1515254274604">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="null pointer" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_534893641" CREATED="1514653167126" MODIFIED="1515254165736">
-<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1050820407" CREATED="1514671902079" MODIFIED="1514671909018"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;A null value is a special value that means the pointer is not pointing at anything.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="Starting with C++11, this should be favored instead of 0 when we want a null pointer:" STYLE_REF="Beschreibung" ID="ID_1136146718" CREATED="1514653338203" MODIFIED="1515254177354"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int *ptr = nullptr;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="other example" STYLE_REF="Beschreibung" ID="ID_942943216" CREATED="1514653201477" MODIFIED="1514653346346"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>int *ptr(0);&#160;&#160;// ptr is now a null pointer </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>int *ptr2; // ptr2 is uninitialized </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>ptr2 = 0; // ptr2 is now a null pointer</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="std::nullptr_t" STYLE_REF="Beschreibung" ID="ID_999125871" CREATED="1514653429506" MODIFIED="1515254179530"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;C++11 also introduces a new type called std::nullptr_t (in header &lt;cstddef&gt;). std::nullptr_t can only hold one value: nullptr!</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="If we want to write a function that accepts a nullptr argument, what type do we make the parameter? The answer is std::nullptr_t." STYLE_REF="Beschreibung" ID="ID_1452540328" CREATED="1514653412655" MODIFIED="1514653413983"/>
-</node>
-<node TEXT="can be used in conditional test" STYLE_REF="Beschreibung" ID="ID_1196936921" CREATED="1514653273137" MODIFIED="1514653284293"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;if (ptr) </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;cout &lt;&lt; &quot;ptr is pointing to a double value.&quot;; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>else </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;cout &lt;&lt; &quot;ptr is a null pointer.&quot;;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="deferencing" STYLE_REF="Beschreibung" ID="ID_1223463311" CREATED="1514653297871" MODIFIED="1514653309375"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;results in undefined behavior</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="void pointer" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_337733498" CREATED="1514671233589" MODIFIED="1515254166290">
-<node TEXT="The void pointer, also known as the generic pointer, is a special type of pointer that can be pointed at objects of any data type!" STYLE_REF="Beschreibung" ID="ID_1636151627" CREATED="1514671239526" MODIFIED="1514671249256"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;void *ptr; // ptr is a void pointer</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="dereference" STYLE_REF="Beschreibung" ID="ID_1171690226" CREATED="1514671328025" MODIFIED="1515254192000"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;However, because the void pointer does not know what type of object it is pointing to, it cannot be dereferenced directly!</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1910043012" CREATED="1514671352007" MODIFIED="1514671368957"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int value = 5; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>void *voidPtr = &amp;value; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>//cout &lt;&lt; *voidPtr &lt;&lt; endl; // illegal: cannot dereference a void pointer </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>int *intPtr = static_cast&lt;int*&gt;(voidPtr); // however, if we cast our void pointer to an int pointer... </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>cout &lt;&lt; *intPtr &lt;&lt; endl; // then we can dereference it like normal</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="The next obvious questions is: If a void pointer doesn&#x2019;t know what it&#x2019;s pointing to, how do we know what to cast it to? Ultimately, that is up to you to keep track of." STYLE_REF="Beschreibung" ID="ID_1553405631" CREATED="1514671497732" MODIFIED="1514671499458"/>
-</node>
-<node TEXT="properties" STYLE_REF="Beschreibung" ID="ID_889254991" CREATED="1514671624880" MODIFIED="1515254198356">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="null void pointer" STYLE_REF="Beschreibung" ID="ID_451435250" CREATED="1514671528675" MODIFIED="1514671537435"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Void pointers can be set to a null value:</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="no arithmetic" STYLE_REF="Beschreibung" ID="ID_419591153" CREATED="1514671560964" MODIFIED="1514671566712"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;It is not possible to do pointer arithmetic on a void pointer. This is because pointer arithmetic requires the pointer to know what size object it is pointing to, so it can increment or decrement the pointer appropriately.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="no void reference" STYLE_REF="Beschreibung" ID="ID_1950192277" CREATED="1514671584549" MODIFIED="1514671592786"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Note that there is no such thing as a void reference. This is because a void reference would be of type void &amp;, and would not know what type of value it referenced.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="RULE" STYLE_REF="Beschreibung" ID="ID_1457956740" CREATED="1514671633870" MODIFIED="1514671645302"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Avoid using void pointers</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="pointer to pointer" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_567000936" CREATED="1514671916767" MODIFIED="1515254166566">
-<node TEXT="A pointer to a pointer works just like a normal pointer &#x2014; you can dereference it to retrieve the value pointed to. And because that value is itself a pointer, you can dereference it again to get to the underlying value. These dereferences can be done consecutively:" STYLE_REF="Beschreibung" ID="ID_1989912977" CREATED="1514671939854" MODIFIED="1514671971827"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int value = 5; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>int *ptr = &amp;value; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>std::cout &lt;&lt; *ptr; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>int **ptrptr = &amp;ptr; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>std::cout &lt;&lt; **ptrptr; </i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="pointer to a pointer can be set to null:" STYLE_REF="Beschreibung" ID="ID_1986832524" CREATED="1514671988012" MODIFIED="1514671998021"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int **ptrptr = nullptr; // use 0 instead prior to C++11</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="use case" STYLE_REF="Beschreibung" ID="ID_163572433" CREATED="1514672053656" MODIFIED="1515254251251">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="dynamically allocate an array of pointers:" STYLE_REF="Beschreibung" ID="ID_1274363403" CREATED="1514672060343" MODIFIED="1514672076808"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int **array = new int*[10]; // allocate an array of 10 int pointers</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="Two-dimensional dynamically allocated arrays" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1116194270" CREATED="1514672254951" MODIFIED="1515254242009">
-<node TEXT="array dimension is compile-time constant" STYLE_REF="Beschreibung" ID="ID_892431868" CREATED="1514672271023" MODIFIED="1514672309318"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int (*array)[5] = new int[10][5]; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>auto array = new int[10][5]; // so much simpler in C++ 11!</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="otherwise" STYLE_REF="Beschreibung" ID="ID_653799056" CREATED="1514672412172" MODIFIED="1515254257135"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;First, we allocate an array of pointers (as per above). Then we iterate through the array of pointers and allocate a dynamic array for each array element. Our dynamic two-dimensional array is a dynamic one-dimensional array of dynamic one-dimensional arrays!</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="Our dynamic two-dimensional array is a dynamic one-dimensional array of dynamic one-dimensional arrays!" STYLE_REF="Beschreibung" ID="ID_826238577" CREATED="1514672439011" MODIFIED="1514672492524"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int **array = new int*[10]; // allocate an array of 10 int pointers &#8212; these are our rows </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>for (int count = 0; count &lt; 10; ++count) </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;array[count] = new int[5]; // these are our columns</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="deallocation" STYLE_REF="Beschreibung" ID="ID_59181505" CREATED="1514672562103" MODIFIED="1515254261674"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>for (int count = 0; count &lt; 10; ++count) </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;delete[] array[count]; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>delete[] array; // this needs to be done last</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="Note that we delete the array in the opposite order that we created it. If we delete array before the array elements, then we&#x2019;d have to access deallocated memory to delete the array elements. And that would result in undefined behavior." STYLE_REF="Beschreibung" ID="ID_1869223307" CREATED="1514672615773" MODIFIED="1514672617186"/>
-</node>
-</node>
-<node TEXT="Because allocating and deallocating two-dimensional arrays is complex and easy to mess up, it&#x2019;s often easier to &#x201c;flatten&#x201d; a two-dimensional array (of size x by y) into a one-dimensional array of size x * y" STYLE_REF="Beschreibung" ID="ID_31047376" CREATED="1514672663586" MODIFIED="1514672665302"/>
-<node TEXT="higher degrees of dimensionality possible" STYLE_REF="Beschreibung" ID="ID_1368416725" CREATED="1514672738210" MODIFIED="1514672753480"/>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="smart pointer" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_532867714" CREATED="1515503508693" MODIFIED="1515503514534">
-<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_345737252" CREATED="1515503514932" MODIFIED="1515503523067"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;A Smart pointer is a composition class that is designed to manage dynamically allocated memory and ensure that memory gets deleted when the smart pointer object goes out of scope. (Relatedly, built-in pointers are sometimes called &#8220;dumb pointers&#8221; because they can&#8217;t clean up after themselves).</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="std::unique_ptr" STYLE_REF="Beschreibung" ID="ID_884257671" CREATED="1515510950970" MODIFIED="1515512775788">
-<hook NAME="AlwaysUnfoldedNode"/>
-<richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;std::unique_ptr is the C++11 replacement for std::auto_ptr. It should be used to manage any dynamically allocated object that is not shared by multiple objects. That is, std::unique_ptr should completely own the object it manages, not share that ownership with other classes.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_498037099" CREATED="1515512105551" MODIFIED="1515512652965">
-<node TEXT="copy disabled" STYLE_REF="Beschreibung" ID="ID_802248715" CREATED="1515511148857" MODIFIED="1515511156059"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Because std::unique_ptr is designed with move semantics in mind, copy initialization and copy assignment are disabled. If you want to transfer the contents managed by std::unique_ptr, you must use move semantics.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-<node TEXT="accessing the managed object" STYLE_REF="Beschreibung" ID="ID_1748200333" CREATED="1515511756021" MODIFIED="1515511764547"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;std::unique_ptr has an overloaded operator* and operator-&gt; that can be used to return the resource being managed. Operator* returns a reference to the managed resource, and operator-&gt; returns a pointer.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-<node TEXT="std::make_unique()" STYLE_REF="Beschreibung" ID="ID_1581003680" CREATED="1515511975766" MODIFIED="1515512661290"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;C++14 comes with an additional function named std::make_unique(). This templated function constructs an object of the template type and initializes it with the arguments passed into the function.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="use it" STYLE_REF="Beschreibung" ID="ID_1035359190" CREATED="1515512001524" MODIFIED="1515512005837"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Use of std::make_unique() is optional, but is recommended over creating std::unique_ptr yourself. This is because code using std::make_unique is simpler, and it also requires less typing (when used with automatic type deduction). Furthermore it resolves an exception safety issue that can result from C++ leaving the order of evaluation for function arguments unspecified.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="usage" STYLE_REF="Beschreibung" ID="ID_1823094265" CREATED="1515512114676" MODIFIED="1515512673906">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="arrays" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_95158500" CREATED="1515512491475" MODIFIED="1515512676347">
-<node TEXT="std::unique_ptr and arrays" STYLE_REF="Beschreibung" ID="ID_721793436" CREATED="1515511888634" MODIFIED="1515511899226"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: Favor std:array, std::vector, or std::string over a smart pointer managing a fixed array, dynamic array, or C-style string</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-</node>
-<node TEXT="functions" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1525064602" CREATED="1515512178147" MODIFIED="1515512676932">
-<node TEXT="returning std::unique_ptr from a function" STYLE_REF="Beschreibung" ID="ID_1909755504" CREATED="1515512038352" MODIFIED="1515512061941"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;std::unique_ptr can be safely returned from a function by value. In general, you should not return std::unique_ptr by pointer (ever) or reference (unless you have a specific compelling reason to).</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-<node TEXT="Passing std::unique_ptr to a function" STYLE_REF="Beschreibung" ID="ID_842508443" CREATED="1515512175612" MODIFIED="1515512686661">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="take ownership of contents" STYLE_REF="Beschreibung" ID="ID_641325506" CREATED="1515512233566" MODIFIED="1515512241033"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;If you want the function to take ownership of the contents of the pointer, pass the std::unique_ptr by value. Note that because copy semantics have been disabled, you&#8217;ll need to use std::move to actually pass the variable in.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-<node TEXT="don&apos;t take ownership" STYLE_REF="Beschreibung" ID="ID_1437708410" CREATED="1515512269675" MODIFIED="1515512689574">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="by reference" STYLE_REF="Beschreibung" ID="ID_770451766" CREATED="1515512275516" MODIFIED="1515512281514"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Although you can pass a std::unique_ptr by reference (which will allow the function to use the object without assuming ownership), you should only do so when the caller might alter or change the object being managed.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-<node TEXT="pass resource itself" STYLE_REF="Beschreibung" ID="ID_43757432" CREATED="1515512338800" MODIFIED="1515512348725"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Instead, it&#8217;s better to just pass the resource itself (by pointer or reference, depending on whether null is a valid argument). This allows the function to remain agnostic of how the caller is managing its resources. To get a raw resource pointer from a std::unique_ptr, you can use the get() member function:</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="classes" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1722468233" CREATED="1515512483199" MODIFIED="1515512677279">
-<node TEXT="std::unique_ptr and classes" STYLE_REF="Beschreibung" ID="ID_798571836" CREATED="1515512433982" MODIFIED="1515512444170"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;You can, of course, use std::unique_ptr as a composition member of your class. This way, you don&#8217;t have to worry about ensuring your class destructor deletes the dynamic memory, as the std::unique_ptr will be automatically destroyed when the class object is destroyed. However, do note that if your class object is dynamically allocated, the object itself is at risk for not being properly deallocated, in which case even a smart pointer won&#8217;t help.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-</node>
-<node TEXT="what not to do" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_414894173" CREATED="1515512544202" MODIFIED="1515512677658">
-<node TEXT="same resource" STYLE_REF="Beschreibung" ID="ID_321218407" CREATED="1515512547911" MODIFIED="1515512700707"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;First, don&#8217;t let multiple classes manage the same resource.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1323700453" CREATED="1515512593711" MODIFIED="1515512597577"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Resource *res = new Resource; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>std::unique_ptr&lt;Resource&gt; res1(res); </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>std::unique_ptr&lt;Resource&gt; res2(res);</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-</node>
-<node TEXT="manually delete resource" STYLE_REF="Beschreibung" ID="ID_1208025368" CREATED="1515512580047" MODIFIED="1515512704139"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Second, don&#8217;t manually delete the resource out from underneath the std::unique_ptr.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_514691509" CREATED="1515512604455" MODIFIED="1515512610188"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Resource *res = new Resource; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>std::unique_ptr&lt;Resource&gt; res1(res); </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>delete res;</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="std::shared_ptr" STYLE_REF="Beschreibung" ID="ID_939091375" CREATED="1515512837830" MODIFIED="1515513535796"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Unlike std::unique_ptr, which is designed to singly own and manage a resource, std::shared_ptr is meant to solve the case where you need multiple smart pointers co-owning a resource. This means that it is fine to have multiple std::shared_ptr pointing to the same resource. Internally, std::shared_ptr keeps track of how many std::shared_ptr are sharing the resource. As long as at least one std::shared_ptr is pointing to the resource, the resource will not be deallocated, even if individual std::shared_ptr are destroyed. As soon as the last std::shared_ptr managing the resource goes out of scope (or is reassigned to point at something else), the resource will be deallocated.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1802185359" CREATED="1515513182972" MODIFIED="1515513538504">
-<node TEXT="std::make_shared()" STYLE_REF="Beschreibung" ID="ID_1557687752" CREATED="1515513186161" MODIFIED="1515513542927"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Much like std::make_unique() can be used to create a std::unique_ptr in C++14, std::make_shared() can (and should) be used to make a std::shared_ptr. std::make_shared() is available in C++11.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="simpler, safer, more performant" STYLE_REF="Beschreibung" ID="ID_845848129" CREATED="1515513258980" MODIFIED="1515513277619"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The reasons for using std::make_shared() are the same as std::make_unique() -- std::make_shared() is simpler and safer (there&#8217;s no way to directly create two std::shared_ptr pointing to the same resource using this method). However, std::make_shared() is also more performant than not using it. The reasons for this lie in the way that std::shared_ptr keeps track of how many pointers are pointing at a given resource.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-</node>
-<node TEXT="more than one pointing to same resource" STYLE_REF="Beschreibung" ID="ID_1349896581" CREATED="1515513128619" MODIFIED="1515513545434"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: Always make a copy of an existing std::shared_ptr if you need more than one std::shared_ptr pointing to the same resource.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="why" STYLE_REF="Beschreibung" ID="ID_881483697" CREATED="1515513366949" MODIFIED="1515513371756"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;However, when a std::shared_ptr is cloned using copy assignment, the data in the control block can be appropriately updated to indicate that there are now additional std::shared_ptr co-managing the resource.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-</node>
-<node TEXT="shared pointers can be created from unique pointers" STYLE_REF="Beschreibung" ID="ID_1990798585" CREATED="1515513424170" MODIFIED="1515513443307"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;A std::unique_ptr can be converted into a std::shared_ptr via a special std::shared_ptr constructor that accepts a std::unique_ptr r-value. The contents of the std::unique_ptr will be moved to the std::shared_ptr. However, std::shared_ptr can not be safely converted to a std::unique_ptr. This means that if you&#8217;re creating a function that is going to return a smart pointer, you&#8217;re better off returning a std::unique_ptr and assigning it to a std::shared_ptr if and when that&#8217;s appropriate.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-</node>
-<node TEXT="downsides" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1607043680" CREATED="1515513712872" MODIFIED="1515513718804">
-<node TEXT="perils of shared pointers" STYLE_REF="Beschreibung" ID="ID_359571160" CREATED="1515513499211" MODIFIED="1515513512499"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;std::shared_ptr has some of the same challenges as std::unique_ptr -- if the std::shared_ptr is not properly disposed of (either because it was dynamically allocated and never deleted, or it was part of an object that was dynamically allocated and never deleted) then the resource it is managing won&#8217;t be deallocated either. With std::unique_ptr, you only have to worry about one smart pointer being properly disposed of. With std::shared_ptr, you have to worry about them all. If any of the std::shared_ptr managing a resource are not properly destroyed, the resource will not be deallocated properly.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-<node TEXT="circular references" STYLE_REF="Beschreibung" ID="ID_1548046878" CREATED="1515513725990" MODIFIED="1515513732570"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The practical effect having shared pointers form a cycle is that each object ends up keeping the next object alive -- with the last object keeping the first object alive. Thus, no objects in the series can be deallocated because they all think some other object still needs it!</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="std::weak_ptr" STYLE_REF="Beschreibung" ID="ID_906030801" CREATED="1515513817392" MODIFIED="1515514003054"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;A std::weak_ptr is an observer -- it can observe and access the same object as a std::shared_ptr (or other std::weak_ptrs) but it is not considered an owner. Remember, when a std::shared pointer goes out of scope, it only considers whether other std:shared_ptr are co-owning the object. std::weak_ptr does not count!</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1879668779" CREATED="1515513973504" MODIFIED="1515513977400">
-<node TEXT="using std::weak_ptr" STYLE_REF="Beschreibung" ID="ID_181022261" CREATED="1515513883575" MODIFIED="1515513893380"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The downside of std::weak_ptr is that std::weak_ptr are not directly usable (they have no operator-&gt;). To use a std::weak_ptr, you must first convert it into a std::shared_ptr. Then you can use the std::shared_ptr. To convert a std::weak_ptr into a std::shared_ptr, you can use the lock() member function.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-<node TEXT="shared vs. weak" STYLE_REF="Beschreibung" ID="ID_1547831884" CREATED="1515513954435" MODIFIED="1515513962400"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;std::shared_ptr can be used when you need multiple smart pointers that can co-own a resource. The resource will be deallocated when the last std::shared_ptr goes out of scope. std::weak_ptr can be used when you want a smart pointer that can see and use a shared resource, but does not participate in the ownership of that resource.</i></font>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="references" STYLE_REF="Beschreibung" ID="ID_254146950" CREATED="1514662431080" MODIFIED="1515254293033">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="to non-const values" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1259252640" CREATED="1514662608205" MODIFIED="1515254296936">
-<node TEXT="declaration" STYLE_REF="Beschreibung" ID="ID_723792415" CREATED="1514662621109" MODIFIED="1514662628370"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;A reference is a type of C++ variable that acts as an alias to another object or value.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="references as aliases" STYLE_REF="Beschreibung" ID="ID_1447083420" CREATED="1514662667702" MODIFIED="1515254309217"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int value = 5; // normal integer </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>int &amp;ref = value; // reference to variable value </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>value = 6; // value is now 6 </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>ref = 7; // value is now 7</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="References must be initialized when created:" STYLE_REF="Beschreibung" ID="ID_1849204566" CREATED="1514662771378" MODIFIED="1514662782837"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Unlike pointers, which can hold a null value, there is no such thing as a null reference.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="References to non-const values can only be initialized with non-const l-values." STYLE_REF="Beschreibung" ID="ID_1038025593" CREATED="1514662823271" MODIFIED="1514662824447"/>
-<node TEXT="References can not be reassigned" STYLE_REF="Beschreibung" ID="ID_1432412497" CREATED="1514662862934" MODIFIED="1514662864342"/>
-</node>
-<node TEXT="references as function parameters" STYLE_REF="Beschreibung" ID="ID_1547749350" CREATED="1514662997465" MODIFIED="1515254312227"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;In this context, the reference parameter acts as an alias for the argument, and no copy of the argument is made into the parameter. This can lead to better performance if the argument is large or expensive to copy.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="best practice" STYLE_REF="Beschreibung" ID="ID_663556517" CREATED="1514663064862" MODIFIED="1514663115540"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Best practice: Pass arguments by non-const reference when the argument needs to be modified by the function. Because the reference parameter acts as an alias for the argument, a function that uses a reference parameter is able to modify the argument passed in:</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="References as shortcuts" STYLE_REF="Beschreibung" ID="ID_870623301" CREATED="1514663157435" MODIFIED="1514663169407"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int &amp;ref = other.something.value1; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>// ref can now be used in place of other.something.value1</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="to const values" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1176785562" CREATED="1514668886032" MODIFIED="1515254297570">
-<node TEXT="to non-const l-value" STYLE_REF="Beschreibung" ID="ID_14155422" CREATED="1514668913817" MODIFIED="1515254318783"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>int x = 5; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>const int &amp;ref1 = x; // okay, x is a non-const l-value</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="much like pointer" STYLE_REF="Beschreibung" ID="ID_94960" CREATED="1514669102552" MODIFIED="1514669112917"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Much like a pointer to a const value, a reference to a const value can reference a non-const variable. When accessed through a reference to a const value, the value is considered const even if the original variable is not:</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="to const l-value" STYLE_REF="Beschreibung" ID="ID_139952310" CREATED="1514668939494" MODIFIED="1515254320983"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;const int y = 7; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>const int &amp;ref2 = y; // okay, y is a const l-value</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="constant references as function parameters" STYLE_REF="Beschreibung" ID="ID_1829086168" CREATED="1514669547032" MODIFIED="1515254325578"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;References used as function parameters can also be const. This allows us to access the argument without making a copy of it, while guaranteeing that the function will not change the value being referenced.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="References to const values are particularly useful as function parameters because of their versatility. A const reference parameter allows you to pass in a non-const l-value argument, a const l-value argument, a literal, or the result of an expression:" STYLE_REF="Beschreibung" ID="ID_1507951271" CREATED="1514669699968" MODIFIED="1514669702686"/>
-</node>
-</node>
-<node TEXT="to r-value" STYLE_REF="Beschreibung" ID="ID_1662490789" CREATED="1514668963842" MODIFIED="1515254323594"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;const int &amp;ref3 = 6; // okay, 6 is an r-value</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="References to r-values extend the lifetime of the referenced value" STYLE_REF="Beschreibung" ID="ID_889706749" CREATED="1514669461678" MODIFIED="1514669486328"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;When a reference to a const value is initialized with an r-value, the lifetime of the r-value is extended to match the lifetime of the reference.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="r-value" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1550824777" CREATED="1515507272962" MODIFIED="1515507773051"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;C++11</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1605115704" CREATED="1515507279029" MODIFIED="1515509099227"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;An r-value reference is a reference that is designed to be initialized with an r-value (only). While an l-value reference is created using a single ampersand, an r-value reference is created using a double ampersand</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example 1" STYLE_REF="Beschreibung" ID="ID_734264516" CREATED="1515507294130" MODIFIED="1515507621410"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int x = 5; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>int &amp;lref = x; // l-value reference initialized with l-value x </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>int &amp;&amp;rref = 5; // r-value reference initialized with r-value 5</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="example 2" STYLE_REF="Beschreibung" ID="ID_1753393392" CREATED="1515507621911" MODIFIED="1515507634030"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>Fraction &amp;&amp;rref = Fraction(3, 5); // r-value reference to temporary Fraction </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>std::cout &lt;&lt; rref &lt;&lt; '\n';</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="r-value references as function parameters" STYLE_REF="Beschreibung" ID="ID_920681781" CREATED="1515507818253" MODIFIED="1515509102758"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;R-value references are more often used as function parameters. This is most useful for function overloads when you want to have different behavior for l-value and r-value arguments.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1205021187" CREATED="1515507835529" MODIFIED="1515507858415"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int x = 5; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>fun(x); // l-value argument calls l-value version of function </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>fun(5); // r-value argument calls r-value version of function</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="useful properties" STYLE_REF="Beschreibung" ID="ID_1721118234" CREATED="1515507352324" MODIFIED="1515509106368">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="1" OBJECT="java.lang.Long|1" STYLE_REF="Beschreibung" ID="ID_809933305" CREATED="1515507371267" MODIFIED="1515507374841"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;First, r-value references extend the lifespan of the object they are initialized with to the lifespan of the r-value reference. l-value references to const objects can do this too, but it&#8217;s far more useful for r-value references since r-values have expression scope otherwise.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="2" OBJECT="java.lang.Long|2" STYLE_REF="Beschreibung" ID="ID_387514640" CREATED="1515507377022" MODIFIED="1515507386754"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Second, non-const r-value references allow you to modify the r-value!</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="references vs. pointers" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1539147601" CREATED="1514663192598" MODIFIED="1515254014998"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;a reference acts like a pointer that is implicitly dereferenced when accessed (references are usually implemented internally by the compiler using pointers).</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="prefer references" STYLE_REF="Beschreibung" ID="ID_181741417" CREATED="1514663257430" MODIFIED="1514663298623"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Because references must be initialized to valid objects (cannot be null) and can not be changed once set, references are generally much safer to use than pointers (since there&#8217;s no risk of dereferencing a null pointer). However, they are also a bit more limited in functionality accordingly. If a given task can be solved with either a reference or a pointer, the reference should generally be preferred. Pointers should only be used in situations where references are not sufficient (such as dynamically allocating memory).</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
 <node TEXT="datatypes" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_55284723" CREATED="1514469270437" MODIFIED="1515253770191">
 <node TEXT="built-in types" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1908985688" CREATED="1514406070387" MODIFIED="1515254339614">
 <node TEXT="boolean" STYLE_REF="Beschreibung" ID="ID_1212452457" CREATED="1514406087988" MODIFIED="1514410653868">
@@ -7340,6 +3940,148 @@
 <node TEXT="Finally, to clean up when we are done, we call va_end(), with va_list as the parameter." STYLE_REF="Beschreibung" ID="ID_823982526" CREATED="1514837917560" MODIFIED="1514837919013"/>
 </node>
 </node>
+</node>
+</node>
+<node TEXT="literals" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_825551665" CREATED="1514396384202" MODIFIED="1515405887104">
+<node TEXT="unsigned int" STYLE_REF="Beschreibung" ID="ID_1571964803" CREATED="1514408053706" MODIFIED="1514408061918"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;u or U</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="long" STYLE_REF="Beschreibung" ID="ID_759484146" CREATED="1514408064549" MODIFIED="1514408070943"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;l or L</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="unsigned long" STYLE_REF="Beschreibung" ID="ID_1812775330" CREATED="1514408078690" MODIFIED="1514408084595"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;ul, uL, Ul, UL, lu, lU, Lu, or LU</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="long long" STYLE_REF="Beschreibung" ID="ID_499202165" CREATED="1514408089797" MODIFIED="1514408096756"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;ll or LL</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="unsigned long long" STYLE_REF="Beschreibung" ID="ID_217332275" CREATED="1514408108654" MODIFIED="1514408115554"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;ull, uLL, Ull, ULL, llu, llU, LLu, or LLU</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="double" STYLE_REF="Beschreibung" ID="ID_1051958554" CREATED="1514408120414" MODIFIED="1514408126273"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;f or F</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="long double" STYLE_REF="Beschreibung" ID="ID_581805900" CREATED="1514408131627" MODIFIED="1514408137176"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;l or L</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="octal" STYLE_REF="Beschreibung" ID="ID_947194314" CREATED="1514408147041" MODIFIED="1514408234944"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;prefix 0</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="hexadecimal" STYLE_REF="Beschreibung" ID="ID_1229117003" CREATED="1514408243931" MODIFIED="1514408258271"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;prefix 0x</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="binary" STYLE_REF="Beschreibung" ID="ID_900110603" CREATED="1514408266009" MODIFIED="1514408273323"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;prefix 0b</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
 </node>
 </node>
 <node TEXT="objects" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1050126748" CREATED="1514394695045" MODIFIED="1515253770893">
@@ -11006,6 +7748,3264 @@
 </richcontent>
 </node>
 </node>
+<node TEXT="operators" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_26142556" CREATED="1514395244370" MODIFIED="1515253769522">
+<node TEXT="" ID="ID_200488901" CREATED="1514396508434" MODIFIED="1514410394765">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="unary" STYLE_REF="Beschreibung" ID="ID_1543891771" CREATED="1514396509808" MODIFIED="1514410415672">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="sizeof()" STYLE_REF="Stichpunkt" ID="ID_342771741" CREATED="1514406291970" MODIFIED="1515253790586"/>
+<node TEXT="arithmetic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_485030467" CREATED="1514409276828" MODIFIED="1515253791381"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;+, -</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="overloading" STYLE_REF="Beschreibung" ID="ID_1240312372" CREATED="1515074876252" MODIFIED="1515253823607">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example 1" STYLE_REF="Beschreibung" ID="ID_1972915117" CREATED="1515074858171" MODIFIED="1515074882300"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Point Point::operator- () const</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="example 2" STYLE_REF="Beschreibung" ID="ID_253742837" CREATED="1515074885817" MODIFIED="1515074890313"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;bool Point::operator! () const</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="increment/decrement" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_510998203" CREATED="1514409416197" MODIFIED="1515253791736"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;++ --</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="prefix" STYLE_REF="Beschreibung" ID="ID_1712741090" CREATED="1514409430273" MODIFIED="1514410479931"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;evaluate after</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="increment" STYLE_REF="Beschreibung" ID="ID_721125791" CREATED="1514409474675" MODIFIED="1514409482255"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;++x</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="decrement" STYLE_REF="Beschreibung" ID="ID_316213926" CREATED="1514409483545" MODIFIED="1514409488849"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;--x</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="overloading example" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1985930498" CREATED="1515074986786" MODIFIED="1515253842598"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Digit&amp; Digit::operator++()</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="return type" STYLE_REF="Beschreibung" ID="ID_365862916" CREATED="1515075032739" MODIFIED="1515075041770"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Note that we return *this. The overloaded increment and decrement operators return the current implicit object so multiple operators can be &#8220;chained&#8221; together. </i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="postfix" STYLE_REF="Beschreibung" ID="ID_1729937590" CREATED="1514409461486" MODIFIED="1514410482504"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;evaluate first</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="increment" STYLE_REF="Beschreibung" ID="ID_1305575231" CREATED="1514409491433" MODIFIED="1514409497974"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;x++</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="decrement" STYLE_REF="Beschreibung" ID="ID_664565754" CREATED="1514409498821" MODIFIED="1514409504810"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;x--</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="overloading" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_722541462" CREATED="1515075083410" MODIFIED="1515253841161">
+<node TEXT="dummy variable" STYLE_REF="Beschreibung" ID="ID_101752837" CREATED="1515075087997" MODIFIED="1515075093007"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;C++ uses a &#8220;dummy variable&#8221; or &#8220;dummy argument&#8221; for the postfix operators. This argument is a fake integer parameter that only serves to distinguish the postfix version of increment/decrement from the prefix version.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_3747584" CREATED="1515075112119" MODIFIED="1515075115653"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Digit Digit::operator++(int)</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="implementation" STYLE_REF="Beschreibung" ID="ID_70373058" CREATED="1515075360068" MODIFIED="1515253850862"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The postfix operators, on the other hand, need to return the state of the object before it is incremented or decremented. The typical way this problem is solved is to use a temporary variable that holds the value of the object before it is incremented or decremented. Then the object itself can be incremented or decremented. And finally, the temporary variable is returned to the caller.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="return type" STYLE_REF="Beschreibung" ID="ID_249598289" CREATED="1515075422769" MODIFIED="1515075427074"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Note that this means the return value of the overloaded operator must be a non-reference, because we can&#8217;t return a reference to a local variable that will be destroyed when the function exits.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="less efficient" STYLE_REF="Beschreibung" ID="ID_1725379435" CREATED="1515075432819" MODIFIED="1515075437894"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Also note that this means the postfix operators are typically less efficient than the prefix operators because of the added overhead of instantiating a temporary variable and returning by value instead of reference.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="side effect" STYLE_REF="Beschreibung" ID="ID_1222321667" CREATED="1514409554757" MODIFIED="1514409560706"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Don&#8217;t use a variable that has a side effect applied to it more than once in a given statement. If you do, the result may be undefined.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="address-of operator" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1067044209" CREATED="1514652074916" MODIFIED="1515253792083"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&amp;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_958773808" CREATED="1515074071550" MODIFIED="1515074076524"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;std::cout &lt;&lt; &amp;x &lt;&lt; '\n'; // print the memory address of variable x</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="subscript" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1933472310" CREATED="1515089231248" MODIFIED="1515253792462"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;[]</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="overloading" STYLE_REF="Beschreibung" ID="ID_543184128" CREATED="1515089594812" MODIFIED="1515253864978">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="overloading example" STYLE_REF="Beschreibung" ID="ID_1079170514" CREATED="1515089253310" MODIFIED="1515089260825"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int&amp; IntList::operator[] (const int index)</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="constant objects" STYLE_REF="Beschreibung" ID="ID_636920829" CREATED="1515089371953" MODIFIED="1515089383011"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The non-const version will be used with non-const objects, and the const version with const-objects.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="error checking" STYLE_REF="Beschreibung" ID="ID_629878094" CREATED="1515089444575" MODIFIED="1515089477002"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;One other advantage of overloading the subscript operator is that we can make it safer than accessing arrays directly. If we know the size of our array, we can make our overloaded subscript operator check to ensure the index is within bounds</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="pointers to objects and overloaded operator[] don&apos;t mix" STYLE_REF="Beschreibung" ID="ID_217166080" CREATED="1515089563774" MODIFIED="1515089587944"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Make sure you&#8217;re not trying to call an overloaded operator[] on a pointer to an object.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="parenthesis" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_83153334" CREATED="1515089704880" MODIFIED="1515253792818"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;()</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="overloading" STYLE_REF="Beschreibung" ID="ID_785691882" CREATED="1515092605931" MODIFIED="1515253870689">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example 1" STYLE_REF="Beschreibung" ID="ID_1132675641" CREATED="1515092616867" MODIFIED="1515092621528"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;double&amp; Matrix::operator()(int row, int col)</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="example 2" STYLE_REF="Beschreibung" ID="ID_1536103560" CREATED="1515092622114" MODIFIED="1515092643271"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;const double&amp; Matrix::operator()(int row, int col) const</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="binary" STYLE_REF="Beschreibung" ID="ID_1822106158" CREATED="1514396512100" MODIFIED="1514410428273">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="assignment" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_422303195" CREATED="1515147144236" MODIFIED="1515253793420"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;=</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="overloading" STYLE_REF="Beschreibung" ID="ID_384996394" CREATED="1515147576583" MODIFIED="1515253885121">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="overloading example" STYLE_REF="Beschreibung" ID="ID_910411653" CREATED="1515147153470" MODIFIED="1515147231687"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Fraction&amp; Fraction::operator= (const Fraction &amp;fraction)</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="self-assignment" STYLE_REF="Beschreibung" ID="ID_514244141" CREATED="1515147477367" MODIFIED="1515253888392"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;self-assignment can lead to memory leaks and dangling pointers. By checking if our implicit object is the same as the one being passed in as a parameter, we can have our assignment operator just return immediately without doing any other work.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1292200542" CREATED="1515147518409" MODIFIED="1515147557947"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>// self-assignment guard </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>if (this == &amp;fraction) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;return *this;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="default assignment operator" STYLE_REF="Beschreibung" ID="ID_789978154" CREATED="1515147617361" MODIFIED="1515147636744"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Unlike other operators, the compiler will provide a default public assignment operator for your class if you do not provide one. This assignment operator does memberwise assignment (which is essentially the same as the memberwise initialization that default copy constructors do).</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="prevent assignments" STYLE_REF="Beschreibung" ID="ID_1361004161" CREATED="1515147647049" MODIFIED="1515147654794"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Just like other constructors and operators, you can prevent assignments from being made by making your assignment operator private or using the delete keyword.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="shallow copies" STYLE_REF="Beschreibung" ID="ID_1523476899" CREATED="1515147949812" MODIFIED="1515253891128"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;when designing classes that handle dynamically allocated memory, memberwise (shallow) copying can get us in a lot of trouble! This is because shallow copies of a pointer just copy the address of the pointer -- it does not allocate any memory or copy the contents being pointed to!</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="deep copies" STYLE_REF="Beschreibung" ID="ID_304270420" CREATED="1515148025843" MODIFIED="1515148030839"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;A deep copy allocates memory for the copy and then copies the actual value, so that the copy lives in distinct memory from the source.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="standard library" STYLE_REF="Beschreibung" ID="ID_1804884126" CREATED="1515148098237" MODIFIED="1515148104527"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Classes in the standard library that deal with dynamic memory, such as std::string and std::vector, handle all of their memory management, and have overloaded copy constructors and assignment operators that do proper deep copying. So instead of doing your own memory management, you can just initialize or assign them like normal fundamental variables! That makes these classes simpler to use, less error-prone, and you don&#8217;t have to spend time writing your own overloaded functions!</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="arithmetic" STYLE_REF="Stichpunkt" ID="ID_333078018" CREATED="1514409296010" MODIFIED="1515253794669"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;+ - * / %</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="arithmetic assignment" STYLE_REF="Stichpunkt" ID="ID_1551142594" CREATED="1514409350977" MODIFIED="1515253796199"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;+= -= *= /= %=</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="comma" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1351514468" CREATED="1514409645010" MODIFIED="1515253796577"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;,</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1603777934" CREATED="1515075491133" MODIFIED="1515075501128"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;Evaluate x then y, returns value of y</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1171256218" CREATED="1515075501786" MODIFIED="1515075508502"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;x, y</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="relational" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1022629920" CREATED="1514409759487" MODIFIED="1515253797411"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&lt; &gt; &lt;= &gt;= == !=</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="Comparison of floating point values" STYLE_REF="Beschreibung" ID="ID_671462765" CREATED="1514409801896" MODIFIED="1514409841700"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Comparison of floating point numbers is a difficult topic, and there&#8217;s no &#8220;one size fits all&#8221; algorithm that works for every case. However, the approximatelyEqualAbsRel() should be good enough to handle most cases you&#8217;ll encounter.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="overloading" STYLE_REF="Beschreibung" ID="ID_1414328431" CREATED="1515074234301" MODIFIED="1515253902169"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Because the comparison operators are all binary operators that do not modify their left operands, we will make our overloaded comparison operators friend functions.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example 1" STYLE_REF="Beschreibung" ID="ID_1629735758" CREATED="1515074917918" MODIFIED="1515074926322"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>bool operator== (const Car &amp;c1, const Car &amp;c2)</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="example 2" STYLE_REF="Beschreibung" ID="ID_1645571396" CREATED="1515074934110" MODIFIED="1515074943812"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;bool operator!= (const Car &amp;c1, const Car &amp;c2)</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="logical" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_230705014" CREATED="1514409896325" MODIFIED="1515253797830"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;NOT AND OR XOR</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="NOT" STYLE_REF="Beschreibung" ID="ID_1199005896" CREATED="1514409903171" MODIFIED="1514409922302"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;!</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="" ID="ID_1120117911" CREATED="1514409981830" MODIFIED="1514409981831">
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="" ID="ID_40946089" CREATED="1514409964278" MODIFIED="1514409977080">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="AND" STYLE_REF="Beschreibung" ID="ID_484577742" CREATED="1514409905561" MODIFIED="1514409926431"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&amp;&amp;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="OR" STYLE_REF="Beschreibung" ID="ID_1724717770" CREATED="1514409907348" MODIFIED="1514409930791"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;||</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="" ID="ID_1204486761" CREATED="1514409981829" MODIFIED="1514409981830">
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="AND has higher precedence" STYLE_REF="Beschreibung" ID="ID_1140321606" CREATED="1514409981831" MODIFIED="1514409993765"/>
+</node>
+<node TEXT="XOR" STYLE_REF="Beschreibung" ID="ID_1656092148" CREATED="1514409909733" MODIFIED="1514409958477"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;!=</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="member selection operator" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_573429508" CREATED="1514670109060" MODIFIED="1515253798186"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;-&gt;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1066141179" CREATED="1514670120321" MODIFIED="1514670124756"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;(*ptr).age&#160;&#160;= 5; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>ptr-&gt;age = 5;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="input / output" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_671334626" CREATED="1515071893463" MODIFIED="1515253798620"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&lt;&lt; &gt;&gt;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="output operator" STYLE_REF="Beschreibung" ID="ID_1832690783" CREATED="1515071585991" MODIFIED="1515253912930"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;std::cout &lt;&lt;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="overloading" STYLE_REF="Beschreibung" ID="ID_755738785" CREATED="1515071642358" MODIFIED="1515071655966"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;// std::ostream is the type for object std::cout </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>friend std::ostream&amp; operator&lt;&lt; (std::ostream &amp;out, const Point &amp;point);</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="input operator" STYLE_REF="Beschreibung" ID="ID_1682908491" CREATED="1515071839768" MODIFIED="1515253915944"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;std::cin &gt;&gt;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="overloading" STYLE_REF="Beschreibung" ID="ID_104963995" CREATED="1515071853950" MODIFIED="1515071859682"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;friend std::istream&amp; operator&gt;&gt; (std::istream &amp;in, Point &amp;point);</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="bitwise" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_221564001" CREATED="1514410090599" MODIFIED="1515253799079">
+<node TEXT="" ID="ID_1586366131" CREATED="1514410199498" MODIFIED="1514410453312">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="left shift" STYLE_REF="Beschreibung" ID="ID_1110754032" CREATED="1514410111429" MODIFIED="1514410117923"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&lt;&lt;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="right shift" STYLE_REF="Beschreibung" ID="ID_781027838" CREATED="1514410118633" MODIFIED="1514410127655"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&gt;&gt;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="NOT" STYLE_REF="Beschreibung" ID="ID_1992926451" CREATED="1514410128780" MODIFIED="1514410136158"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;~</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="AND" STYLE_REF="Beschreibung" ID="ID_1233810840" CREATED="1514410136676" MODIFIED="1514410142959"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&amp;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="OR" STYLE_REF="Beschreibung" ID="ID_87777979" CREATED="1514410143877" MODIFIED="1514410150529"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;|</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="XOR" STYLE_REF="Beschreibung" ID="ID_273505693" CREATED="1514410152362" MODIFIED="1514410159276"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;^</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="bitflags / bitmasks" STYLE_REF="Beschreibung" ID="ID_1860516621" CREATED="1514410206797" MODIFIED="1514410282187"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;use bitwise operations in bytes instead of many booleans to save space</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="ternary" STYLE_REF="Beschreibung" ID="ID_1447099493" CREATED="1514396513928" MODIFIED="1514410432990">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="conditional operator" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_49352233" CREATED="1514409675553" MODIFIED="1515253807054"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;?</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1280558456" CREATED="1515075541000" MODIFIED="1515075546830"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;If c is nonzero (true) then evaluate x, else evaluate y</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_376321054" CREATED="1515075547663" MODIFIED="1515075555715"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;c ? x : y</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="evaluation order" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_812593346" CREATED="1514409179791" MODIFIED="1515253931590">
+<node TEXT="precedence" STYLE_REF="Beschreibung" ID="ID_1463266497" CREATED="1514409127523" MODIFIED="1514409133640"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The order in which operators are evaluated in a compound expression is called operator precedence.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="associativity" STYLE_REF="Beschreibung" ID="ID_394861532" CREATED="1514409170234" MODIFIED="1514409178375"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;If two operators with the same precedence level are adjacent to each other in an expression, the operator associativity rules tell the compiler whether to evaluate the operators from left to right or from right to left.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="overloading" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_274764734" CREATED="1515064695320" MODIFIED="1515253932289">
+<node TEXT="resolving overloaded operators" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1407993862" CREATED="1515064726607" MODIFIED="1515253946628">
+<node TEXT="all operands are fundamental data types" STYLE_REF="Beschreibung" ID="ID_1282854969" CREATED="1515064744037" MODIFIED="1515064754554"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;If all of the operands are fundamental data types, the compiler will call a built-in routine if one exists. If one does not exist, the compiler will produce a compiler error.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="any operands are user types" STYLE_REF="Beschreibung" ID="ID_1804720894" CREATED="1515064764971" MODIFIED="1515064773170"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;If any of the operands are user data types (e.g. one of your classes, or an enum type), the compiler looks to see whether the type has a matching overloaded operator function that it can call. If it can&#8217;t find one, it will try to convert one or more of the user-defined type operands into fundamental data types so it can use a matching built-in operator (via an overloaded typecast, which we&#8217;ll cover later in this chapter). If that fails, then it will produce a compile error.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="what" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1819631547" CREATED="1515064920256" MODIFIED="1515253947310">
+<node TEXT="almost any existing operator can be overloaded, except" STYLE_REF="Beschreibung" ID="ID_1112349776" CREATED="1515064813598" MODIFIED="1515253968950">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="conditional (?:)" STYLE_REF="Beschreibung" ID="ID_1458743612" CREATED="1515064843172" MODIFIED="1515064852646"/>
+<node TEXT="sizeof" STYLE_REF="Beschreibung" ID="ID_1548639871" CREATED="1515064856543" MODIFIED="1515064861357"/>
+<node TEXT="scope (::)" STYLE_REF="Beschreibung" ID="ID_1374786926" CREATED="1515064868757" MODIFIED="1515064869898"/>
+<node TEXT="member selector (.)" STYLE_REF="Beschreibung" ID="ID_1600467100" CREATED="1515064878230" MODIFIED="1515064879396"/>
+<node TEXT="member pointer selector (.*)" STYLE_REF="Beschreibung" ID="ID_1330430546" CREATED="1515064887347" MODIFIED="1515064888290"/>
+</node>
+<node TEXT="you can only overload the operators that exist" STYLE_REF="Beschreibung" ID="ID_1168367280" CREATED="1515064916920" MODIFIED="1515064918062"/>
+<node TEXT="at least one of the operands in an overloaded operator must be a user-defined type." STYLE_REF="Beschreibung" ID="ID_1135217120" CREATED="1515064985742" MODIFIED="1515064986853"/>
+<node TEXT="it is not possible to change the number of operands an operator supports." STYLE_REF="Beschreibung" ID="ID_473823281" CREATED="1515064998918" MODIFIED="1515064999650"/>
+<node TEXT="all operators keep their default precedence and associativity (regardless of what they&#x2019;re used for) and this can not be changed." STYLE_REF="Beschreibung" ID="ID_725808390" CREATED="1515065012394" MODIFIED="1515065013346"/>
+</node>
+<node TEXT="when" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_129497996" CREATED="1515065102694" MODIFIED="1515253947746">
+<node TEXT="as close to original intent as possible" STYLE_REF="Beschreibung" ID="ID_1176395287" CREATED="1515065107041" MODIFIED="1515065122405"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: When overloading operators, it&#8217;s best to keep the function of the operators as close to the original intent of the operators as possible.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="maybe use named function instead" STYLE_REF="Beschreibung" ID="ID_490594197" CREATED="1515065212253" MODIFIED="1515065223495"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: If the meaning of an operator when applied to a custom class is not clear and intuitive, use a named function instead.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="how" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1169131235" CREATED="1515065368619" MODIFIED="1515253948123">
+<node TEXT="using friend functions" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1671504700" CREATED="1515065356660" MODIFIED="1515253987158">
+<node TEXT="class Cents" STYLE_REF="Beschreibung" ID="ID_111863028" CREATED="1515070240549" MODIFIED="1515070268414"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;class Cents </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>... </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>public: </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// add Cents + Cents using a friend function </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;friend Cents operator+(const Cents &amp;c1, const Cents &amp;c2); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>};</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="operator function" STYLE_REF="Beschreibung" ID="ID_1423711275" CREATED="1515070271447" MODIFIED="1515070315651"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;// note: this function is not a member function! </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>Cents operator+(const Cents &amp;c1, const Cents &amp;c2) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;return Cents(c1.m_cents + c2.m_cents); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="using normal functions" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_826501415" CREATED="1515070780020" MODIFIED="1515253987794">
+<node TEXT="if you don&#x2019;t need that access, you can write your overloaded operators as normal functions." STYLE_REF="Beschreibung" ID="ID_1328883159" CREATED="1515070784672" MODIFIED="1515070824117"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;// note: this function is not a member function nor a friend function! </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>Cents operator+(const Cents &amp;c1, const Cents &amp;c2) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// use the Cents constructor and operator+(int, int) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;// we don't need direct access to private members here </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;return Cents(c1.getCents() + c2.getCents()); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="prototypes" STYLE_REF="Beschreibung" ID="ID_545958391" CREATED="1515070872841" MODIFIED="1515070877885"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The one difference is that the friend function declaration inside the class serves as a prototype as well. With the normal function version, you&#8217;ll have to provide your own function prototype.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="using member functions" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_540598202" CREATED="1515072653140" MODIFIED="1515253988058">
+<node TEXT="class Cents" STYLE_REF="Beschreibung" ID="ID_424616096" CREATED="1515072745784" MODIFIED="1515072770787"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;class Cents </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>... </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>public: </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// Overload Cents + int </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;Cents operator+(int value); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>};</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="member function" STYLE_REF="Beschreibung" ID="ID_401665586" CREATED="1515072799206" MODIFIED="1515072804986"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;// note: this function is a member function! </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>// the cents parameter in the friend version is now the implicit *this parameter </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>Cents Cents::operator+(int value) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;return Cents(m_cents + value); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="usage" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_920988824" CREATED="1515072969154" MODIFIED="1515253948670">
+<node TEXT="overloading operators for operands of different types" STYLE_REF="Beschreibung" ID="ID_1280357547" CREATED="1515070605950" MODIFIED="1515070637003"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Often it is the case that you want your overloaded operators to work with operands that are different types. Consequently, whenever we overload binary operators for operands of different types, we actually need to write two functions -- one for each case.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="overloaded operator calling overloaded operator" STYLE_REF="Beschreibung" ID="ID_1255173092" CREATED="1515070698233" MODIFIED="1515070710123"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;It is often possible to define overloaded operators by calling other overloaded operators -- when possible, do so!</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="which" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_337593686" CREATED="1515072916793" MODIFIED="1515253949001">
+<node TEXT="1" OBJECT="java.lang.Long|1" STYLE_REF="Beschreibung" ID="ID_1095719112" CREATED="1515073174246" MODIFIED="1515073177727"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;If you&#8217;re overloading assignment (=), subscript ([]), function call (()), or member selection (-&gt;), do so as a member function.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="2" OBJECT="java.lang.Long|2" STYLE_REF="Beschreibung" ID="ID_547614132" CREATED="1515073197425" MODIFIED="1515073201145"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;If you&#8217;re overloading a unary operator, do so as a member function.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="3" OBJECT="java.lang.Long|3" STYLE_REF="Beschreibung" ID="ID_1213764670" CREATED="1515073217515" MODIFIED="1515073220549"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;If you&#8217;re overloading a binary operator that modifies its left operand (e.g. operator+=), do so as a member function if you can.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="4" OBJECT="java.lang.Long|4" STYLE_REF="Beschreibung" ID="ID_1854603349" CREATED="1515073230250" MODIFIED="1515073233325"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;If you&#8217;re overloading a binary operator that does not modify its left operand (e.g. operator+), do so as a normal function or friend function.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="pointers and references" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_680457097" CREATED="1515510524710" MODIFIED="1515510539138">
+<node TEXT="pointers" STYLE_REF="Beschreibung" ID="ID_835018892" CREATED="1514652007482" MODIFIED="1515510571565">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1189109054" CREATED="1514671782702" MODIFIED="1515526173317">
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1145585301" CREATED="1514652169057" MODIFIED="1514652174377"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;A pointer is a variable that holds a memory address as its value.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="declaration" STYLE_REF="Beschreibung" ID="ID_409906955" CREATED="1514652208805" MODIFIED="1515254141906"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int *iPtr;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="However, when returning a pointer from a function, it&#x2019;s clearer to put the asterisk next to the return type:" STYLE_REF="Beschreibung" ID="ID_1919826422" CREATED="1514652255741" MODIFIED="1514652273337"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>int* doSomething();</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="type" STYLE_REF="Beschreibung" ID="ID_1113188603" CREATED="1514652423099" MODIFIED="1514652427908"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The type of the pointer has to match the type of the variable being pointed to:</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="get address of a variable" STYLE_REF="Beschreibung" ID="ID_1617674109" CREATED="1514652321634" MODIFIED="1514652336751"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>int value = 5; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>int *ptr = &amp;value;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="usage" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_104351728" CREATED="1514671753009" MODIFIED="1515254129355">
+<node TEXT="dereferencing" STYLE_REF="Beschreibung" ID="ID_73737477" CREATED="1514652734865" MODIFIED="1515254151466"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;std::cout &lt;&lt; *ptr; // dereference ptr (get the value that ptr is pointing to)</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="ptr is the same as &amp;value" STYLE_REF="Beschreibung" ID="ID_424973086" CREATED="1514652823277" MODIFIED="1514652824815"/>
+<node TEXT="*ptr is treated the same as value" STYLE_REF="Beschreibung" ID="ID_1714252064" CREATED="1514652830278" MODIFIED="1514652832207"/>
+</node>
+<node TEXT="arithmetic" STYLE_REF="Beschreibung" ID="ID_1706070977" CREATED="1514654597430" MODIFIED="1515254153896"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;If ptr points to an integer, ptr + 1 is the address of the next integer in memory after ptr. ptr - 1 is the address of the previous integer before ptr.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="scaling" STYLE_REF="Beschreibung" ID="ID_41563821" CREATED="1514654706106" MODIFIED="1514654715970"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Note that ptr + 1 does not return the memory address after ptr, but the memory address of the next object of the type that ptr points to. If ptr points to an integer (assuming 4 bytes), ptr + 3 means 3 integers (12 bytes) after ptr. If ptr points to a char, which is always 1 byte, ptr + 3 means 3 chars (3 bytes) after ptr. </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>When calculating the result of a pointer arithmetic expression, the compiler always multiplies the integer operand by the size of the object being pointed to. This is called scaling.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="warning" STYLE_REF="Beschreibung" ID="ID_561826141" CREATED="1514652900964" MODIFIED="1514652905697"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;When a pointer is dereferenced, the application attempts to go to the memory location that is stored in the pointer and retrieve the contents of memory. For security reasons, modern operating systems sandbox applications to prevent them from improperly interacting with other applications, and to protect the stability of the operating system itself. If an application tries to access a memory location not allocated to it by the operating system, the operating system may shut down the application.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="special" STYLE_REF="Beschreibung" ID="ID_1207863535" CREATED="1514671766044" MODIFIED="1515254274604">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="null pointer" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_534893641" CREATED="1514653167126" MODIFIED="1515254165736">
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1050820407" CREATED="1514671902079" MODIFIED="1514671909018"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;A null value is a special value that means the pointer is not pointing at anything.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="Starting with C++11, this should be favored instead of 0 when we want a null pointer:" STYLE_REF="Beschreibung" ID="ID_1136146718" CREATED="1514653338203" MODIFIED="1515254177354"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int *ptr = nullptr;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="other example" STYLE_REF="Beschreibung" ID="ID_942943216" CREATED="1514653201477" MODIFIED="1514653346346"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>int *ptr(0);&#160;&#160;// ptr is now a null pointer </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>int *ptr2; // ptr2 is uninitialized </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>ptr2 = 0; // ptr2 is now a null pointer</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="std::nullptr_t" STYLE_REF="Beschreibung" ID="ID_999125871" CREATED="1514653429506" MODIFIED="1515254179530"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;C++11 also introduces a new type called std::nullptr_t (in header &lt;cstddef&gt;). std::nullptr_t can only hold one value: nullptr!</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="If we want to write a function that accepts a nullptr argument, what type do we make the parameter? The answer is std::nullptr_t." STYLE_REF="Beschreibung" ID="ID_1452540328" CREATED="1514653412655" MODIFIED="1514653413983"/>
+</node>
+<node TEXT="can be used in conditional test" STYLE_REF="Beschreibung" ID="ID_1196936921" CREATED="1514653273137" MODIFIED="1514653284293"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;if (ptr) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;cout &lt;&lt; &quot;ptr is pointing to a double value.&quot;; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>else </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;cout &lt;&lt; &quot;ptr is a null pointer.&quot;;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="deferencing" STYLE_REF="Beschreibung" ID="ID_1223463311" CREATED="1514653297871" MODIFIED="1514653309375"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;results in undefined behavior</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="void pointer" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_337733498" CREATED="1514671233589" MODIFIED="1515254166290">
+<node TEXT="The void pointer, also known as the generic pointer, is a special type of pointer that can be pointed at objects of any data type!" STYLE_REF="Beschreibung" ID="ID_1636151627" CREATED="1514671239526" MODIFIED="1514671249256"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;void *ptr; // ptr is a void pointer</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="dereference" STYLE_REF="Beschreibung" ID="ID_1171690226" CREATED="1514671328025" MODIFIED="1515254192000"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;However, because the void pointer does not know what type of object it is pointing to, it cannot be dereferenced directly!</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1910043012" CREATED="1514671352007" MODIFIED="1514671368957"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int value = 5; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>void *voidPtr = &amp;value; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>//cout &lt;&lt; *voidPtr &lt;&lt; endl; // illegal: cannot dereference a void pointer </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>int *intPtr = static_cast&lt;int*&gt;(voidPtr); // however, if we cast our void pointer to an int pointer... </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>cout &lt;&lt; *intPtr &lt;&lt; endl; // then we can dereference it like normal</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="The next obvious questions is: If a void pointer doesn&#x2019;t know what it&#x2019;s pointing to, how do we know what to cast it to? Ultimately, that is up to you to keep track of." STYLE_REF="Beschreibung" ID="ID_1553405631" CREATED="1514671497732" MODIFIED="1514671499458"/>
+</node>
+<node TEXT="properties" STYLE_REF="Beschreibung" ID="ID_889254991" CREATED="1514671624880" MODIFIED="1515254198356">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="null void pointer" STYLE_REF="Beschreibung" ID="ID_451435250" CREATED="1514671528675" MODIFIED="1514671537435"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Void pointers can be set to a null value:</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="no arithmetic" STYLE_REF="Beschreibung" ID="ID_419591153" CREATED="1514671560964" MODIFIED="1514671566712"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;It is not possible to do pointer arithmetic on a void pointer. This is because pointer arithmetic requires the pointer to know what size object it is pointing to, so it can increment or decrement the pointer appropriately.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="no void reference" STYLE_REF="Beschreibung" ID="ID_1950192277" CREATED="1514671584549" MODIFIED="1514671592786"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Note that there is no such thing as a void reference. This is because a void reference would be of type void &amp;, and would not know what type of value it referenced.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="RULE" STYLE_REF="Beschreibung" ID="ID_1457956740" CREATED="1514671633870" MODIFIED="1514671645302"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Avoid using void pointers</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="pointer to pointer" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_567000936" CREATED="1514671916767" MODIFIED="1515254166566">
+<node TEXT="A pointer to a pointer works just like a normal pointer &#x2014; you can dereference it to retrieve the value pointed to. And because that value is itself a pointer, you can dereference it again to get to the underlying value. These dereferences can be done consecutively:" STYLE_REF="Beschreibung" ID="ID_1989912977" CREATED="1514671939854" MODIFIED="1514671971827"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int value = 5; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>int *ptr = &amp;value; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>std::cout &lt;&lt; *ptr; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>int **ptrptr = &amp;ptr; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>std::cout &lt;&lt; **ptrptr; </i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="pointer to a pointer can be set to null:" STYLE_REF="Beschreibung" ID="ID_1986832524" CREATED="1514671988012" MODIFIED="1514671998021"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int **ptrptr = nullptr; // use 0 instead prior to C++11</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="use case" STYLE_REF="Beschreibung" ID="ID_163572433" CREATED="1514672053656" MODIFIED="1515254251251">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="dynamically allocate an array of pointers:" STYLE_REF="Beschreibung" ID="ID_1274363403" CREATED="1514672060343" MODIFIED="1514672076808"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int **array = new int*[10]; // allocate an array of 10 int pointers</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="Two-dimensional dynamically allocated arrays" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1116194270" CREATED="1514672254951" MODIFIED="1515254242009">
+<node TEXT="array dimension is compile-time constant" STYLE_REF="Beschreibung" ID="ID_892431868" CREATED="1514672271023" MODIFIED="1514672309318"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int (*array)[5] = new int[10][5]; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>auto array = new int[10][5]; // so much simpler in C++ 11!</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="otherwise" STYLE_REF="Beschreibung" ID="ID_653799056" CREATED="1514672412172" MODIFIED="1515254257135"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;First, we allocate an array of pointers (as per above). Then we iterate through the array of pointers and allocate a dynamic array for each array element. Our dynamic two-dimensional array is a dynamic one-dimensional array of dynamic one-dimensional arrays!</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="Our dynamic two-dimensional array is a dynamic one-dimensional array of dynamic one-dimensional arrays!" STYLE_REF="Beschreibung" ID="ID_826238577" CREATED="1514672439011" MODIFIED="1514672492524"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int **array = new int*[10]; // allocate an array of 10 int pointers &#8212; these are our rows </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>for (int count = 0; count &lt; 10; ++count) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;array[count] = new int[5]; // these are our columns</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="deallocation" STYLE_REF="Beschreibung" ID="ID_59181505" CREATED="1514672562103" MODIFIED="1515254261674"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>for (int count = 0; count &lt; 10; ++count) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;delete[] array[count]; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>delete[] array; // this needs to be done last</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="Note that we delete the array in the opposite order that we created it. If we delete array before the array elements, then we&#x2019;d have to access deallocated memory to delete the array elements. And that would result in undefined behavior." STYLE_REF="Beschreibung" ID="ID_1869223307" CREATED="1514672615773" MODIFIED="1514672617186"/>
+</node>
+</node>
+<node TEXT="Because allocating and deallocating two-dimensional arrays is complex and easy to mess up, it&#x2019;s often easier to &#x201c;flatten&#x201d; a two-dimensional array (of size x by y) into a one-dimensional array of size x * y" STYLE_REF="Beschreibung" ID="ID_31047376" CREATED="1514672663586" MODIFIED="1514672665302"/>
+<node TEXT="higher degrees of dimensionality possible" STYLE_REF="Beschreibung" ID="ID_1368416725" CREATED="1514672738210" MODIFIED="1514672753480"/>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="smart pointer" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_532867714" CREATED="1515503508693" MODIFIED="1515503514534">
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_345737252" CREATED="1515503514932" MODIFIED="1515503523067"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;A Smart pointer is a composition class that is designed to manage dynamically allocated memory and ensure that memory gets deleted when the smart pointer object goes out of scope. (Relatedly, built-in pointers are sometimes called &#8220;dumb pointers&#8221; because they can&#8217;t clean up after themselves).</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="std::unique_ptr" STYLE_REF="Beschreibung" ID="ID_884257671" CREATED="1515510950970" MODIFIED="1515512775788">
+<hook NAME="AlwaysUnfoldedNode"/>
+<richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;std::unique_ptr is the C++11 replacement for std::auto_ptr. It should be used to manage any dynamically allocated object that is not shared by multiple objects. That is, std::unique_ptr should completely own the object it manages, not share that ownership with other classes.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_498037099" CREATED="1515512105551" MODIFIED="1515512652965">
+<node TEXT="copy disabled" STYLE_REF="Beschreibung" ID="ID_802248715" CREATED="1515511148857" MODIFIED="1515511156059"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Because std::unique_ptr is designed with move semantics in mind, copy initialization and copy assignment are disabled. If you want to transfer the contents managed by std::unique_ptr, you must use move semantics.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="accessing the managed object" STYLE_REF="Beschreibung" ID="ID_1748200333" CREATED="1515511756021" MODIFIED="1515511764547"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;std::unique_ptr has an overloaded operator* and operator-&gt; that can be used to return the resource being managed. Operator* returns a reference to the managed resource, and operator-&gt; returns a pointer.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="std::make_unique()" STYLE_REF="Beschreibung" ID="ID_1581003680" CREATED="1515511975766" MODIFIED="1515512661290"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;C++14 comes with an additional function named std::make_unique(). This templated function constructs an object of the template type and initializes it with the arguments passed into the function.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="use it" STYLE_REF="Beschreibung" ID="ID_1035359190" CREATED="1515512001524" MODIFIED="1515512005837"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Use of std::make_unique() is optional, but is recommended over creating std::unique_ptr yourself. This is because code using std::make_unique is simpler, and it also requires less typing (when used with automatic type deduction). Furthermore it resolves an exception safety issue that can result from C++ leaving the order of evaluation for function arguments unspecified.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="usage" STYLE_REF="Beschreibung" ID="ID_1823094265" CREATED="1515512114676" MODIFIED="1515512673906">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="arrays" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_95158500" CREATED="1515512491475" MODIFIED="1515512676347">
+<node TEXT="std::unique_ptr and arrays" STYLE_REF="Beschreibung" ID="ID_721793436" CREATED="1515511888634" MODIFIED="1515511899226"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Favor std:array, std::vector, or std::string over a smart pointer managing a fixed array, dynamic array, or C-style string</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="functions" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1525064602" CREATED="1515512178147" MODIFIED="1515512676932">
+<node TEXT="returning std::unique_ptr from a function" STYLE_REF="Beschreibung" ID="ID_1909755504" CREATED="1515512038352" MODIFIED="1515512061941"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;std::unique_ptr can be safely returned from a function by value. In general, you should not return std::unique_ptr by pointer (ever) or reference (unless you have a specific compelling reason to).</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="Passing std::unique_ptr to a function" STYLE_REF="Beschreibung" ID="ID_842508443" CREATED="1515512175612" MODIFIED="1515512686661">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="take ownership of contents" STYLE_REF="Beschreibung" ID="ID_641325506" CREATED="1515512233566" MODIFIED="1515512241033"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;If you want the function to take ownership of the contents of the pointer, pass the std::unique_ptr by value. Note that because copy semantics have been disabled, you&#8217;ll need to use std::move to actually pass the variable in.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="don&apos;t take ownership" STYLE_REF="Beschreibung" ID="ID_1437708410" CREATED="1515512269675" MODIFIED="1515512689574">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="by reference" STYLE_REF="Beschreibung" ID="ID_770451766" CREATED="1515512275516" MODIFIED="1515512281514"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Although you can pass a std::unique_ptr by reference (which will allow the function to use the object without assuming ownership), you should only do so when the caller might alter or change the object being managed.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="pass resource itself" STYLE_REF="Beschreibung" ID="ID_43757432" CREATED="1515512338800" MODIFIED="1515512348725"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Instead, it&#8217;s better to just pass the resource itself (by pointer or reference, depending on whether null is a valid argument). This allows the function to remain agnostic of how the caller is managing its resources. To get a raw resource pointer from a std::unique_ptr, you can use the get() member function:</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="classes" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1722468233" CREATED="1515512483199" MODIFIED="1515512677279">
+<node TEXT="std::unique_ptr and classes" STYLE_REF="Beschreibung" ID="ID_798571836" CREATED="1515512433982" MODIFIED="1515512444170"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;You can, of course, use std::unique_ptr as a composition member of your class. This way, you don&#8217;t have to worry about ensuring your class destructor deletes the dynamic memory, as the std::unique_ptr will be automatically destroyed when the class object is destroyed. However, do note that if your class object is dynamically allocated, the object itself is at risk for not being properly deallocated, in which case even a smart pointer won&#8217;t help.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="what not to do" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_414894173" CREATED="1515512544202" MODIFIED="1515512677658">
+<node TEXT="same resource" STYLE_REF="Beschreibung" ID="ID_321218407" CREATED="1515512547911" MODIFIED="1515512700707"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;First, don&#8217;t let multiple classes manage the same resource.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1323700453" CREATED="1515512593711" MODIFIED="1515512597577"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Resource *res = new Resource; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>std::unique_ptr&lt;Resource&gt; res1(res); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>std::unique_ptr&lt;Resource&gt; res2(res);</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="manually delete resource" STYLE_REF="Beschreibung" ID="ID_1208025368" CREATED="1515512580047" MODIFIED="1515512704139"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Second, don&#8217;t manually delete the resource out from underneath the std::unique_ptr.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_514691509" CREATED="1515512604455" MODIFIED="1515512610188"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Resource *res = new Resource; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>std::unique_ptr&lt;Resource&gt; res1(res); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>delete res;</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="std::shared_ptr" STYLE_REF="Beschreibung" ID="ID_939091375" CREATED="1515512837830" MODIFIED="1515513535796"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Unlike std::unique_ptr, which is designed to singly own and manage a resource, std::shared_ptr is meant to solve the case where you need multiple smart pointers co-owning a resource. This means that it is fine to have multiple std::shared_ptr pointing to the same resource. Internally, std::shared_ptr keeps track of how many std::shared_ptr are sharing the resource. As long as at least one std::shared_ptr is pointing to the resource, the resource will not be deallocated, even if individual std::shared_ptr are destroyed. As soon as the last std::shared_ptr managing the resource goes out of scope (or is reassigned to point at something else), the resource will be deallocated.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1802185359" CREATED="1515513182972" MODIFIED="1515513538504">
+<node TEXT="std::make_shared()" STYLE_REF="Beschreibung" ID="ID_1557687752" CREATED="1515513186161" MODIFIED="1515513542927"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Much like std::make_unique() can be used to create a std::unique_ptr in C++14, std::make_shared() can (and should) be used to make a std::shared_ptr. std::make_shared() is available in C++11.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="simpler, safer, more performant" STYLE_REF="Beschreibung" ID="ID_845848129" CREATED="1515513258980" MODIFIED="1515513277619"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The reasons for using std::make_shared() are the same as std::make_unique() -- std::make_shared() is simpler and safer (there&#8217;s no way to directly create two std::shared_ptr pointing to the same resource using this method). However, std::make_shared() is also more performant than not using it. The reasons for this lie in the way that std::shared_ptr keeps track of how many pointers are pointing at a given resource.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="more than one pointing to same resource" STYLE_REF="Beschreibung" ID="ID_1349896581" CREATED="1515513128619" MODIFIED="1515513545434"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Always make a copy of an existing std::shared_ptr if you need more than one std::shared_ptr pointing to the same resource.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="why" STYLE_REF="Beschreibung" ID="ID_881483697" CREATED="1515513366949" MODIFIED="1515513371756"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;However, when a std::shared_ptr is cloned using copy assignment, the data in the control block can be appropriately updated to indicate that there are now additional std::shared_ptr co-managing the resource.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="shared pointers can be created from unique pointers" STYLE_REF="Beschreibung" ID="ID_1990798585" CREATED="1515513424170" MODIFIED="1515513443307"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;A std::unique_ptr can be converted into a std::shared_ptr via a special std::shared_ptr constructor that accepts a std::unique_ptr r-value. The contents of the std::unique_ptr will be moved to the std::shared_ptr. However, std::shared_ptr can not be safely converted to a std::unique_ptr. This means that if you&#8217;re creating a function that is going to return a smart pointer, you&#8217;re better off returning a std::unique_ptr and assigning it to a std::shared_ptr if and when that&#8217;s appropriate.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="downsides" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1607043680" CREATED="1515513712872" MODIFIED="1515513718804">
+<node TEXT="perils of shared pointers" STYLE_REF="Beschreibung" ID="ID_359571160" CREATED="1515513499211" MODIFIED="1515513512499"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;std::shared_ptr has some of the same challenges as std::unique_ptr -- if the std::shared_ptr is not properly disposed of (either because it was dynamically allocated and never deleted, or it was part of an object that was dynamically allocated and never deleted) then the resource it is managing won&#8217;t be deallocated either. With std::unique_ptr, you only have to worry about one smart pointer being properly disposed of. With std::shared_ptr, you have to worry about them all. If any of the std::shared_ptr managing a resource are not properly destroyed, the resource will not be deallocated properly.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="circular references" STYLE_REF="Beschreibung" ID="ID_1548046878" CREATED="1515513725990" MODIFIED="1515513732570"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The practical effect having shared pointers form a cycle is that each object ends up keeping the next object alive -- with the last object keeping the first object alive. Thus, no objects in the series can be deallocated because they all think some other object still needs it!</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="std::weak_ptr" STYLE_REF="Beschreibung" ID="ID_906030801" CREATED="1515513817392" MODIFIED="1515514003054"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;A std::weak_ptr is an observer -- it can observe and access the same object as a std::shared_ptr (or other std::weak_ptrs) but it is not considered an owner. Remember, when a std::shared pointer goes out of scope, it only considers whether other std:shared_ptr are co-owning the object. std::weak_ptr does not count!</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1879668779" CREATED="1515513973504" MODIFIED="1515513977400">
+<node TEXT="using std::weak_ptr" STYLE_REF="Beschreibung" ID="ID_181022261" CREATED="1515513883575" MODIFIED="1515513893380"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The downside of std::weak_ptr is that std::weak_ptr are not directly usable (they have no operator-&gt;). To use a std::weak_ptr, you must first convert it into a std::shared_ptr. Then you can use the std::shared_ptr. To convert a std::weak_ptr into a std::shared_ptr, you can use the lock() member function.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="shared vs. weak" STYLE_REF="Beschreibung" ID="ID_1547831884" CREATED="1515513954435" MODIFIED="1515513962400"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;std::shared_ptr can be used when you need multiple smart pointers that can co-own a resource. The resource will be deallocated when the last std::shared_ptr goes out of scope. std::weak_ptr can be used when you want a smart pointer that can see and use a shared resource, but does not participate in the ownership of that resource.</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="references" STYLE_REF="Beschreibung" ID="ID_254146950" CREATED="1514662431080" MODIFIED="1515254293033">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="to non-const values" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1259252640" CREATED="1514662608205" MODIFIED="1515254296936">
+<node TEXT="declaration" STYLE_REF="Beschreibung" ID="ID_723792415" CREATED="1514662621109" MODIFIED="1514662628370"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;A reference is a type of C++ variable that acts as an alias to another object or value.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="references as aliases" STYLE_REF="Beschreibung" ID="ID_1447083420" CREATED="1514662667702" MODIFIED="1515254309217"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int value = 5; // normal integer </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>int &amp;ref = value; // reference to variable value </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>value = 6; // value is now 6 </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>ref = 7; // value is now 7</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="References must be initialized when created:" STYLE_REF="Beschreibung" ID="ID_1849204566" CREATED="1514662771378" MODIFIED="1514662782837"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Unlike pointers, which can hold a null value, there is no such thing as a null reference.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="References to non-const values can only be initialized with non-const l-values." STYLE_REF="Beschreibung" ID="ID_1038025593" CREATED="1514662823271" MODIFIED="1514662824447"/>
+<node TEXT="References can not be reassigned" STYLE_REF="Beschreibung" ID="ID_1432412497" CREATED="1514662862934" MODIFIED="1514662864342"/>
+</node>
+<node TEXT="references as function parameters" STYLE_REF="Beschreibung" ID="ID_1547749350" CREATED="1514662997465" MODIFIED="1515254312227"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;In this context, the reference parameter acts as an alias for the argument, and no copy of the argument is made into the parameter. This can lead to better performance if the argument is large or expensive to copy.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="best practice" STYLE_REF="Beschreibung" ID="ID_663556517" CREATED="1514663064862" MODIFIED="1514663115540"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Best practice: Pass arguments by non-const reference when the argument needs to be modified by the function. Because the reference parameter acts as an alias for the argument, a function that uses a reference parameter is able to modify the argument passed in:</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="References as shortcuts" STYLE_REF="Beschreibung" ID="ID_870623301" CREATED="1514663157435" MODIFIED="1514663169407"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int &amp;ref = other.something.value1; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>// ref can now be used in place of other.something.value1</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="to const values" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1176785562" CREATED="1514668886032" MODIFIED="1515254297570">
+<node TEXT="to non-const l-value" STYLE_REF="Beschreibung" ID="ID_14155422" CREATED="1514668913817" MODIFIED="1515254318783"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>int x = 5; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>const int &amp;ref1 = x; // okay, x is a non-const l-value</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="much like pointer" STYLE_REF="Beschreibung" ID="ID_94960" CREATED="1514669102552" MODIFIED="1514669112917"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Much like a pointer to a const value, a reference to a const value can reference a non-const variable. When accessed through a reference to a const value, the value is considered const even if the original variable is not:</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="to const l-value" STYLE_REF="Beschreibung" ID="ID_139952310" CREATED="1514668939494" MODIFIED="1515254320983"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;const int y = 7; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>const int &amp;ref2 = y; // okay, y is a const l-value</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="constant references as function parameters" STYLE_REF="Beschreibung" ID="ID_1829086168" CREATED="1514669547032" MODIFIED="1515254325578"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;References used as function parameters can also be const. This allows us to access the argument without making a copy of it, while guaranteeing that the function will not change the value being referenced.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="References to const values are particularly useful as function parameters because of their versatility. A const reference parameter allows you to pass in a non-const l-value argument, a const l-value argument, a literal, or the result of an expression:" STYLE_REF="Beschreibung" ID="ID_1507951271" CREATED="1514669699968" MODIFIED="1514669702686"/>
+</node>
+</node>
+<node TEXT="to r-value" STYLE_REF="Beschreibung" ID="ID_1662490789" CREATED="1514668963842" MODIFIED="1515254323594"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;const int &amp;ref3 = 6; // okay, 6 is an r-value</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="References to r-values extend the lifetime of the referenced value" STYLE_REF="Beschreibung" ID="ID_889706749" CREATED="1514669461678" MODIFIED="1514669486328"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;When a reference to a const value is initialized with an r-value, the lifetime of the r-value is extended to match the lifetime of the reference.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="r-value" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1550824777" CREATED="1515507272962" MODIFIED="1515507773051"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;C++11</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1605115704" CREATED="1515507279029" MODIFIED="1515509099227"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;An r-value reference is a reference that is designed to be initialized with an r-value (only). While an l-value reference is created using a single ampersand, an r-value reference is created using a double ampersand</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example 1" STYLE_REF="Beschreibung" ID="ID_734264516" CREATED="1515507294130" MODIFIED="1515507621410"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int x = 5; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>int &amp;lref = x; // l-value reference initialized with l-value x </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>int &amp;&amp;rref = 5; // r-value reference initialized with r-value 5</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="example 2" STYLE_REF="Beschreibung" ID="ID_1753393392" CREATED="1515507621911" MODIFIED="1515507634030"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>Fraction &amp;&amp;rref = Fraction(3, 5); // r-value reference to temporary Fraction </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>std::cout &lt;&lt; rref &lt;&lt; '\n';</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="r-value references as function parameters" STYLE_REF="Beschreibung" ID="ID_920681781" CREATED="1515507818253" MODIFIED="1515509102758"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;R-value references are more often used as function parameters. This is most useful for function overloads when you want to have different behavior for l-value and r-value arguments.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1205021187" CREATED="1515507835529" MODIFIED="1515507858415"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int x = 5; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>fun(x); // l-value argument calls l-value version of function </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>fun(5); // r-value argument calls r-value version of function</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="useful properties" STYLE_REF="Beschreibung" ID="ID_1721118234" CREATED="1515507352324" MODIFIED="1515509106368">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="1" OBJECT="java.lang.Long|1" STYLE_REF="Beschreibung" ID="ID_809933305" CREATED="1515507371267" MODIFIED="1515507374841"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;First, r-value references extend the lifespan of the object they are initialized with to the lifespan of the r-value reference. l-value references to const objects can do this too, but it&#8217;s far more useful for r-value references since r-values have expression scope otherwise.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="2" OBJECT="java.lang.Long|2" STYLE_REF="Beschreibung" ID="ID_387514640" CREATED="1515507377022" MODIFIED="1515507386754"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Second, non-const r-value references allow you to modify the r-value!</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="references vs. pointers" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1539147601" CREATED="1514663192598" MODIFIED="1515254014998"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;a reference acts like a pointer that is implicitly dereferenced when accessed (references are usually implemented internally by the compiler using pointers).</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="prefer references" STYLE_REF="Beschreibung" ID="ID_181741417" CREATED="1514663257430" MODIFIED="1514663298623"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Because references must be initialized to valid objects (cannot be null) and can not be changed once set, references are generally much safer to use than pointers (since there&#8217;s no risk of dereferencing a null pointer). However, they are also a bit more limited in functionality accordingly. If a given task can be solved with either a reference or a pointer, the reference should generally be preferred. Pointers should only be used in situations where references are not sufficient (such as dynamically allocating memory).</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="variables" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1589531231" CREATED="1514394702029" MODIFIED="1515253769835">
+<node TEXT="normal" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_829924226" CREATED="1514662138223" MODIFIED="1515254013411">
+<node TEXT="" ID="ID_830904743" CREATED="1514662152468" MODIFIED="1515254027893">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="l-value" STYLE_REF="Beschreibung" ID="ID_112515578" CREATED="1514394737287" MODIFIED="1514394769929"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;value that has a persistent address</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="r-value" STYLE_REF="Beschreibung" ID="ID_124345566" CREATED="1514394771019" MODIFIED="1514394794759"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;value that is not associated with a persistent memory address</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="" ID="ID_1040431033" CREATED="1514394873484" MODIFIED="1514394873485">
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="" ID="ID_1534511155" CREATED="1514394861193" MODIFIED="1514410537278">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_265059873" CREATED="1514394825795" MODIFIED="1514394839512"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int x;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="assignment" STYLE_REF="Beschreibung" ID="ID_514004802" CREATED="1514394841707" MODIFIED="1514394859322"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;x = 5;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="" ID="ID_1662662864" CREATED="1514394873482" MODIFIED="1514394873484">
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="initialization" STYLE_REF="Beschreibung" ID="ID_1219793013" CREATED="1514394873487" MODIFIED="1515254031000"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int x = 5;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="uninitialized variables" STYLE_REF="Beschreibung" ID="ID_1691765435" CREATED="1514394921686" MODIFIED="1514394960439"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&quot;make sure all of your variables have known values&quot;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="initialization vs. assignment" STYLE_REF="Beschreibung" ID="ID_116955890" CREATED="1514394984813" MODIFIED="1514395015404"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&quot;When giving variables an initial value, favor initialization over assignment&quot;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="" ID="ID_1617476255" CREATED="1514405708592" MODIFIED="1514410550245">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="copy initialization" STYLE_REF="Beschreibung" ID="ID_243367252" CREATED="1514405713124" MODIFIED="1514405739003"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int x = 5;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="direct initialization" STYLE_REF="Beschreibung" ID="ID_1693247185" CREATED="1514405745292" MODIFIED="1514405758552"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int x(5);</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="uniform initialization" STYLE_REF="Beschreibung" ID="ID_1104541451" CREATED="1514405777102" MODIFIED="1514410553398"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int x{5};</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="rule" STYLE_REF="Beschreibung" ID="ID_757092015" CREATED="1514405835294" MODIFIED="1514405841319"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: If you&#8217;re using a C++11 compatible compiler, favor uniform initialization</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="multiple variables" STYLE_REF="Beschreibung" ID="ID_859188794" CREATED="1514405903638" MODIFIED="1514405913729"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int a = 5, b = 6; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>int c(7), d(8); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>int e{9}, f{10};</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="where" STYLE_REF="Beschreibung" ID="ID_288222693" CREATED="1514405965185" MODIFIED="1514405971048"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The proper C++ style is to define variables as close to the first use of that variable as you reasonably can</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="auto keyword" STYLE_REF="Beschreibung" ID="ID_1357950884" CREATED="1514486495947" MODIFIED="1515254051517"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;When initializing a variable, the auto keyword can be used in place of the variable type to tell the compiler to infer the variable&#8217;s type from the initializer&#8217;s type. This is called type inference (also sometimes called type deduction).</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_999405168" CREATED="1514486529917" MODIFIED="1514486534478"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;auto d = 5.0; // 5.0 is a double literal, so d will be type double</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="function parameters" STYLE_REF="Beschreibung" ID="ID_168490424" CREATED="1514486567516" MODIFIED="1514486576703"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The auto keyword can&#8217;t be used with function parameters</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="In C++14, the auto keyword was extended to be able to auto-deduce a function&#x2019;s return type" STYLE_REF="Beschreibung" ID="ID_656917206" CREATED="1514486623769" MODIFIED="1514486632869"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;auto add(int x, int y) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;return x + y; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="constant" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1458368377" CREATED="1514408585224" MODIFIED="1515254014117"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;const double gravity { 9.8 };</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="runtime constants" STYLE_REF="Beschreibung" ID="ID_1603737840" CREATED="1514408694447" MODIFIED="1514408701344"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Runtime constants are those whose initialization values can only be resolved at runtime (when your program is running).</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="compile-time constants" STYLE_REF="Beschreibung" ID="ID_1168023047" CREATED="1514408713432" MODIFIED="1514410543012"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Compile-time constants are those whose initialization values can be resolved at compile-time (when your program is compiling).</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="C++11 introduced new keyword constexpr, which ensures that the constant must be a compile-time constant:" STYLE_REF="Beschreibung" ID="ID_768645495" CREATED="1514408758378" MODIFIED="1514408779483"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;constexpr double gravity (9.8);</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="rule" STYLE_REF="Beschreibung" ID="ID_151316904" CREATED="1514408826759" MODIFIED="1514408831053"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: use const variables to provide a name and context for your magic numbers.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="Using symbolic constants throughout a program" STYLE_REF="Beschreibung" ID="ID_148512389" CREATED="1514408902963" MODIFIED="1514408936583"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;declare constant variables in header file within namespace</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="pointer" STYLE_REF="Beschreibung" ID="ID_718422959" CREATED="1514661578630" MODIFIED="1515254093216">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="pointer to constant value" STYLE_REF="Beschreibung" ID="ID_1654945111" CREATED="1514661389317" MODIFIED="1515254095123"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;A pointer to a constant variable can point to a non-constant variable but not the other way around. Think of it this way: a pointer to a constant variable treats the variable as constant when it is accessed through the pointer, regardless of whether the variable was initially defined as const or not.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_96826063" CREATED="1514661670313" MODIFIED="1514661674761"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int value = 5; // value is not constant </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>const int *ptr = &amp;value; // this is still okay</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="constant pointer" STYLE_REF="Beschreibung" ID="ID_1547008612" CREATED="1514661611992" MODIFIED="1515254097593"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;We can also make a pointer itself constant. A const pointer is a pointer whose value can not be changed after initialization</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1240810340" CREATED="1514661625811" MODIFIED="1514661639825"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int value = 5; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>int *const ptr = &amp;value;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="constant pointer to a constant value" STYLE_REF="Beschreibung" ID="ID_1579897263" CREATED="1514661797873" MODIFIED="1515254101218"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;A const pointer to a const value can not be set to point to another address, nor can the value it is pointing to be changed through the pointer.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1068813881" CREATED="1514661822246" MODIFIED="1514661826864"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int value = 5; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>const int *const ptr = &amp;value;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="dynamic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_730628320" CREATED="1514655712729" MODIFIED="1515254014384"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int *ptr = new int;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="In the above case, we&#x2019;re requesting an integer&#x2019;s worth of memory from the operating system. The new operator returns a pointer containing the address of the memory that has been allocated." STYLE_REF="Beschreibung" ID="ID_659501549" CREATED="1514655732724" MODIFIED="1514655733928"/>
+<node TEXT="initialization" STYLE_REF="Beschreibung" ID="ID_470824029" CREATED="1514655855333" MODIFIED="1514655865135"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>int *ptr1 = new int (5); // use direct initialization </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>int *ptr2 = new int { 6 }; // use uniform initialization</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="delete single variables" STYLE_REF="Beschreibung" ID="ID_1619602884" CREATED="1514655888690" MODIFIED="1514655910455"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;delete ptr; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>ptr = 0;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="operator new can fail" STYLE_REF="Beschreibung" ID="ID_885633782" CREATED="1514656051196" MODIFIED="1515254114085"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int *value = new (std::nothrow) int; // value will be set to a null pointer if the integer allocation fails</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="Consequently, the best practice is to check all memory requests to ensure they actually succeeded before using the allocated memory." STYLE_REF="Beschreibung" ID="ID_1079316604" CREATED="1514656086250" MODIFIED="1514656087490"/>
+</node>
+<node TEXT="memory leaks" STYLE_REF="Beschreibung" ID="ID_1573997630" CREATED="1514656524109" MODIFIED="1514656529716"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Dynamically allocated memory effectively has no scope. That is, it stays allocated until it is explicitly deallocated or until the program ends (and the operating system cleans it up, assuming your operating system does that). However, the pointers used to hold dynamically allocated memory addresses follow the scoping rules of normal variables.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
 </node>
 <node TEXT="techniques" STYLE_REF="Beschreibung" POSITION="right" ID="ID_1418801475" CREATED="1514396903564" MODIFIED="1514410342983">
 <hook NAME="AlwaysUnfoldedNode"/>
@@ -11160,8 +11160,8 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="scope" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1468399822" CREATED="1514396230735" MODIFIED="1515406001238">
-<node TEXT="forward declaration" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_168072463" CREATED="1514396703525" MODIFIED="1515406039940"><richcontent TYPE="DETAILS">
+<node TEXT="command line arguments" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1417897380" CREATED="1514836371213" MODIFIED="1515406640569">
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_335272783" CREATED="1514836391661" MODIFIED="1514836396768"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11169,38 +11169,13 @@
   </head>
   <body>
     <p>
-      <font color="#666666" size="1"><i>&#160;&quot;tell the compiler about the existence of an identifier before actually defining the identifier.&quot;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_263742959" CREATED="1514396746937" MODIFIED="1514396787563"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;#include &lt;iostream&gt; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>int add(int x, int y); // forward declaration of add()</i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>int main(){}</i></font>
+      <font color="#666666" size="1"><i>&#160;Command line arguments are optional string arguments that are passed by the operating system to the program when it is launched.</i></font>
     </p>
   </body>
 </html>
 </richcontent>
 </node>
-<node TEXT="multiple files" STYLE_REF="Beschreibung" ID="ID_1258018534" CREATED="1514397175138" MODIFIED="1514397195080"><richcontent TYPE="DETAILS">
+<node TEXT="main()" STYLE_REF="Beschreibung" ID="ID_867360293" CREATED="1514836740126" MODIFIED="1515406645113"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11208,76 +11183,19 @@
   </head>
   <body>
     <p>
-      <font color="#666666" size="1"><i>&#160;use forward declaration when using functions from other files</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="namespaces" STYLE_REF="Beschreibung" ID="ID_1169345708" CREATED="1514465852473" MODIFIED="1515406036279">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="global namespace" STYLE_REF="Stichpunkt" ID="ID_1311868401" CREATED="1514465858415" MODIFIED="1515406041303"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;By default, global variables and normal functions are defined in the global namespace.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="std namespace" STYLE_REF="Stichpunkt" ID="ID_133947561" CREATED="1514397503033" MODIFIED="1515406041754"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;All of the functionality in the C++ standard library is defined inside a namespace named std (short for standard) </i></font>
+      <font color="#666666" size="1"><i>int main(int argc, char *argv[]) </i></font>
     </p>
     <p>
-      <font color="#666666" size="1"><i>&quot;std::cout&quot;</i></font>
+      <font color="#666666" size="1"><i>//sometimes written as: </i></font>
     </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="using directive / declaration" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_742538724" CREATED="1514468641363" MODIFIED="1515406042188"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
     <p>
-      <font color="#666666" size="1"><i>&#160;If a using declaration or directive is used within a block, the using statement applies only within that block (it follows normal scoping rules)</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="" ID="ID_575482455" CREATED="1514468884914" MODIFIED="1515406063026">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="using declaration" STYLE_REF="Beschreibung" ID="ID_1296652908" CREATED="1514468211430" MODIFIED="1515406070370"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The using declaration &#8220;using std::cout;&#8221; tells the compiler that we&#8217;re going to be using the object &#8220;cout&#8221; from the std namespace. So whenever it sees &#8220;cout&#8221;, it will assume that we mean &#8220;std::cout&#8221;.</i></font>
+      <font color="#666666" size="1"><i>int main(int argc, char** argv)</i></font>
     </p>
   </body>
 </html>
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1977871031" CREATED="1514468306765" MODIFIED="1514468328057"><richcontent TYPE="DETAILS">
+<node TEXT="argc" STYLE_REF="Beschreibung" ID="ID_1687409178" CREATED="1514836832582" MODIFIED="1514836836999"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11285,16 +11203,13 @@
   </head>
   <body>
     <p>
-      <font color="#666666" size="1"><i>using std::cout; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>cout &lt;&lt; &quot;Hello world!&quot;</i></font>
+      <font color="#666666" size="1"><i>&#160;argc is an integer parameter containing a count of the number of arguments passed to the program (think: argc = argument count). argc will always be at least 1, because the first argument is always the name of the program itself. Each command line argument the user provides will cause argc to increase by 1.</i></font>
     </p>
   </body>
 </html>
 </richcontent>
 </node>
-<node TEXT="conflict" STYLE_REF="Beschreibung" ID="ID_1183246982" CREATED="1514468410981" MODIFIED="1514468416491"><richcontent TYPE="DETAILS">
+<node TEXT="argv" STYLE_REF="Beschreibung" ID="ID_89027133" CREATED="1514836851195" MODIFIED="1514836858843"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11302,61 +11217,14 @@
   </head>
   <body>
     <p>
-      <font color="#666666" size="1"><i>&#160;If there&#8217;s a naming conflict between std::cout and some other use of cout, std::cout will be preferred.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="using directive" STYLE_REF="Beschreibung" ID="ID_1119976706" CREATED="1514468479788" MODIFIED="1515406067539"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The using directive &#8220;using namespace std;&#8221; tells the compiler that we want to use everything in the std namespace, so if the compiler finds a name it doesn&#8217;t recognize, it will check the std namespace.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1732411992" CREATED="1514468489198" MODIFIED="1514468520911"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>using namespace std; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>cout &lt;&lt; &quot;Hello world!&quot;;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="conflict" STYLE_REF="Beschreibung" ID="ID_1257766521" CREATED="1514468619158" MODIFIED="1514468626373"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;If there&#8217;s a naming conflict between std::cout and some other use of cout, the compiler will flag it as an error (rather than preferring one instance over the other).</i></font>
+      <font color="#666666" size="1"><i>&#160;argv is where the actual argument values are stored (think: argv = argument values, though the proper name is &#8220;argument vectors&#8221;). Although the declaration of argv looks intimidating, argv is really just an array of C-style strings. The length of this array is argc.</i></font>
     </p>
   </body>
 </html>
 </richcontent>
 </node>
 </node>
-</node>
-<node TEXT="rule" STYLE_REF="Beschreibung" ID="ID_231239041" CREATED="1514468888398" MODIFIED="1514468893471"><richcontent TYPE="DETAILS">
+<node TEXT="dealing with numeric arguments" STYLE_REF="Beschreibung" ID="ID_620390593" CREATED="1514836977580" MODIFIED="1515406647464"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11364,104 +11232,13 @@
   </head>
   <body>
     <p>
-      <font color="#666666" size="1"><i>&#160;Rule: Avoid &#8220;using&#8221; statements outside of a function.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="own namespace" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_836163622" CREATED="1514466017557" MODIFIED="1515406042622">
-<node TEXT="goo.h" STYLE_REF="Beschreibung" ID="ID_427443711" CREATED="1514466024705" MODIFIED="1514466046755"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>namespace Goo </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>{ </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// This doSomething() belongs to namespace Goo </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;int doSomething(int x, int y) </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;{ </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;return x - y; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;} </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>}</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="main.cpp" STYLE_REF="Beschreibung" ID="ID_467770053" CREATED="1514466069447" MODIFIED="1514466081138"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>int main(void) </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>{ </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;std::cout &lt;&lt; Goo::doSomething(4, 3); </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;return 0; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>}</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="Multiple namespace blocks with the same name allowed" STYLE_REF="Beschreibung" ID="ID_1380775291" CREATED="1514466148332" MODIFIED="1514466158350"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;It&#8217;s legal to declare namespace blocks in multiple locations (either across multiple files, or multiple places within in the same file). All declarations within the namespace block are considered part of the namespace.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="nested namespaces" STYLE_REF="Beschreibung" ID="ID_1306349195" CREATED="1514466217695" MODIFIED="1515406080312"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Namespaces can be nested inside other namespaces.</i></font>
+      <font color="#666666" size="1"><i>&#160;Command line arguments are always passed as strings, even if the value provided is numeric in nature. To use a command line argument as a number, you must convert it from a string to a number. Unfortunately, C++ makes this a little more difficult than it should be.</i></font>
     </p>
   </body>
 </html>
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1402440210" CREATED="1514466324454" MODIFIED="1514466330009"><richcontent TYPE="DETAILS">
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1477098052" CREATED="1514836984565" MODIFIED="1514837042756"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -11469,679 +11246,20 @@
   </head>
   <body>
     <p>
-      <font color="#666666" size="1"><i>&#160;namespace Foo </i></font>
+      <font color="#666666" size="1"><i>std::stringstream convert(argv[1]); </i></font>
     </p>
     <p>
-      <font color="#666666" size="1"><i>{ </i></font>
+      <font color="#666666" size="1"><i>int myint; </i></font>
     </p>
     <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;namespace Goo </i></font>
+      <font color="#666666" size="1"><i>if (!(convert &gt;&gt; myint)) // do the conversion </i></font>
     </p>
     <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;{ </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;const int g_x = 5; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;} </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>}</i></font>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;myint = 0; // if conversion fails, set myint to a default</i></font>
     </p>
   </body>
 </html>
 </richcontent>
-</node>
-<node TEXT="namespace aliases" STYLE_REF="Beschreibung" ID="ID_945581496" CREATED="1514466336297" MODIFIED="1514466356096"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;namespace Boo = Foo::Goo</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="blocks / local variables" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1116200116" CREATED="1514458853828" MODIFIED="1515406043137"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Blocks can be used any place where a single statement is allowed. </i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="duration" STYLE_REF="Beschreibung" ID="ID_86758251" CREATED="1514461902095" MODIFIED="1515406125671">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="automatic (default)" STYLE_REF="Beschreibung" ID="ID_852729388" CREATED="1514459051624" MODIFIED="1515406130162"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Local variables have automatic duration, which means they are created (and initialized, if relevant) at the point of definition, and destroyed when the block they are defined in is exited.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="default" STYLE_REF="Beschreibung" ID="ID_1796585476" CREATED="1514461884770" MODIFIED="1514461895080"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>int s_value = 1;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="static" STYLE_REF="Beschreibung" ID="ID_948168642" CREATED="1514461850949" MODIFIED="1515406132198"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Static duration variables are only created (and initialized) once, and then they are persisted throughout the life of the program.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="keyword" STYLE_REF="Beschreibung" ID="ID_1030986086" CREATED="1514461874617" MODIFIED="1514461880624"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;static int s_value = 1;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="style" STYLE_REF="Beschreibung" ID="ID_79789010" CREATED="1514462068137" MODIFIED="1514462074424"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;it&#8217;s common to use &#8220;s_&#8221; to prefix static (static duration) variables.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="local scope" STYLE_REF="Beschreibung" ID="ID_74398999" CREATED="1514459498990" MODIFIED="1514459529630"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;can only be seen inside a block</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="nested blocks" STYLE_REF="Beschreibung" ID="ID_638653700" CREATED="1514459141759" MODIFIED="1515406134615"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Nested blocks are considered part of the outer block in which they are defined. Consequently, variables defined in the outer block can be seen inside a nested block.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="shadowing" STYLE_REF="Beschreibung" ID="ID_376200812" CREATED="1514459247188" MODIFIED="1514459253049"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Note that a variable inside a nested block can have the same name as a variable inside an outer block. When this happens, the nested variable &#8220;hides&#8221; the outer variable. This is called name hiding or shadowing.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="rule" STYLE_REF="Beschreibung" ID="ID_499871052" CREATED="1514459284814" MODIFIED="1514459289383"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: Avoid using nested variables with the same names as variables in an outer block.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="rule" STYLE_REF="Beschreibung" ID="ID_1544946871" CREATED="1514459342902" MODIFIED="1514459348296"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: Define variables in the smallest scope possible.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="function parameters have block scope" STYLE_REF="Beschreibung" ID="ID_301467521" CREATED="1514459362072" MODIFIED="1514459373606"/>
-</node>
-<node TEXT="global variables" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1321206039" CREATED="1514459459653" MODIFIED="1515406043603"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Variables declared outside of a block are called global variables.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node TEXT="static duration" STYLE_REF="Beschreibung" ID="ID_1708555839" CREATED="1514459470000" MODIFIED="1514459491153"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Global variables have static duration, which means they are created when the program starts and are destroyed when it ends.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="file scope" STYLE_REF="Beschreibung" ID="ID_1158852522" CREATED="1514459492059" MODIFIED="1514459620259"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Global variables have file scope (also informally called &#8220;global scope&#8221; or &#8220;global namespace scope&#8221;), which means they are visible until the end of the file in which they are declared.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="Defining global variables" STYLE_REF="Beschreibung" ID="ID_1193569260" CREATED="1514460009366" MODIFIED="1515406148534"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;declared at the top of a file</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="global scope operator" STYLE_REF="Beschreibung" ID="ID_1929312282" CREATED="1514460042551" MODIFIED="1514460060846"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;::value</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="linkage" STYLE_REF="Beschreibung" ID="ID_476303718" CREATED="1514460103212" MODIFIED="1515406151363">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="internal" STYLE_REF="Beschreibung" ID="ID_1537539141" CREATED="1514460127062" MODIFIED="1515406154331"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Variables with internal linkage can be used anywhere within the file they are defined in, but can not be referenced outside the file they exist in.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="keyword: static" STYLE_REF="Beschreibung" ID="ID_1059117875" CREATED="1514460136383" MODIFIED="1514460152316"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;static int g_x;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="external" STYLE_REF="Beschreibung" ID="ID_1471604799" CREATED="1514460154083" MODIFIED="1515406156140"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;Variables with external linkage can be used both in the file they are defined in, as well as in other files.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="keyword: extern" STYLE_REF="Beschreibung" ID="ID_64182483" CREATED="1514460173381" MODIFIED="1514460199170"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;extern double g_y(9.8);</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="forward declaration" STYLE_REF="Beschreibung" ID="ID_440489432" CREATED="1514460323645" MODIFIED="1515406158807"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;extern double g_y;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="Variable forward declarations via the extern keyword" STYLE_REF="Beschreibung" ID="ID_403704456" CREATED="1514460267885" MODIFIED="1514460318489"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Similarly, in order to use an external global variable that has been declared in another file, you must use a variable forward declaration.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="style" STYLE_REF="Beschreibung" ID="ID_1565432950" CREATED="1514460828692" MODIFIED="1514460833831"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Use a g_ prefix to help identify your non-const global variables.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="why global constants are evil" STYLE_REF="Beschreibung" ID="ID_606618231" CREATED="1514461136056" MODIFIED="1515406161773">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="non-const variables" STYLE_REF="Beschreibung" ID="ID_453895696" CREATED="1514461148161" MODIFIED="1514461157619"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Avoid use of non-const global variables if at all possible! If you do have to use them, use them sensibly and cautiously.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="const variables" STYLE_REF="Beschreibung" ID="ID_1810964329" CREATED="1514461183773" MODIFIED="1514461190502"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Const global variables (symbolic constants) are fine to use, so long as you use proper naming conventions.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="favor local variables" STYLE_REF="Beschreibung" ID="ID_1191218173" CREATED="1514461202936" MODIFIED="1514461211261"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;In other cases, favor local variables. Pass those local variables to the functions that need them.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="preprocessing" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_963312100" CREATED="1514398696992" MODIFIED="1515406171791">
-<node TEXT="preprocessor" STYLE_REF="Beschreibung" ID="ID_1780248964" CREATED="1514398748752" MODIFIED="1514398762478"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;When the preprocessor runs, it simply scans through each code file from top to bottom, looking for directives. Directives are specific instructions that start with a # symbol and end with a newline (NOT a semicolon).</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="includes" STYLE_REF="Beschreibung" ID="ID_532694745" CREATED="1514398769291" MODIFIED="1514398781953"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;#include &lt;iostream&gt;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="Object-like macros with substitution text" STYLE_REF="Beschreibung" ID="ID_1219650978" CREATED="1514398801451" MODIFIED="1514398816493"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;#define MY_FAVORITE_NUMBER 9</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="conditional compilation" STYLE_REF="Beschreibung" ID="ID_776799472" CREATED="1514398888834" MODIFIED="1514410751676">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="#ifdef" STYLE_REF="Beschreibung" ID="ID_784352546" CREATED="1514398894845" MODIFIED="1514398914096"/>
-<node TEXT="#ifndef" STYLE_REF="Beschreibung" ID="ID_904824659" CREATED="1514398902186" MODIFIED="1514398913848"/>
-<node TEXT="#endif" STYLE_REF="Beschreibung" ID="ID_1160501900" CREATED="1514398908841" MODIFIED="1514398912971"/>
-</node>
-<node TEXT="scope" STYLE_REF="Beschreibung" ID="ID_1462219337" CREATED="1514398971376" MODIFIED="1514398976865"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;This means that directives are only valid from the point of definition to the end of the file in which they are defined. Directives defined in one code file do not have impact on other code files in the same project.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="header files" STYLE_REF="Beschreibung" ID="ID_1249461338" CREATED="1514397612550" MODIFIED="1515406232343"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;copy contents into main file</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1434448311" CREATED="1515406212553" MODIFIED="1515406227375">
-<node TEXT="standard library" STYLE_REF="Beschreibung" ID="ID_1068147737" CREATED="1514397619124" MODIFIED="1514410769743"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;#include &lt;iostream&gt;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="extension" STYLE_REF="Beschreibung" ID="ID_642117068" CREATED="1514398056220" MODIFIED="1514398070428"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;standard library header don't need .h</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="main.cpp" STYLE_REF="Beschreibung" ID="ID_1316152268" CREATED="1514397724986" MODIFIED="1514410762533"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;#include &lt;iostream&gt; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>#include &quot;add.h&quot;</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="add.h" STYLE_REF="Beschreibung" ID="ID_1666801827" CREATED="1514397766250" MODIFIED="1514410765517">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="start of header guard" STYLE_REF="Beschreibung" ID="ID_1973465323" CREATED="1514397778023" MODIFIED="1514397809880"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;#ifndef ADD_H </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>#define ADD_H</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="contents" STYLE_REF="Beschreibung" ID="ID_1394325801" CREATED="1514397810837" MODIFIED="1514397826917"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int add(int x, int y);</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="end of header guard" STYLE_REF="Beschreibung" ID="ID_933644388" CREATED="1514397827595" MODIFIED="1514397836534"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;#endif</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="add.cpp" STYLE_REF="Beschreibung" ID="ID_316109014" CREATED="1514397843477" MODIFIED="1514397861598"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;int add(int x, int y) </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>{ </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;return x + y; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>}</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="angled brackets vs. quotes" STYLE_REF="Beschreibung" ID="ID_28761734" CREATED="1514397976952" MODIFIED="1514397988582"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: Use angled brackets to include header files that come with the compiler. Use double quotes to include any other header files.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="best practices" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1459768007" CREATED="1514398158160" MODIFIED="1515406227882">
-<node TEXT="" ID="ID_44304426" CREATED="1514398534684" MODIFIED="1514410783975">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="including header files from other directories" STYLE_REF="Beschreibung" ID="ID_1637751391" CREATED="1514398140252" MODIFIED="1514398150953"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;A better method is to tell your compiler or IDE that you have a bunch of header files in some other location, so that it will look there when it can&#8217;t find them in the current directory. This can generally be done by setting an &#8220;include path&#8221; or &#8220;search directory&#8221; in your IDE project settings.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="Do not rely on header files including other header files" STYLE_REF="Beschreibung" ID="ID_1708527360" CREATED="1514397996832" MODIFIED="1514398599219"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: Each .cpp file should explicitly #include all of the header files it needs to compile.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="Always include header guards" STYLE_REF="Beschreibung" ID="ID_175436759" CREATED="1514398164367" MODIFIED="1514398264370"/>
-<node TEXT="Do not define variables in header files unless they are constants. Header files should generally only be used for declarations." STYLE_REF="Beschreibung" ID="ID_1516530781" CREATED="1514398185458" MODIFIED="1514398187531"/>
-<node TEXT="Do not define functions in header files" STYLE_REF="Beschreibung" ID="ID_1420426317" CREATED="1514398189342" MODIFIED="1514398232573"/>
-<node TEXT="Each header file should have a specific job, and be as independent as possible. For example, you might put all your declarations related to functionality A in A.h and all your declarations related functionality B in B.h. That way if you only care about A later, you can just include A.h and not get any of the stuff related to B." STYLE_REF="Beschreibung" ID="ID_705332159" CREATED="1514398233875" MODIFIED="1514398356924"/>
-<node TEXT="Give your header files the same name as the source files they&apos;re associated with (e.g. grades.h goes with grades.cpp" STYLE_REF="Beschreibung" ID="ID_975810202" CREATED="1514398362387" MODIFIED="1514398395666"/>
-<node TEXT="Try to minimize the number of other header files you #include in your header files. Only #include what is necessary" STYLE_REF="Beschreibung" ID="ID_250230854" CREATED="1514398398121" MODIFIED="1514398435313"/>
-<node TEXT="Do not #include .cpp files." STYLE_REF="Beschreibung" ID="ID_1573127549" CREATED="1514398436939" MODIFIED="1514398446339"/>
 </node>
 </node>
 </node>
@@ -13103,8 +12221,8 @@
 </node>
 </node>
 </node>
-<node TEXT="command line arguments" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1417897380" CREATED="1514836371213" MODIFIED="1515406640569">
-<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_335272783" CREATED="1514836391661" MODIFIED="1514836396768"><richcontent TYPE="DETAILS">
+<node TEXT="preprocessing" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_963312100" CREATED="1514398696992" MODIFIED="1515406171791">
+<node TEXT="preprocessor" STYLE_REF="Beschreibung" ID="ID_1780248964" CREATED="1514398748752" MODIFIED="1514398762478"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -13112,13 +12230,13 @@
   </head>
   <body>
     <p>
-      <font color="#666666" size="1"><i>&#160;Command line arguments are optional string arguments that are passed by the operating system to the program when it is launched.</i></font>
+      <font color="#666666" size="1"><i>&#160;When the preprocessor runs, it simply scans through each code file from top to bottom, looking for directives. Directives are specific instructions that start with a # symbol and end with a newline (NOT a semicolon).</i></font>
     </p>
   </body>
 </html>
 </richcontent>
 </node>
-<node TEXT="main()" STYLE_REF="Beschreibung" ID="ID_867360293" CREATED="1514836740126" MODIFIED="1515406645113"><richcontent TYPE="DETAILS">
+<node TEXT="includes" STYLE_REF="Beschreibung" ID="ID_532694745" CREATED="1514398769291" MODIFIED="1514398781953"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -13126,19 +12244,62 @@
   </head>
   <body>
     <p>
-      <font color="#666666" size="1"><i>int main(int argc, char *argv[]) </i></font>
+      <font color="#666666" size="1"><i>&#160;#include &lt;iostream&gt;</i></font>
     </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="Object-like macros with substitution text" STYLE_REF="Beschreibung" ID="ID_1219650978" CREATED="1514398801451" MODIFIED="1514398816493"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
     <p>
-      <font color="#666666" size="1"><i>//sometimes written as: </i></font>
+      <font color="#666666" size="1"><i>&#160;#define MY_FAVORITE_NUMBER 9</i></font>
     </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="conditional compilation" STYLE_REF="Beschreibung" ID="ID_776799472" CREATED="1514398888834" MODIFIED="1514410751676">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="#ifdef" STYLE_REF="Beschreibung" ID="ID_784352546" CREATED="1514398894845" MODIFIED="1514398914096"/>
+<node TEXT="#ifndef" STYLE_REF="Beschreibung" ID="ID_904824659" CREATED="1514398902186" MODIFIED="1514398913848"/>
+<node TEXT="#endif" STYLE_REF="Beschreibung" ID="ID_1160501900" CREATED="1514398908841" MODIFIED="1514398912971"/>
+</node>
+<node TEXT="scope" STYLE_REF="Beschreibung" ID="ID_1462219337" CREATED="1514398971376" MODIFIED="1514398976865"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
     <p>
-      <font color="#666666" size="1"><i>int main(int argc, char** argv)</i></font>
+      <font color="#666666" size="1"><i>&#160;This means that directives are only valid from the point of definition to the end of the file in which they are defined. Directives defined in one code file do not have impact on other code files in the same project.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="header files" STYLE_REF="Beschreibung" ID="ID_1249461338" CREATED="1514397612550" MODIFIED="1515406232343"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;copy contents into main file</i></font>
     </p>
   </body>
 </html>
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="argc" STYLE_REF="Beschreibung" ID="ID_1687409178" CREATED="1514836832582" MODIFIED="1514836836999"><richcontent TYPE="DETAILS">
+<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1434448311" CREATED="1515406212553" MODIFIED="1515406227375">
+<node TEXT="standard library" STYLE_REF="Beschreibung" ID="ID_1068147737" CREATED="1514397619124" MODIFIED="1514410769743"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -13146,42 +12307,13 @@
   </head>
   <body>
     <p>
-      <font color="#666666" size="1"><i>&#160;argc is an integer parameter containing a count of the number of arguments passed to the program (think: argc = argument count). argc will always be at least 1, because the first argument is always the name of the program itself. Each command line argument the user provides will cause argc to increase by 1.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="argv" STYLE_REF="Beschreibung" ID="ID_89027133" CREATED="1514836851195" MODIFIED="1514836858843"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;argv is where the actual argument values are stored (think: argv = argument values, though the proper name is &#8220;argument vectors&#8221;). Although the declaration of argv looks intimidating, argv is really just an array of C-style strings. The length of this array is argc.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="dealing with numeric arguments" STYLE_REF="Beschreibung" ID="ID_620390593" CREATED="1514836977580" MODIFIED="1515406647464"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Command line arguments are always passed as strings, even if the value provided is numeric in nature. To use a command line argument as a number, you must convert it from a string to a number. Unfortunately, C++ makes this a little more difficult than it should be.</i></font>
+      <font color="#666666" size="1"><i>&#160;#include &lt;iostream&gt;</i></font>
     </p>
   </body>
 </html>
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1477098052" CREATED="1514836984565" MODIFIED="1514837042756"><richcontent TYPE="DETAILS">
+<node TEXT="extension" STYLE_REF="Beschreibung" ID="ID_642117068" CREATED="1514398056220" MODIFIED="1514398070428"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -13189,20 +12321,888 @@
   </head>
   <body>
     <p>
-      <font color="#666666" size="1"><i>std::stringstream convert(argv[1]); </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>int myint; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>if (!(convert &gt;&gt; myint)) // do the conversion </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;myint = 0; // if conversion fails, set myint to a default</i></font>
+      <font color="#666666" size="1"><i>&#160;standard library header don't need .h</i></font>
     </p>
   </body>
 </html>
 </richcontent>
+</node>
+</node>
+<node TEXT="main.cpp" STYLE_REF="Beschreibung" ID="ID_1316152268" CREATED="1514397724986" MODIFIED="1514410762533"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;#include &lt;iostream&gt; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>#include &quot;add.h&quot;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="add.h" STYLE_REF="Beschreibung" ID="ID_1666801827" CREATED="1514397766250" MODIFIED="1514410765517">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="start of header guard" STYLE_REF="Beschreibung" ID="ID_1973465323" CREATED="1514397778023" MODIFIED="1514397809880"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;#ifndef ADD_H </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>#define ADD_H</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="contents" STYLE_REF="Beschreibung" ID="ID_1394325801" CREATED="1514397810837" MODIFIED="1514397826917"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int add(int x, int y);</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="end of header guard" STYLE_REF="Beschreibung" ID="ID_933644388" CREATED="1514397827595" MODIFIED="1514397836534"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;#endif</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="add.cpp" STYLE_REF="Beschreibung" ID="ID_316109014" CREATED="1514397843477" MODIFIED="1514397861598"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;int add(int x, int y) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;return x + y; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="angled brackets vs. quotes" STYLE_REF="Beschreibung" ID="ID_28761734" CREATED="1514397976952" MODIFIED="1514397988582"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Use angled brackets to include header files that come with the compiler. Use double quotes to include any other header files.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="best practices" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1459768007" CREATED="1514398158160" MODIFIED="1515406227882">
+<node TEXT="" ID="ID_44304426" CREATED="1514398534684" MODIFIED="1514410783975">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="including header files from other directories" STYLE_REF="Beschreibung" ID="ID_1637751391" CREATED="1514398140252" MODIFIED="1514398150953"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;A better method is to tell your compiler or IDE that you have a bunch of header files in some other location, so that it will look there when it can&#8217;t find them in the current directory. This can generally be done by setting an &#8220;include path&#8221; or &#8220;search directory&#8221; in your IDE project settings.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="Do not rely on header files including other header files" STYLE_REF="Beschreibung" ID="ID_1708527360" CREATED="1514397996832" MODIFIED="1514398599219"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Each .cpp file should explicitly #include all of the header files it needs to compile.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="Always include header guards" STYLE_REF="Beschreibung" ID="ID_175436759" CREATED="1514398164367" MODIFIED="1514398264370"/>
+<node TEXT="Do not define variables in header files unless they are constants. Header files should generally only be used for declarations." STYLE_REF="Beschreibung" ID="ID_1516530781" CREATED="1514398185458" MODIFIED="1514398187531"/>
+<node TEXT="Do not define functions in header files" STYLE_REF="Beschreibung" ID="ID_1420426317" CREATED="1514398189342" MODIFIED="1514398232573"/>
+<node TEXT="Each header file should have a specific job, and be as independent as possible. For example, you might put all your declarations related to functionality A in A.h and all your declarations related functionality B in B.h. That way if you only care about A later, you can just include A.h and not get any of the stuff related to B." STYLE_REF="Beschreibung" ID="ID_705332159" CREATED="1514398233875" MODIFIED="1514398356924"/>
+<node TEXT="Give your header files the same name as the source files they&apos;re associated with (e.g. grades.h goes with grades.cpp" STYLE_REF="Beschreibung" ID="ID_975810202" CREATED="1514398362387" MODIFIED="1514398395666"/>
+<node TEXT="Try to minimize the number of other header files you #include in your header files. Only #include what is necessary" STYLE_REF="Beschreibung" ID="ID_250230854" CREATED="1514398398121" MODIFIED="1514398435313"/>
+<node TEXT="Do not #include .cpp files." STYLE_REF="Beschreibung" ID="ID_1573127549" CREATED="1514398436939" MODIFIED="1514398446339"/>
+</node>
+</node>
+</node>
+<node TEXT="scope" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1468399822" CREATED="1514396230735" MODIFIED="1515406001238">
+<node TEXT="forward declaration" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_168072463" CREATED="1514396703525" MODIFIED="1515406039940"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&quot;tell the compiler about the existence of an identifier before actually defining the identifier.&quot;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_263742959" CREATED="1514396746937" MODIFIED="1514396787563"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;#include &lt;iostream&gt; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>int add(int x, int y); // forward declaration of add()</i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>int main(){}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="multiple files" STYLE_REF="Beschreibung" ID="ID_1258018534" CREATED="1514397175138" MODIFIED="1514397195080"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;use forward declaration when using functions from other files</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="namespaces" STYLE_REF="Beschreibung" ID="ID_1169345708" CREATED="1514465852473" MODIFIED="1515406036279">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="global namespace" STYLE_REF="Stichpunkt" ID="ID_1311868401" CREATED="1514465858415" MODIFIED="1515406041303"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;By default, global variables and normal functions are defined in the global namespace.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="std namespace" STYLE_REF="Stichpunkt" ID="ID_133947561" CREATED="1514397503033" MODIFIED="1515406041754"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;All of the functionality in the C++ standard library is defined inside a namespace named std (short for standard) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&quot;std::cout&quot;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="using directive / declaration" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_742538724" CREATED="1514468641363" MODIFIED="1515406042188"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;If a using declaration or directive is used within a block, the using statement applies only within that block (it follows normal scoping rules)</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="" ID="ID_575482455" CREATED="1514468884914" MODIFIED="1515406063026">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="using declaration" STYLE_REF="Beschreibung" ID="ID_1296652908" CREATED="1514468211430" MODIFIED="1515406070370"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The using declaration &#8220;using std::cout;&#8221; tells the compiler that we&#8217;re going to be using the object &#8220;cout&#8221; from the std namespace. So whenever it sees &#8220;cout&#8221;, it will assume that we mean &#8220;std::cout&#8221;.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1977871031" CREATED="1514468306765" MODIFIED="1514468328057"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>using std::cout; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>cout &lt;&lt; &quot;Hello world!&quot;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="conflict" STYLE_REF="Beschreibung" ID="ID_1183246982" CREATED="1514468410981" MODIFIED="1514468416491"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;If there&#8217;s a naming conflict between std::cout and some other use of cout, std::cout will be preferred.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="using directive" STYLE_REF="Beschreibung" ID="ID_1119976706" CREATED="1514468479788" MODIFIED="1515406067539"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The using directive &#8220;using namespace std;&#8221; tells the compiler that we want to use everything in the std namespace, so if the compiler finds a name it doesn&#8217;t recognize, it will check the std namespace.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1732411992" CREATED="1514468489198" MODIFIED="1514468520911"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>using namespace std; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>cout &lt;&lt; &quot;Hello world!&quot;;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="conflict" STYLE_REF="Beschreibung" ID="ID_1257766521" CREATED="1514468619158" MODIFIED="1514468626373"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;If there&#8217;s a naming conflict between std::cout and some other use of cout, the compiler will flag it as an error (rather than preferring one instance over the other).</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="rule" STYLE_REF="Beschreibung" ID="ID_231239041" CREATED="1514468888398" MODIFIED="1514468893471"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Avoid &#8220;using&#8221; statements outside of a function.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="own namespace" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_836163622" CREATED="1514466017557" MODIFIED="1515406042622">
+<node TEXT="goo.h" STYLE_REF="Beschreibung" ID="ID_427443711" CREATED="1514466024705" MODIFIED="1514466046755"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>namespace Goo </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// This doSomething() belongs to namespace Goo </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;int doSomething(int x, int y) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;return x - y; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;} </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="main.cpp" STYLE_REF="Beschreibung" ID="ID_467770053" CREATED="1514466069447" MODIFIED="1514466081138"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>int main(void) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;std::cout &lt;&lt; Goo::doSomething(4, 3); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;return 0; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="Multiple namespace blocks with the same name allowed" STYLE_REF="Beschreibung" ID="ID_1380775291" CREATED="1514466148332" MODIFIED="1514466158350"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;It&#8217;s legal to declare namespace blocks in multiple locations (either across multiple files, or multiple places within in the same file). All declarations within the namespace block are considered part of the namespace.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="nested namespaces" STYLE_REF="Beschreibung" ID="ID_1306349195" CREATED="1514466217695" MODIFIED="1515406080312"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Namespaces can be nested inside other namespaces.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1402440210" CREATED="1514466324454" MODIFIED="1514466330009"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;namespace Foo </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;namespace Goo </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;const int g_x = 5; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;} </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="namespace aliases" STYLE_REF="Beschreibung" ID="ID_945581496" CREATED="1514466336297" MODIFIED="1514466356096"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;namespace Boo = Foo::Goo</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="blocks / local variables" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1116200116" CREATED="1514458853828" MODIFIED="1515406043137"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Blocks can be used any place where a single statement is allowed. </i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="duration" STYLE_REF="Beschreibung" ID="ID_86758251" CREATED="1514461902095" MODIFIED="1515406125671">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="automatic (default)" STYLE_REF="Beschreibung" ID="ID_852729388" CREATED="1514459051624" MODIFIED="1515406130162"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Local variables have automatic duration, which means they are created (and initialized, if relevant) at the point of definition, and destroyed when the block they are defined in is exited.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="default" STYLE_REF="Beschreibung" ID="ID_1796585476" CREATED="1514461884770" MODIFIED="1514461895080"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>int s_value = 1;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="static" STYLE_REF="Beschreibung" ID="ID_948168642" CREATED="1514461850949" MODIFIED="1515406132198"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Static duration variables are only created (and initialized) once, and then they are persisted throughout the life of the program.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="keyword" STYLE_REF="Beschreibung" ID="ID_1030986086" CREATED="1514461874617" MODIFIED="1514461880624"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;static int s_value = 1;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="style" STYLE_REF="Beschreibung" ID="ID_79789010" CREATED="1514462068137" MODIFIED="1514462074424"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;it&#8217;s common to use &#8220;s_&#8221; to prefix static (static duration) variables.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="local scope" STYLE_REF="Beschreibung" ID="ID_74398999" CREATED="1514459498990" MODIFIED="1514459529630"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;can only be seen inside a block</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="nested blocks" STYLE_REF="Beschreibung" ID="ID_638653700" CREATED="1514459141759" MODIFIED="1515406134615"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Nested blocks are considered part of the outer block in which they are defined. Consequently, variables defined in the outer block can be seen inside a nested block.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="shadowing" STYLE_REF="Beschreibung" ID="ID_376200812" CREATED="1514459247188" MODIFIED="1514459253049"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Note that a variable inside a nested block can have the same name as a variable inside an outer block. When this happens, the nested variable &#8220;hides&#8221; the outer variable. This is called name hiding or shadowing.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="rule" STYLE_REF="Beschreibung" ID="ID_499871052" CREATED="1514459284814" MODIFIED="1514459289383"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Avoid using nested variables with the same names as variables in an outer block.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="rule" STYLE_REF="Beschreibung" ID="ID_1544946871" CREATED="1514459342902" MODIFIED="1514459348296"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Define variables in the smallest scope possible.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="function parameters have block scope" STYLE_REF="Beschreibung" ID="ID_301467521" CREATED="1514459362072" MODIFIED="1514459373606"/>
+</node>
+<node TEXT="global variables" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1321206039" CREATED="1514459459653" MODIFIED="1515406043603"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Variables declared outside of a block are called global variables.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="static duration" STYLE_REF="Beschreibung" ID="ID_1708555839" CREATED="1514459470000" MODIFIED="1514459491153"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Global variables have static duration, which means they are created when the program starts and are destroyed when it ends.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="file scope" STYLE_REF="Beschreibung" ID="ID_1158852522" CREATED="1514459492059" MODIFIED="1514459620259"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Global variables have file scope (also informally called &#8220;global scope&#8221; or &#8220;global namespace scope&#8221;), which means they are visible until the end of the file in which they are declared.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="Defining global variables" STYLE_REF="Beschreibung" ID="ID_1193569260" CREATED="1514460009366" MODIFIED="1515406148534"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;declared at the top of a file</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="global scope operator" STYLE_REF="Beschreibung" ID="ID_1929312282" CREATED="1514460042551" MODIFIED="1514460060846"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;::value</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="linkage" STYLE_REF="Beschreibung" ID="ID_476303718" CREATED="1514460103212" MODIFIED="1515406151363">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="internal" STYLE_REF="Beschreibung" ID="ID_1537539141" CREATED="1514460127062" MODIFIED="1515406154331"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Variables with internal linkage can be used anywhere within the file they are defined in, but can not be referenced outside the file they exist in.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="keyword: static" STYLE_REF="Beschreibung" ID="ID_1059117875" CREATED="1514460136383" MODIFIED="1514460152316"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;static int g_x;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="external" STYLE_REF="Beschreibung" ID="ID_1471604799" CREATED="1514460154083" MODIFIED="1515406156140"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;Variables with external linkage can be used both in the file they are defined in, as well as in other files.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="keyword: extern" STYLE_REF="Beschreibung" ID="ID_64182483" CREATED="1514460173381" MODIFIED="1514460199170"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;extern double g_y(9.8);</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="forward declaration" STYLE_REF="Beschreibung" ID="ID_440489432" CREATED="1514460323645" MODIFIED="1515406158807"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;extern double g_y;</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="Variable forward declarations via the extern keyword" STYLE_REF="Beschreibung" ID="ID_403704456" CREATED="1514460267885" MODIFIED="1514460318489"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Similarly, in order to use an external global variable that has been declared in another file, you must use a variable forward declaration.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="style" STYLE_REF="Beschreibung" ID="ID_1565432950" CREATED="1514460828692" MODIFIED="1514460833831"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Use a g_ prefix to help identify your non-const global variables.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="why global constants are evil" STYLE_REF="Beschreibung" ID="ID_606618231" CREATED="1514461136056" MODIFIED="1515406161773">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="non-const variables" STYLE_REF="Beschreibung" ID="ID_453895696" CREATED="1514461148161" MODIFIED="1514461157619"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Avoid use of non-const global variables if at all possible! If you do have to use them, use them sensibly and cautiously.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="const variables" STYLE_REF="Beschreibung" ID="ID_1810964329" CREATED="1514461183773" MODIFIED="1514461190502"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Const global variables (symbolic constants) are fine to use, so long as you use proper naming conventions.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="favor local variables" STYLE_REF="Beschreibung" ID="ID_1191218173" CREATED="1514461202936" MODIFIED="1514461211261"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;In other cases, favor local variables. Pass those local variables to the functions that need them.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
 </node>
 </node>
 </node>
@@ -14439,741 +14439,7 @@
 </node>
 <node TEXT="" ID="ID_1453084840" CREATED="1515514458693" MODIFIED="1515514584762">
 <hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="testing" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1644707749" CREATED="1514585610588" MODIFIED="1515406650650">
-<node TEXT="" ID="ID_731453860" CREATED="1514585762430" MODIFIED="1515406656184">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="Testing tip #1: Write your program in small, well defined units (functions), and compile often along the way" STYLE_REF="Beschreibung" ID="ID_1058806518" CREATED="1514585630252" MODIFIED="1514585641285"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: Compile often, and test any non-trivial functions when you write them</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="Testing tip #2: Aim for 100% statement coverage" STYLE_REF="Beschreibung" ID="ID_1764397228" CREATED="1514585647088" MODIFIED="1514585663476"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: Ensure your testing hits every statement in the function.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="Testing tip 3: Aim for 100% branch coverage" STYLE_REF="Beschreibung" ID="ID_1623272358" CREATED="1514585673662" MODIFIED="1514585688095"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: Test each of your branches such that they are true at least once and false at least once.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="Testing tip #4: Aim for 100% loop coverage" STYLE_REF="Beschreibung" ID="ID_1029848393" CREATED="1514585694063" MODIFIED="1514585705384"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: Use the 0, 1, 2 test to ensure your loops work correctly with different number of iterations</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="Testing tip #5: Ensure you&#x2019;re testing different categories of input" STYLE_REF="Beschreibung" ID="ID_498437765" CREATED="1514585715277" MODIFIED="1514585725435"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: Test different categories of input values to make sure your unit handles them properly</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="put test into automated function" STYLE_REF="Beschreibung" ID="ID_1676506919" CREATED="1514585774673" MODIFIED="1514585783401"/>
-</node>
 <node TEXT="error handling" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_929687182" CREATED="1514827575967" MODIFIED="1515406661629">
-<node TEXT="exceptions" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_504430578" CREATED="1514569065778" MODIFIED="1515406270194">
-<node TEXT="" ID="ID_683755885" CREATED="1515425527784" MODIFIED="1515445922751">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="throw" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1551509116" CREATED="1515424256808" MODIFIED="1515445925465">
-<node TEXT="throwing exceptions" STYLE_REF="Beschreibung" ID="ID_1234874387" CREATED="1515423515510" MODIFIED="1515423522665"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;In C++, a throw statement is used to signal that an exception or error case has occurred (think of throwing a penalty flag). Signaling that an exception has occurred is also commonly called raising an exception.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="To use a throw statement, simply use the throw keyword, followed by a value of any data type you wish to use to signal that an error has occurred. Typically, this value will be an error code, a description of the problem, or a custom exception class." STYLE_REF="Beschreibung" ID="ID_792241834" CREATED="1515423560162" MODIFIED="1515423593335"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;throw -1; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>throw ENUM_INVALID_INDEX; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>throw &quot;Can not take square root of negative number&quot;; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>throw dX; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>throw MyException(&quot;Fatal Error&quot;); </i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="rethrow exceptions" STYLE_REF="Beschreibung" ID="ID_306497971" CREATED="1515444744687" MODIFIED="1515445937210"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;C++ provides a way to rethrow the exact same exception as the one that was just caught. To do so, simply use the throw keyword from within the catch block (with no associated variable).</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_412526994" CREATED="1515444819999" MODIFIED="1515444855207"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>catch (Base&amp; b) </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>{ </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;std::cout &lt;&lt; &quot;Caught Base b, which is actually a &quot;; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;b.print(); </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;std::cout &lt;&lt; &quot;\n&quot;; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;throw; // note: We're now rethrowing the object here </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>}</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="try" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_390987317" CREATED="1515424230701" MODIFIED="1515445926497">
-<node TEXT="looking for exceptions" STYLE_REF="Beschreibung" ID="ID_537645699" CREATED="1515423651372" MODIFIED="1515423659258"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;In C++, we use the try keyword to define a block of statements (called a try block). The try block acts as an observer, looking for any exceptions that are thrown by any of the statements within the try block.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_182576739" CREATED="1515423666996" MODIFIED="1515423691868"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;try </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>{ </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;throw -1; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>}</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="at least one catch block" STYLE_REF="Beschreibung" ID="ID_1205519826" CREATED="1515424115427" MODIFIED="1515424124511"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;A try block must have at least one catch block immediately following it, but may have multiple catch blocks listed in sequence.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="function try blocks" STYLE_REF="Beschreibung" ID="ID_211942277" CREATED="1515445154408" MODIFIED="1515445942795"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Function try blocks are designed to allow you to establish an exception handler around the body of an entire function, rather than around a block of code. </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>unlike normal catch blocks, which allow you to either resolve an exception, throw a new exception, or rethrow an existing exception, with function-level try blocks, you must throw or rethrow an exception. If you do not explicitly throw a new exception, or rethrow the current exception (using the throw keyword by itself), the exception will be implicitly rethrown up the stack.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_567590093" CREATED="1515445164172" MODIFIED="1515445319109"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;class B : public A </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>{ </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>public: </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;B(int x) try : A(x) // note addition of try keyword here </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;{ </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;} </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;catch (...) </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;{ </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// Exceptions from member initializer list or constructor </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// body are caught here </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;std::cerr &lt;&lt; &quot;Construction of A failed\n&quot;; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// If an exception isn't explicitly thrown here, the current </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// exception will be implicitly rethrown </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;}</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="catch" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1361979484" CREATED="1515424246680" MODIFIED="1515445926915">
-<node TEXT="handling exceptions" STYLE_REF="Beschreibung" ID="ID_1634927803" CREATED="1515423731715" MODIFIED="1515445950252"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Actually handling exceptions is the job of the catch block(s). The catch keyword is used to define a block of code (called a catch block) that handles exceptions for a single data type.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_731298099" CREATED="1515423747253" MODIFIED="1515423764965"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;catch (int x) </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>{ &#160; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;std::cerr &lt;&lt; &quot;We caught an int exception with value&quot; &lt;&lt; x &lt;&lt; std::endl; </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>}</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="catch parameters" STYLE_REF="Beschreibung" ID="ID_1745524248" CREATED="1515424201230" MODIFIED="1515424208985"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Catch parameters work just like function parameters, with the parameter being available within the subsequent catch block. Exceptions of fundamental types can be caught by value, but exceptions of non-fundamental types should be caught by const reference to avoid making an unnecessary copy.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="There are three common things that catch blocks do when they catch an exception:" STYLE_REF="Beschreibung" ID="ID_1601421201" CREATED="1515424592220" MODIFIED="1515445953061">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="First, catch blocks may print an error (either to the console, or a log file)." STYLE_REF="Beschreibung" ID="ID_459452400" CREATED="1515424610953" MODIFIED="1515424611963"/>
-<node TEXT="Second, catch blocks may return a value or error code back to the caller." STYLE_REF="Beschreibung" ID="ID_836199135" CREATED="1515424618186" MODIFIED="1515424619111"/>
-<node TEXT="Third, a catch block may throw another exception. Because the catch block is outside of the try block, the newly thrown exception in this case is not handled by the preceding try block -- it&#x2019;s handled by the next enclosing try block." STYLE_REF="Beschreibung" ID="ID_1823137801" CREATED="1515424626198" MODIFIED="1515424627299"/>
-</node>
-<node TEXT="catch-all handler" STYLE_REF="Beschreibung" ID="ID_562822782" CREATED="1515425854386" MODIFIED="1515445955503"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;A catch-all handler works just like a normal catch block, except that instead of using a specific type to catch, it uses the ellipses operator (&#8230;) as the type to catch.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="placed last" STYLE_REF="Beschreibung" ID="ID_1420260267" CREATED="1515425944341" MODIFIED="1515425949639"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The catch-all handler should be placed last in the catch block chain. This is to ensure that exceptions can be caught by exception handlers tailored to specific data types if those handlers exist.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="left empty" STYLE_REF="Beschreibung" ID="ID_1544512458" CREATED="1515425962300" MODIFIED="1515425986715"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Often, the catch-all handler block is left empty. This will catch any unanticipated exceptions and prevent them from stack unwinding to the top of your program, but does no specific error handling.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1671298044" CREATED="1515425995509" MODIFIED="1515426003918"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>catch(...) {} // ignore any unanticipated exceptions</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-</node>
-<node TEXT="when return codes fail" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1490110116" CREATED="1515424279837" MODIFIED="1515445927239">
-<node TEXT="when return codes fail" STYLE_REF="Beschreibung" ID="ID_1287283361" CREATED="1515423387328" MODIFIED="1515423445552"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>The primary issue with return codes is that the error handling code ends up intricately linked to the normal control flow of the code. This in turns ends up constraining both how the code is laid out, and how errors can be reasonably handled.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="unwinding the stack" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1420031267" CREATED="1515425081874" MODIFIED="1515445927562">
-<node TEXT="what happens when an exception is raised?" STYLE_REF="Beschreibung" ID="ID_865494825" CREATED="1515425097138" MODIFIED="1515425110362"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;First, the program looks to see if the exception can be handled immediately (which means it was thrown inside a try block). If not, the current function is terminated, and the program checks to see if the function&#8217;s caller will handle the exception. If not, it terminates the caller and checks the caller&#8217;s caller. Each function is terminated in sequence until a handler for the exception is found, or until main() is terminated without the exception being handled. This process is called unwinding the stack</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="uncaught exceptions" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1899556161" CREATED="1515425768484" MODIFIED="1515445927901">
-<node TEXT="what happens?" STYLE_REF="Beschreibung" ID="ID_1489593235" CREATED="1515425776459" MODIFIED="1515425799300"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;When main() terminates with an unhandled exception, the operating system will generally notify you that an unhandled exception error has occurred. How it does this depends on the operating system, but possibilities include printing an error message, popping up an error dialog, or simply crashing. Some OSes are less graceful than others. Generally this is something you want to avoid altogether!</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="catch-all handler" STYLE_REF="Beschreibung" ID="ID_1489671829" CREATED="1515425854386" MODIFIED="1515445969016"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;A catch-all handler works just like a normal catch block, except that instead of using a specific type to catch, it uses the ellipses operator (&#8230;) as the type to catch.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="placed last" STYLE_REF="Beschreibung" ID="ID_433946611" CREATED="1515425944341" MODIFIED="1515425949639"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The catch-all handler should be placed last in the catch block chain. This is to ensure that exceptions can be caught by exception handlers tailored to specific data types if those handlers exist.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="left empty" STYLE_REF="Beschreibung" ID="ID_673807651" CREATED="1515425962300" MODIFIED="1515425986715"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Often, the catch-all handler block is left empty. This will catch any unanticipated exceptions and prevent them from stack unwinding to the top of your program, but does no specific error handling.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_466480320" CREATED="1515425995509" MODIFIED="1515426003918"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>catch(...) {} // ignore any unanticipated exceptions</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="exception class" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_784572443" CREATED="1515426953719" MODIFIED="1515445928248">
-<node TEXT="basic" STYLE_REF="Beschreibung" ID="ID_1660213018" CREATED="1515427342686" MODIFIED="1515445976760">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1832353016" CREATED="1515426962189" MODIFIED="1515426967040"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;An exception class is just a normal class that is designed specifically to be thrown as an exception.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="why" STYLE_REF="Beschreibung" ID="ID_866706049" CREATED="1515427000287" MODIFIED="1515427003611"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Using such a class, we can have the exception return a description of the problem that occurred, which provides context for what went wrong. And since ArrayException is its own unique type, we can specifically catch exceptions thrown by the array class and treat them differently from other exceptions if we wish.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="catch by reference" STYLE_REF="Beschreibung" ID="ID_1597695204" CREATED="1515427024099" MODIFIED="1515427031216"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Note that exception handlers should catch class exception objects by reference instead of by value. This prevents the compiler from making a copy of the exception, which can be expensive when the exception is a class object, and prevents object slicing when dealing with derived exception classes (which we&#8217;ll talk about in a moment). Catching exceptions by pointer should generally be avoided unless you have a specific reason to do so.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="inheritance" STYLE_REF="Beschreibung" ID="ID_377425028" CREATED="1515427147574" MODIFIED="1515445983009"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;As it turns out, exception handlers will not only match classes of a specific type, they&#8217;ll also match classes derived from that specific type as well!</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="derived before base class" STYLE_REF="Beschreibung" ID="ID_986593016" CREATED="1515427168956" MODIFIED="1515427175977"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Rule: Handlers for derived exception classes should be listed before those for base classes.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="std::exception" STYLE_REF="Beschreibung" ID="ID_1879792524" CREATED="1515427332358" MODIFIED="1515445980520">
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="standard library" STYLE_REF="Beschreibung" ID="ID_1827160642" CREATED="1515427246551" MODIFIED="1515427255525"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The good news is that all of these exception classes are derived from a single class called std::exception. std::exception is a small interface class designed to serve as a base class to any exception thrown by the C++ standard library.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="catch all std::exceptions" STYLE_REF="Beschreibung" ID="ID_1093083602" CREATED="1515427267941" MODIFIED="1515445986275"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;// This handler will catch std::exception and all the derived exceptions too </i></font>
-    </p>
-    <p>
-      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;catch (std::exception &amp;exception)</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="what()" STYLE_REF="Beschreibung" ID="ID_1610255830" CREATED="1515427324713" MODIFIED="1515427329601"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The one thing worth noting is that std::exception has a virtual member function named what() that returns a C-style string description of the exception. Most derived classes override the what() function to change the message. Note that this string is meant to be used for descriptive text only -- do not use it for comparisons, as it is not guaranteed to be the same across compilers.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="using standard exceptions directly" STYLE_REF="Beschreibung" ID="ID_279954270" CREATED="1515427436621" MODIFIED="1515427446205"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Nothing throws a std::exception directly, and neither should you. However, you should feel free to throw the other standard exception classes in the standard library if they adequately represent your needs.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="deriving your own classes from std::exception" STYLE_REF="Beschreibung" ID="ID_1429506419" CREATED="1515427479593" MODIFIED="1515427492825"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;You can, of course, derive your own classes from std::exception, and override the virtual what() member function.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-</node>
-<node TEXT="problems" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1065735343" CREATED="1515445639117" MODIFIED="1515445928580">
-<node TEXT="cleaning up resources" STYLE_REF="Beschreibung" ID="ID_906647327" CREATED="1515445644799" MODIFIED="1515445658239"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;One of the biggest problems that new programmers run into when using exceptions is the issue of cleaning up resources when an exception occurs.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="exceptions and destructors" STYLE_REF="Beschreibung" ID="ID_1488769299" CREATED="1515445706639" MODIFIED="1515445995169"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;The problem occurs when an exception is thrown from a destructor during the stack unwinding process. If that happens, the compiler is put in a situation where it doesn&#8217;t know whether to continue the stack unwinding process or handle the new exception. The end result is that your program will be terminated immediately.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="don&apos;t" STYLE_REF="Beschreibung" ID="ID_1172474796" CREATED="1515445731908" MODIFIED="1515445736690"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Consequently, the best course of action is just to abstain from using exceptions in destructors altogether. Write a message to a log file instead.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="performance concers" STYLE_REF="Beschreibung" ID="ID_1604249908" CREATED="1515445763026" MODIFIED="1515445769651"><richcontent TYPE="DETAILS">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font color="#666666" size="1"><i>&#160;Exceptions do come with a small performance price to pay. They increase the size of your executable, and they may also cause it to run slower due to the additional checking that has to be performed. However, the main performance penalty for exceptions happens when an exception is actually thrown. In this case, the stack must be unwound and an appropriate exception handler found, which is a relatively expensive operation.</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-</node>
-<node TEXT="when should I use exceptions?" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_116849218" CREATED="1515445822694" MODIFIED="1515445928943">
-<node TEXT="The error being handled is likely to occur only infrequently." STYLE_REF="Beschreibung" ID="ID_1152397945" CREATED="1515445831446" MODIFIED="1515445838021"/>
-<node TEXT="The error is serious and execution could not continue otherwise." STYLE_REF="Beschreibung" ID="ID_1640522633" CREATED="1515445843490" MODIFIED="1515445844602"/>
-<node TEXT="The error cannot be handled at the place where it occurs." STYLE_REF="Beschreibung" ID="ID_1083918787" CREATED="1515445852107" MODIFIED="1515445853248"/>
-<node TEXT="There isn&#x2019;t a good alternative way to return an error code back to the caller." STYLE_REF="Beschreibung" ID="ID_590568891" CREATED="1515445859462" MODIFIED="1515445860651"/>
-</node>
-</node>
 <node TEXT="defensive programming" STYLE_REF="Beschreibung" ID="ID_813511610" CREATED="1514827501967" MODIFIED="1514834905504"><richcontent TYPE="DETAILS">
 
 <html>
@@ -15535,6 +14801,742 @@
 </node>
 </node>
 </node>
+</node>
+<node TEXT="exceptions" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_504430578" CREATED="1514569065778" MODIFIED="1515406270194">
+<node TEXT="keywords" STYLE_REF="Beschreibung" ID="ID_683755885" CREATED="1515425527784" MODIFIED="1515526402617">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="throw" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1551509116" CREATED="1515424256808" MODIFIED="1515445925465">
+<node TEXT="throwing exceptions" STYLE_REF="Beschreibung" ID="ID_1234874387" CREATED="1515423515510" MODIFIED="1515423522665"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;In C++, a throw statement is used to signal that an exception or error case has occurred (think of throwing a penalty flag). Signaling that an exception has occurred is also commonly called raising an exception.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="To use a throw statement, simply use the throw keyword, followed by a value of any data type you wish to use to signal that an error has occurred. Typically, this value will be an error code, a description of the problem, or a custom exception class." STYLE_REF="Beschreibung" ID="ID_792241834" CREATED="1515423560162" MODIFIED="1515423593335"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;throw -1; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>throw ENUM_INVALID_INDEX; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>throw &quot;Can not take square root of negative number&quot;; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>throw dX; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>throw MyException(&quot;Fatal Error&quot;); </i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="rethrow exceptions" STYLE_REF="Beschreibung" ID="ID_306497971" CREATED="1515444744687" MODIFIED="1515445937210"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;C++ provides a way to rethrow the exact same exception as the one that was just caught. To do so, simply use the throw keyword from within the catch block (with no associated variable).</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_412526994" CREATED="1515444819999" MODIFIED="1515444855207"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>catch (Base&amp; b) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;std::cout &lt;&lt; &quot;Caught Base b, which is actually a &quot;; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;b.print(); </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;std::cout &lt;&lt; &quot;\n&quot;; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;&#160;throw; // note: We're now rethrowing the object here </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="try" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_390987317" CREATED="1515424230701" MODIFIED="1515445926497">
+<node TEXT="looking for exceptions" STYLE_REF="Beschreibung" ID="ID_537645699" CREATED="1515423651372" MODIFIED="1515423659258"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;In C++, we use the try keyword to define a block of statements (called a try block). The try block acts as an observer, looking for any exceptions that are thrown by any of the statements within the try block.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_182576739" CREATED="1515423666996" MODIFIED="1515423691868"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;try </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;throw -1; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="at least one catch block" STYLE_REF="Beschreibung" ID="ID_1205519826" CREATED="1515424115427" MODIFIED="1515424124511"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;A try block must have at least one catch block immediately following it, but may have multiple catch blocks listed in sequence.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="function try blocks" STYLE_REF="Beschreibung" ID="ID_211942277" CREATED="1515445154408" MODIFIED="1515445942795"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Function try blocks are designed to allow you to establish an exception handler around the body of an entire function, rather than around a block of code. </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>unlike normal catch blocks, which allow you to either resolve an exception, throw a new exception, or rethrow an existing exception, with function-level try blocks, you must throw or rethrow an exception. If you do not explicitly throw a new exception, or rethrow the current exception (using the throw keyword by itself), the exception will be implicitly rethrown up the stack.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_567590093" CREATED="1515445164172" MODIFIED="1515445319109"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;class B : public A </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>public: </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;B(int x) try : A(x) // note addition of try keyword here </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;} </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;catch (...) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;{ </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// Exceptions from member initializer list or constructor </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// body are caught here </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;std::cerr &lt;&lt; &quot;Construction of A failed\n&quot;; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// If an exception isn't explicitly thrown here, the current </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;// exception will be implicitly rethrown </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="catch" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1361979484" CREATED="1515424246680" MODIFIED="1515445926915">
+<node TEXT="handling exceptions" STYLE_REF="Beschreibung" ID="ID_1634927803" CREATED="1515423731715" MODIFIED="1515445950252"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Actually handling exceptions is the job of the catch block(s). The catch keyword is used to define a block of code (called a catch block) that handles exceptions for a single data type.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_731298099" CREATED="1515423747253" MODIFIED="1515423764965"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;catch (int x) </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>{ &#160; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;std::cerr &lt;&lt; &quot;We caught an int exception with value&quot; &lt;&lt; x &lt;&lt; std::endl; </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>}</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="catch parameters" STYLE_REF="Beschreibung" ID="ID_1745524248" CREATED="1515424201230" MODIFIED="1515424208985"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Catch parameters work just like function parameters, with the parameter being available within the subsequent catch block. Exceptions of fundamental types can be caught by value, but exceptions of non-fundamental types should be caught by const reference to avoid making an unnecessary copy.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="There are three common things that catch blocks do when they catch an exception:" STYLE_REF="Beschreibung" ID="ID_1601421201" CREATED="1515424592220" MODIFIED="1515445953061">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="First, catch blocks may print an error (either to the console, or a log file)." STYLE_REF="Beschreibung" ID="ID_459452400" CREATED="1515424610953" MODIFIED="1515424611963"/>
+<node TEXT="Second, catch blocks may return a value or error code back to the caller." STYLE_REF="Beschreibung" ID="ID_836199135" CREATED="1515424618186" MODIFIED="1515424619111"/>
+<node TEXT="Third, a catch block may throw another exception. Because the catch block is outside of the try block, the newly thrown exception in this case is not handled by the preceding try block -- it&#x2019;s handled by the next enclosing try block." STYLE_REF="Beschreibung" ID="ID_1823137801" CREATED="1515424626198" MODIFIED="1515424627299"/>
+</node>
+<node TEXT="catch-all handler" STYLE_REF="Beschreibung" ID="ID_562822782" CREATED="1515425854386" MODIFIED="1515445955503"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;A catch-all handler works just like a normal catch block, except that instead of using a specific type to catch, it uses the ellipses operator (&#8230;) as the type to catch.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="placed last" STYLE_REF="Beschreibung" ID="ID_1420260267" CREATED="1515425944341" MODIFIED="1515425949639"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The catch-all handler should be placed last in the catch block chain. This is to ensure that exceptions can be caught by exception handlers tailored to specific data types if those handlers exist.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="left empty" STYLE_REF="Beschreibung" ID="ID_1544512458" CREATED="1515425962300" MODIFIED="1515425986715"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Often, the catch-all handler block is left empty. This will catch any unanticipated exceptions and prevent them from stack unwinding to the top of your program, but does no specific error handling.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1671298044" CREATED="1515425995509" MODIFIED="1515426003918"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>catch(...) {} // ignore any unanticipated exceptions</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="exception class" STYLE_REF="Beschreibung" ID="ID_784572443" CREATED="1515426953719" MODIFIED="1515526359000">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1660213018" CREATED="1515427342686" MODIFIED="1515526365678">
+<node TEXT="definition" STYLE_REF="Beschreibung" ID="ID_1832353016" CREATED="1515426962189" MODIFIED="1515426967040"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;An exception class is just a normal class that is designed specifically to be thrown as an exception.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="why" STYLE_REF="Beschreibung" ID="ID_866706049" CREATED="1515427000287" MODIFIED="1515427003611"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Using such a class, we can have the exception return a description of the problem that occurred, which provides context for what went wrong. And since ArrayException is its own unique type, we can specifically catch exceptions thrown by the array class and treat them differently from other exceptions if we wish.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="catch by reference" STYLE_REF="Beschreibung" ID="ID_1597695204" CREATED="1515427024099" MODIFIED="1515427031216"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Note that exception handlers should catch class exception objects by reference instead of by value. This prevents the compiler from making a copy of the exception, which can be expensive when the exception is a class object, and prevents object slicing when dealing with derived exception classes (which we&#8217;ll talk about in a moment). Catching exceptions by pointer should generally be avoided unless you have a specific reason to do so.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="inheritance" STYLE_REF="Beschreibung" ID="ID_377425028" CREATED="1515427147574" MODIFIED="1515445983009"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;As it turns out, exception handlers will not only match classes of a specific type, they&#8217;ll also match classes derived from that specific type as well!</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="derived before base class" STYLE_REF="Beschreibung" ID="ID_986593016" CREATED="1515427168956" MODIFIED="1515427175977"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Handlers for derived exception classes should be listed before those for base classes.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="std::exception" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1879792524" CREATED="1515427332358" MODIFIED="1515526369087">
+<node TEXT="standard library" STYLE_REF="Beschreibung" ID="ID_1827160642" CREATED="1515427246551" MODIFIED="1515427255525"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The good news is that all of these exception classes are derived from a single class called std::exception. std::exception is a small interface class designed to serve as a base class to any exception thrown by the C++ standard library.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="catch all std::exceptions" STYLE_REF="Beschreibung" ID="ID_1093083602" CREATED="1515427267941" MODIFIED="1515445986275"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;// This handler will catch std::exception and all the derived exceptions too </i></font>
+    </p>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;&#160;&#160;catch (std::exception &amp;exception)</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="what()" STYLE_REF="Beschreibung" ID="ID_1610255830" CREATED="1515427324713" MODIFIED="1515427329601"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The one thing worth noting is that std::exception has a virtual member function named what() that returns a C-style string description of the exception. Most derived classes override the what() function to change the message. Note that this string is meant to be used for descriptive text only -- do not use it for comparisons, as it is not guaranteed to be the same across compilers.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="using standard exceptions directly" STYLE_REF="Beschreibung" ID="ID_279954270" CREATED="1515427436621" MODIFIED="1515427446205"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Nothing throws a std::exception directly, and neither should you. However, you should feel free to throw the other standard exception classes in the standard library if they adequately represent your needs.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="deriving your own classes from std::exception" STYLE_REF="Beschreibung" ID="ID_1429506419" CREATED="1515427479593" MODIFIED="1515427492825"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;You can, of course, derive your own classes from std::exception, and override the virtual what() member function.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="misc" STYLE_REF="Beschreibung" ID="ID_1117975510" CREATED="1515526414411" MODIFIED="1515526437373">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="when return codes fail" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1490110116" CREATED="1515424279837" MODIFIED="1515445927239">
+<node TEXT="when return codes fail" STYLE_REF="Beschreibung" ID="ID_1287283361" CREATED="1515423387328" MODIFIED="1515423445552"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>The primary issue with return codes is that the error handling code ends up intricately linked to the normal control flow of the code. This in turns ends up constraining both how the code is laid out, and how errors can be reasonably handled.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="unwinding the stack" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1420031267" CREATED="1515425081874" MODIFIED="1515445927562">
+<node TEXT="what happens when an exception is raised?" STYLE_REF="Beschreibung" ID="ID_865494825" CREATED="1515425097138" MODIFIED="1515425110362"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;First, the program looks to see if the exception can be handled immediately (which means it was thrown inside a try block). If not, the current function is terminated, and the program checks to see if the function&#8217;s caller will handle the exception. If not, it terminates the caller and checks the caller&#8217;s caller. Each function is terminated in sequence until a handler for the exception is found, or until main() is terminated without the exception being handled. This process is called unwinding the stack</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="uncaught exceptions" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1899556161" CREATED="1515425768484" MODIFIED="1515445927901">
+<node TEXT="what happens?" STYLE_REF="Beschreibung" ID="ID_1489593235" CREATED="1515425776459" MODIFIED="1515425799300"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;When main() terminates with an unhandled exception, the operating system will generally notify you that an unhandled exception error has occurred. How it does this depends on the operating system, but possibilities include printing an error message, popping up an error dialog, or simply crashing. Some OSes are less graceful than others. Generally this is something you want to avoid altogether!</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="catch-all handler" STYLE_REF="Beschreibung" ID="ID_1489671829" CREATED="1515425854386" MODIFIED="1515445969016"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;&#160;A catch-all handler works just like a normal catch block, except that instead of using a specific type to catch, it uses the ellipses operator (&#8230;) as the type to catch.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="placed last" STYLE_REF="Beschreibung" ID="ID_433946611" CREATED="1515425944341" MODIFIED="1515425949639"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The catch-all handler should be placed last in the catch block chain. This is to ensure that exceptions can be caught by exception handlers tailored to specific data types if those handlers exist.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="left empty" STYLE_REF="Beschreibung" ID="ID_673807651" CREATED="1515425962300" MODIFIED="1515425986715"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Often, the catch-all handler block is left empty. This will catch any unanticipated exceptions and prevent them from stack unwinding to the top of your program, but does no specific error handling.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="example" STYLE_REF="Beschreibung" ID="ID_466480320" CREATED="1515425995509" MODIFIED="1515426003918"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>catch(...) {} // ignore any unanticipated exceptions</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+</node>
+<node TEXT="problems" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1065735343" CREATED="1515445639117" MODIFIED="1515445928580">
+<node TEXT="cleaning up resources" STYLE_REF="Beschreibung" ID="ID_906647327" CREATED="1515445644799" MODIFIED="1515445658239"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;One of the biggest problems that new programmers run into when using exceptions is the issue of cleaning up resources when an exception occurs.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="exceptions and destructors" STYLE_REF="Beschreibung" ID="ID_1488769299" CREATED="1515445706639" MODIFIED="1515445995169"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;The problem occurs when an exception is thrown from a destructor during the stack unwinding process. If that happens, the compiler is put in a situation where it doesn&#8217;t know whether to continue the stack unwinding process or handle the new exception. The end result is that your program will be terminated immediately.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="don&apos;t" STYLE_REF="Beschreibung" ID="ID_1172474796" CREATED="1515445731908" MODIFIED="1515445736690"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Consequently, the best course of action is just to abstain from using exceptions in destructors altogether. Write a message to a log file instead.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="performance concers" STYLE_REF="Beschreibung" ID="ID_1604249908" CREATED="1515445763026" MODIFIED="1515445769651"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Exceptions do come with a small performance price to pay. They increase the size of your executable, and they may also cause it to run slower due to the additional checking that has to be performed. However, the main performance penalty for exceptions happens when an exception is actually thrown. In this case, the stack must be unwound and an appropriate exception handler found, which is a relatively expensive operation.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="when should I use exceptions?" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_116849218" CREATED="1515445822694" MODIFIED="1515445928943">
+<node TEXT="The error being handled is likely to occur only infrequently." STYLE_REF="Beschreibung" ID="ID_1152397945" CREATED="1515445831446" MODIFIED="1515445838021"/>
+<node TEXT="The error is serious and execution could not continue otherwise." STYLE_REF="Beschreibung" ID="ID_1640522633" CREATED="1515445843490" MODIFIED="1515445844602"/>
+<node TEXT="The error cannot be handled at the place where it occurs." STYLE_REF="Beschreibung" ID="ID_1083918787" CREATED="1515445852107" MODIFIED="1515445853248"/>
+<node TEXT="There isn&#x2019;t a good alternative way to return an error code back to the caller." STYLE_REF="Beschreibung" ID="ID_590568891" CREATED="1515445859462" MODIFIED="1515445860651"/>
+</node>
+</node>
+</node>
+<node TEXT="testing" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1644707749" CREATED="1514585610588" MODIFIED="1515406650650">
+<node TEXT="" ID="ID_731453860" CREATED="1514585762430" MODIFIED="1515406656184">
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="Testing tip #1: Write your program in small, well defined units (functions), and compile often along the way" STYLE_REF="Beschreibung" ID="ID_1058806518" CREATED="1514585630252" MODIFIED="1514585641285"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Compile often, and test any non-trivial functions when you write them</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="Testing tip #2: Aim for 100% statement coverage" STYLE_REF="Beschreibung" ID="ID_1764397228" CREATED="1514585647088" MODIFIED="1514585663476"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Ensure your testing hits every statement in the function.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="Testing tip 3: Aim for 100% branch coverage" STYLE_REF="Beschreibung" ID="ID_1623272358" CREATED="1514585673662" MODIFIED="1514585688095"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Test each of your branches such that they are true at least once and false at least once.</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="Testing tip #4: Aim for 100% loop coverage" STYLE_REF="Beschreibung" ID="ID_1029848393" CREATED="1514585694063" MODIFIED="1514585705384"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Use the 0, 1, 2 test to ensure your loops work correctly with different number of iterations</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="Testing tip #5: Ensure you&#x2019;re testing different categories of input" STYLE_REF="Beschreibung" ID="ID_498437765" CREATED="1514585715277" MODIFIED="1514585725435"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#666666" size="1"><i>&#160;Rule: Test different categories of input values to make sure your unit handles them properly</i></font>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+</node>
+<node TEXT="put test into automated function" STYLE_REF="Beschreibung" ID="ID_1676506919" CREATED="1514585774673" MODIFIED="1514585783401"/>
 </node>
 </node>
 </node>
