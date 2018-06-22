@@ -103,7 +103,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="late binding" STYLE_REF="Beschreibung" ID="ID_1712646886" CREATED="1515338474687" MODIFIED="1515405951164"><richcontent TYPE="DETAILS">
+<node TEXT="late binding" STYLE_REF="Beschreibung" ID="ID_1712646886" CREATED="1515338474687" MODIFIED="1529672102252"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -111,10 +111,11 @@
   </head>
   <body>
     <p>
-      <font color="#666666" size="1"><i>&#160;Direct function calls can be resolved using a process known as early binding. Early binding (also called static binding) means the compiler (or linker) is able to directly associate the identifier name (such as a function or variable name) with a machine address. Remember that all functions have a unique address. So when the compiler (or linker) encounters a function call, it replaces the function call with a machine language instruction that tells the CPU to jump to the address of the function.</i></font>
+      <font color="#666666" size="1"><i>In some programs, it is not possible to know which function will be called until runtime (when the program is run). This is known as late binding (or dynamic binding). In C++, one way to get late binding is to use function pointers. To review function pointers briefly, a function pointer is a type of pointer that points to a function instead of a variable. The function that a function pointer points to can be called by using the function call operator (()) on the pointer.</i></font>
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="slightly less efficient" STYLE_REF="Beschreibung" ID="ID_307938318" CREATED="1515338613167" MODIFIED="1515405953640"><richcontent TYPE="DETAILS">
@@ -1896,7 +1897,7 @@
 </node>
 </node>
 <node TEXT="array vs pointers" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1510784712" CREATED="1514653795748" MODIFIED="1515254761270">
-<node TEXT="array vs. pointers" STYLE_REF="Beschreibung" ID="ID_1771193579" CREATED="1514653641613" MODIFIED="1514653649508"><richcontent TYPE="DETAILS">
+<node TEXT="array vs. pointers" STYLE_REF="Beschreibung" ID="ID_1771193579" CREATED="1514653641613" MODIFIED="1529672764619"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -1904,10 +1905,11 @@
   </head>
   <body>
     <p>
-      <font color="#666666" size="1"><i>&#160;he variable array contains the address of the first element of the array, as if it were a pointer!</i></font>
+      <font color="#666666" size="1"><i>&#160;the variable array contains the address of the first element of the array, as if it were a pointer!</i></font>
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 <node TEXT="not a pointer" STYLE_REF="Beschreibung" ID="ID_1982564007" CREATED="1514653671587" MODIFIED="1514653677717"><richcontent TYPE="DETAILS">
@@ -9680,7 +9682,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_498037099" CREATED="1515512105551" MODIFIED="1515512652965">
 <node TEXT="copy disabled" STYLE_REF="Beschreibung" ID="ID_802248715" CREATED="1515511148857" MODIFIED="1515511156059"><richcontent TYPE="DETAILS">
@@ -9695,7 +9696,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="accessing the managed object" STYLE_REF="Beschreibung" ID="ID_1748200333" CREATED="1515511756021" MODIFIED="1515511764547"><richcontent TYPE="DETAILS">
@@ -9710,7 +9710,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="std::make_unique()" STYLE_REF="Beschreibung" ID="ID_1581003680" CREATED="1515511975766" MODIFIED="1515512661290"><richcontent TYPE="DETAILS">
@@ -9725,7 +9724,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="use it" STYLE_REF="Beschreibung" ID="ID_1035359190" CREATED="1515512001524" MODIFIED="1515512005837"><richcontent TYPE="DETAILS">
@@ -9740,7 +9738,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -9760,7 +9757,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -9777,7 +9773,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="Passing std::unique_ptr to a function" STYLE_REF="Beschreibung" ID="ID_842508443" CREATED="1515512175612" MODIFIED="1515512686661">
@@ -9794,7 +9789,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="don&apos;t take ownership" STYLE_REF="Beschreibung" ID="ID_1437708410" CREATED="1515512269675" MODIFIED="1515512689574">
@@ -9811,7 +9805,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="pass resource itself" STYLE_REF="Beschreibung" ID="ID_43757432" CREATED="1515512338800" MODIFIED="1515512348725"><richcontent TYPE="DETAILS">
@@ -9826,7 +9819,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -9845,7 +9837,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -9862,7 +9853,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_1323700453" CREATED="1515512593711" MODIFIED="1515512597577"><richcontent TYPE="DETAILS">
@@ -9883,7 +9873,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -9899,7 +9888,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_514691509" CREATED="1515512604455" MODIFIED="1515512610188"><richcontent TYPE="DETAILS">
@@ -9920,7 +9908,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -9939,7 +9926,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1802185359" CREATED="1515513182972" MODIFIED="1515513538504">
@@ -9955,7 +9941,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="simpler, safer, more performant" STYLE_REF="Beschreibung" ID="ID_845848129" CREATED="1515513258980" MODIFIED="1515513277619"><richcontent TYPE="DETAILS">
@@ -9970,7 +9955,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -9986,7 +9970,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="why" STYLE_REF="Beschreibung" ID="ID_881483697" CREATED="1515513366949" MODIFIED="1515513371756"><richcontent TYPE="DETAILS">
@@ -10001,7 +9984,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -10017,7 +9999,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -10034,7 +10015,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="circular references" STYLE_REF="Beschreibung" ID="ID_1548046878" CREATED="1515513725990" MODIFIED="1515513732570"><richcontent TYPE="DETAILS">
@@ -10049,7 +10029,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -10066,7 +10045,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="AlwaysUnfoldedNode"/>
 <node TEXT="basic" STYLE_REF="Stichpunkt" FOLDED="true" ID="ID_1879668779" CREATED="1515513973504" MODIFIED="1515513977400">
@@ -10082,7 +10060,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="shared vs. weak" STYLE_REF="Beschreibung" ID="ID_1547831884" CREATED="1515513954435" MODIFIED="1515513962400"><richcontent TYPE="DETAILS">
@@ -10097,7 +10074,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -10375,7 +10351,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -10407,7 +10382,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="example" STYLE_REF="Beschreibung" ID="ID_134100346" CREATED="1515527119749" MODIFIED="1515527131288"><richcontent TYPE="DETAILS">
@@ -10425,7 +10399,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -10456,7 +10429,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
